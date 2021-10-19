@@ -1,0 +1,25 @@
+.input_search {
+  padding: 8px;
+  font-size: 15px;
+  background: #999999;
+  color: #ffffff;
+  border-style: solid;
+  border-radius: 20px;
+  width: 17rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.input_search:focus {
+  outline: none;
+}
+.input_search::placeholder {
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+}
+.input_img {
+  bottom: 2px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+}
