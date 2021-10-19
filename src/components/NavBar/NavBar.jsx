@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../../img/logo.svg";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function NavBar() {
   return (
@@ -13,6 +14,9 @@ export default function NavBar() {
         <NavLink exact to="/">
           Favorites
         </NavLink>
+      </div>
+      <div className={styles.SearchBar}>
+        <SearchBar />
       </div>
     </header>
   );
