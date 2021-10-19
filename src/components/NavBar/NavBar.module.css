@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  color: #ffffff;
+  justify-content: space-between;
+}
+.header a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.linkContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 23%;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../src/components/NavBar.jsx";
+import NavBar from "./components/NavBar/NavBar.jsx";
 
 function App() {
   return (
