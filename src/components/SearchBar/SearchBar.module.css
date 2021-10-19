@@ -1,13 +1,21 @@
-.input_search {
-  padding: 8px;
-  font-size: 15px;
+form {
+  display: flex;
+}
+.divContainer {
+  display: flex;
+  justify-content: space-around;
   background: #999999;
   color: #ffffff;
-  border-style: solid;
   border-radius: 20px;
-  width: 17rem;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  width: 15rem;
+  padding: 10px 0 10px 0;
+}
+.input_search {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  width: 12rem;
 }
 .input_search:focus {
   outline: none;
@@ -15,11 +23,8 @@
 .input_search::placeholder {
   color: #ffffff;
   font-size: 12px;
-  text-align: center;
+  text-align: start;
 }
-.input_img {
-  bottom: 2px;
-  right: 5px;
-  width: 24px;
-  height: 24px;
+.icon {
+  align-self: center;
 }
