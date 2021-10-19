@@ -8,7 +8,7 @@ export default function NavBar() {
   return (
     <header className={styles.header}>
       <div className={styles.linkContainer}>
-        <NavLink exact to="/">
+        <NavLink exact to="/" className={styles.logo}>
           <img id="" src={Logo} alt="" />
         </NavLink>
         <NavLink exact to="/">
