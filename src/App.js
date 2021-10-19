@@ -1,11 +1,11 @@
-import "./App.css";
+import React from "react";
+import NavBar from "../src/components/NavBar.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
+    <React.Fragment>
+      <NavBar />
+    </React.Fragment>
   );
 }
-
 export default App;
