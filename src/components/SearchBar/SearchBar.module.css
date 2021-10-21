@@ -26,6 +26,9 @@ form {
   font-size: 12px;
   text-align: start;
 }
+.input_search:focus::placeholder {
+  color: transparent;
+}
 .icon {
   align-self: center;
 }
