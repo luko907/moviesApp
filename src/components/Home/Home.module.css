@@ -8,8 +8,25 @@
 }
 .ul_hot_top {
   display: flex;
-  width: 15rem;
+  width: 20rem;
   justify-content: space-between;
   list-style: none;
   padding-left: 10;
+}
+.ul_hot_top li {
+  text-align: center;
+  padding: 7px;
+  width: 80px;
+  border-radius: 10px;
+}
+
+/* li:visited {
+  background: white;
+}
+li:hover {
+  background-color: #111;
+}
+ */
+li:focus {
+  background-color: tomato;
 }
