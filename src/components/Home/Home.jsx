@@ -9,9 +9,15 @@ function Home() {
       </div>
       <div className={styles.div_hot_top}>
         <ul className={styles.ul_hot_top}>
-          <li>Hot</li>
-          <li>Top views</li>
-          <li>Top rating</li>
+          <li>
+            <a href="#">Hot</a>
+          </li>
+          <li>
+            <a href="#">Top views</a>
+          </li>
+          <li>
+            <a href="#">Top rating</a>
+          </li>
         </ul>
       </div>
     </React.Fragment>
