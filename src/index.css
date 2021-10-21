@@ -14,11 +14,6 @@ body {
   color: #ffffff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 #root {
   margin: 2rem 6vw 6vw 6vw;
 }
