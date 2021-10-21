@@ -1,0 +1,15 @@
+.div_suggestion {
+  display: flex;
+  font-weight: 600;
+  font-size: 25px;
+}
+.div_hot_top {
+  display: flex;
+}
+.ul_hot_top {
+  display: flex;
+  width: 15rem;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 10;
+}
