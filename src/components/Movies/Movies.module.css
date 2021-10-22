@@ -1,3 +1,11 @@
+.container {
+  border-radius: 15px;
+  padding: 20px 20px 5px 20px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.226);
+}
+
 .div_suggestion {
   display: flex;
   font-weight: 600;
@@ -28,5 +36,5 @@ li a:hover {
 }
 
 li a:focus {
-  background-color: tomato;
+  background-color: rgba(118, 110, 241, 0.596);
 }

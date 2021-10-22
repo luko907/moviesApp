@@ -11,9 +11,7 @@ export default function NavBar() {
         <NavLink exact to="/" className={styles.logo}>
           <img id="" src={Logo} alt="" />
         </NavLink>
-        <NavLink exact to="/">
-          Favorites
-        </NavLink>
+        <NavLink to="/movies">Movies</NavLink>
       </div>
       <div className={styles.SearchBar}>
         <SearchBar />
