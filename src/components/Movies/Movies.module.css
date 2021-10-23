@@ -8,9 +8,10 @@
 
 .div_suggestion {
   display: flex;
-  font-weight: 600;
-  font-size: 25px;
   margin-left: 1.1rem;
+}
+.div_suggestion span {
+  font-size: 25px;
 }
 .div_hot_top {
   display: flex;
@@ -58,4 +59,10 @@ li a:focus {
 }
 .ul_hot_top li button:focus {
   background-color: rgba(118, 110, 241, 0.596);
+}
+
+.movie_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
