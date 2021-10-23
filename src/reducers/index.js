@@ -5,7 +5,7 @@ const initialState = {
 function appReducer(state = initialState, action) {
   switch (action.type) {
     case "GET_MOVIES": {
-      return { ...state, moviesLoaded: action.payload };
+      return { ...state, moviesLoaded: action.payload.Search };
     }
 
     default:
