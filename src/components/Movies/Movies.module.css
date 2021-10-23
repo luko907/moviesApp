@@ -8,9 +8,10 @@
 
 .div_suggestion {
   display: flex;
-  font-weight: 600;
-  font-size: 25px;
   margin-left: 1.1rem;
+}
+.div_suggestion span {
+  font-size: 25px;
 }
 .div_hot_top {
   display: flex;
