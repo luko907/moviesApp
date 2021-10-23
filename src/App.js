@@ -7,12 +7,12 @@ import "./App.css";
 
 function App() {
   return (
-    <React.Fragment>
+    <div>
       <NavBar />
       <Switch>
         <Route path="/movies" component={Movies} />
       </Switch>
-    </React.Fragment>
+    </div>
   );
 }
 export default App;
