@@ -4,26 +4,30 @@
   width: 15rem;
 }
 
-.movie_img,
-.description_container {
+.movie_img {
   display: flex;
   justify-content: center;
+}
+.description_container {
+  display: flex;
+  margin-left: 1.5rem;
 }
 .movie_img img {
   border-radius: 1rem;
   width: 200px;
-  height: auto;
+  height: 300px;
 }
 
 .description {
   display: flex;
-  width: 7rem;
+  width: 12rem;
   justify-content: space-between;
   margin-top: 0.7rem;
+  margin-bottom: 3rem;
 }
 span {
-  align-self: baseline;
-  font-size: 25px;
+  align-self: flex-end;
+  font-size: 15px;
 }
 .year {
   font-size: 12px;

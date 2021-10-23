@@ -40,7 +40,6 @@ function SearchBar(props) {
             }}
           />
         </div>
-        <button type="submit">BUSCAR</button>
       </form>
     </div>
   );

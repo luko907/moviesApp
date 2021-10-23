@@ -33,7 +33,9 @@ function Movies() {
             </li>
           </ul>
         </div>
-        <Movie />
+        <div className={styles.movie_cards}>
+          <Movie />
+        </div>
       </div>
     </React.Fragment>
   );
