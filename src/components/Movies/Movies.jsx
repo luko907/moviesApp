@@ -2,11 +2,13 @@ import React from "react";
 import { useEffect } from "react";
 import styles from "./Movies.module.css";
 import Movie from "../Movie/Movie";
+import { getMovies } from "../../actions/index.js";
 
 function Movies() {
   useEffect(() => {
     document.body.style["-webkit-backdrop-filter"] = "blur(10px)";
     document.body.style["backdrop-filter"] = "blur(10px)";
+    getMovies();
 
     return () => {
       document.body.style.removeProperty("backdrop-filter");

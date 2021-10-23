@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Movie.module.css";
+import { connect } from "react-redux";
 
-function Movie() {
+function Movie(props) {
   return (
     <React.Fragment>
       <div className={styles.movie}>
@@ -21,4 +22,7 @@ function Movie() {
     </React.Fragment>
   );
 }
-export default Movie;
+
+const mapStateToProps = (state) => ({ movies: state.moviesLoaded });
+
+export default connect(mapStateToProps, null)(Movie);
