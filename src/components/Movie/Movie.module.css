@@ -1,0 +1,33 @@
+.movie {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+}
+
+.movie_img,
+.description_container {
+  display: flex;
+  justify-content: center;
+}
+.movie_img img {
+  border-radius: 1rem;
+  width: 200px;
+  height: auto;
+}
+
+.description {
+  display: flex;
+  width: 7rem;
+  justify-content: space-between;
+  margin-top: 0.7rem;
+}
+span {
+  align-self: baseline;
+}
+.title {
+  font-size: 25px;
+}
+
+.year {
+  font-size: 12px;
+}

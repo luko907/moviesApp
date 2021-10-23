@@ -3,12 +3,6 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   background: url("../src/img/background.png") no-repeat center center fixed;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;

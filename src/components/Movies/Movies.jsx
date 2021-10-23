@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import styles from "./Movies.module.css";
+import Movie from "../Movie/Movie";
 
 function Movies() {
   useEffect(() => {
@@ -34,6 +35,7 @@ function Movies() {
             </li>
           </ul>
         </div>
+        <Movie />
       </div>
     </React.Fragment>
   );
