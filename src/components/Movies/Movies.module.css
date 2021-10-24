@@ -3,7 +3,7 @@
   padding: 20px 20px 30px 20px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  background: rgba(134, 134, 134, 0.596);
+  background: rgba(49, 49, 49, 0.596);
 }
 
 .div_suggestion {
@@ -15,7 +15,7 @@
 }
 .div_hot_top {
   display: flex;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 .ul_hot_top {
   display: flex;
@@ -25,25 +25,6 @@
   padding: 0;
   margin-left: 4rem;
 }
-/* .ul_hot_top li a {
-  display: inline-block;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  padding: 7px;
-  border-radius: 10px;
-  width: 80px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: rgb(77, 73, 73);
-}
-
-li a:focus {
-  background-color: rgba(118, 110, 241, 0.596);
-}
- */
-
 .ul_hot_top li button {
   background-color: transparent;
   border: none;
@@ -65,4 +46,8 @@ li a:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  border: 1px solid rgba(98, 98, 98, 0.616);
+  padding-top: 1.5rem;
+  background-color: rgb(100, 100, 100);
+  border-radius: 5px;
 }
