@@ -2,8 +2,9 @@ import React from "react";
 import { useEffect } from "react";
 import styles from "./Movies.module.css";
 import Movie from "../Movie/Movie";
+import { connect } from "react-redux";
 
-function Movies() {
+function Movies(props) {
   useEffect(() => {
     document.body.style["-webkit-backdrop-filter"] = "blur(10px)";
     document.body.style["backdrop-filter"] = "blur(10px)";
@@ -40,4 +41,10 @@ function Movies() {
     </React.Fragment>
   );
 }
-export default Movies;
+
+const mapStateToProps = (state) => ({
+  moviL: state.moviesLoaded,
+  moviD: state.defaulMovies,
+});
+
+export default connect(mapStateToProps, null)(Movies);

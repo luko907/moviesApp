@@ -17,6 +17,7 @@ function SearchBar(props) {
     props.getMovies(movieInfo);
     setMovieInfo("");
   }
+
   return (
     <div>
       <form

@@ -17,6 +17,8 @@ function App() {
   );
 }
 
-const mapStateToProps = (state) => ({ moviesL: state.moviesLoaded });
+const mapStateToProps = (state) => ({
+  moviesL: state.moviesLoaded,
+});
 
 export default connect(mapStateToProps, null)(App);
