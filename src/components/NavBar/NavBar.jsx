@@ -3,6 +3,7 @@ import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../../img/logo.svg";
 import SearchBar from "../SearchBar/SearchBar";
+import All from "../SearchBar/All.jsx";
 
 export default function NavBar() {
   return (
@@ -14,6 +15,7 @@ export default function NavBar() {
         <NavLink to="/movies">Movies</NavLink>
       </div>
       <div className={styles.SearchBar}>
+        <All />
         <SearchBar />
       </div>
     </header>
