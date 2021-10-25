@@ -10,6 +10,9 @@ export function getActual(title) {
       .then((response) => response.json())
       .then((json) => {
         dispatch({ type: "GET_ACTUAL", payload: json });
+      })
+      .catch((err) => {
+        alert("Please, type again");
       });
   };
 }
