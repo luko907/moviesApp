@@ -3,7 +3,7 @@ import styles from "./SearchBar.module.css";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { getMovies } from "../../actions";
+import { getActual } from "../../actions";
 import { connect } from "react-redux";
 
 function SearchBar(props) {
@@ -14,7 +14,7 @@ function SearchBar(props) {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    props.getMovies(movieInfo);
+    props.getActual(movieInfo);
     setMovieInfo("");
   }
 
@@ -48,7 +48,7 @@ function SearchBar(props) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getMovies: (title) => dispatch(getMovies(title)),
+    getActual: (title) => dispatch(getActual(title)),
   };
 }
 
