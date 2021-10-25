@@ -8,10 +8,11 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <NavBar />
       <Switch>
         <Route path="/movies" component={Movies} />
+        {/*    <Route path="/movies" component={Movies} /> */}
       </Switch>
     </div>
   );
