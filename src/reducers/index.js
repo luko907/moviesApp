@@ -25,8 +25,7 @@ function appReducer(state = initialState, action) {
         moviesLoaded: action.payload.Search.filter(
           (v, i, a) =>
             a.findIndex((t) => t.imdbID === v.imdbID) === i &&
-            v.Poster !== "N/A" &&
-            v.Year > 2015
+            v.Poster !== "N/A"
         ),
       };
     }
