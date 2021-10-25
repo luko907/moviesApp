@@ -40,6 +40,10 @@ export function getMovies() {
       fetch("http://www.omdbapi.com/?apikey=2b9c4287&s=vivo&type=movie").then(
         (value) => value.json()
       ),
+
+      fetch("http://www.omdbapi.com/?apikey=2b9c4287&s=spirit&type=movie").then(
+        (value) => value.json()
+      ),
     ])
       .then((value) => {
         dispatch({ type: "GET_MOVIES", payload: value });
