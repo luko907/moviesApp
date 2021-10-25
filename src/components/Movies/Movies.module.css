@@ -23,15 +23,14 @@ a {
 .div_hot_top {
   display: flex;
   margin-bottom: 0.5rem;
+  width: 80vw;
+  justify-content: flex-start;
 }
 .ul_hot_top {
   display: flex;
-  /*   width: 30rem; */
-  width: 15rem;
   justify-content: space-between;
   list-style: none;
   padding: 0;
-  margin-left: 4rem;
 }
 
 .ul_hot_top li button {
@@ -41,7 +40,7 @@ a {
   padding: 7px;
   font-size: 17px;
   border-radius: 10px;
-  width: 100px;
+  width: 150px;
   cursor: pointer;
 }
 .ul_hot_top li button:hover {
@@ -50,7 +49,10 @@ a {
 .ul_hot_top li button:focus {
   background-color: rgba(118, 110, 241, 0.596);
 }
-
+.popular_link {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
 .movie_cards {
   display: flex;
   flex-wrap: wrap;
@@ -61,27 +63,24 @@ a {
   border-radius: 5px;
 }
 
-@media only screen and (max-width: 765px) {
-  .div_hot_top {
-    justify-content: center;
-  }
+@media only screen and (max-width: 415px) {
   .ul_hot_top {
     margin-left: 0;
   }
-}
-
-@media only screen and (max-width: 415px) {
-  /*   .ul_hot_top {
-    margin-left: 0;
-  } */
-  .ul_hot_top li button {
+  /*   .ul_hot_top li button {
     width: 20vw;
     font-size: 3.6vw;
-  }
+  } */
   .container {
     padding: 20px 8px 5px 8px;
   }
   .div_suggestion span {
     font-size: 5.2vw;
   }
+}
+@media only screen and (max-width: 385px) {
+  /*   .ul_hot_top li button {
+    width: 20vw;
+    font-size: 1rem;
+  } */
 }

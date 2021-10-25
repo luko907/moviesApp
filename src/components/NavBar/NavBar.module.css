@@ -46,24 +46,24 @@
 @media only screen and (max-width: 450px) {
   .linkContainer {
     flex-direction: column;
+    display: contents;
   }
   .header a {
-    font-size: 3.5vw;
+    font-size: 4.5vw;
   }
-  .linkContainer {
-    display: block;
-  }
+
   .logo img {
     width: 50vw;
     height: auto;
   }
-  .link_movies {
-    display: none;
-  }
+  /*   .link_movies {
+  } */
   .SearchBar {
     margin-top: 1.5rem;
   }
   .header {
     margin-bottom: 1rem;
   }
+}
+@media only screen and (max-width: 385px) {
 }

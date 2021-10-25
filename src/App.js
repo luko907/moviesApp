@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        <Route path="/" component={Movies} />
+        <Route path="/movies" component={Movies} />
         {/*    <Route path="/movies" component={Movies} /> */}
       </Switch>
     </div>
