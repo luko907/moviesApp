@@ -1,6 +1,13 @@
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 .container {
   border-radius: 15px;
-  padding: 20px 20px 30px 20px;
+  padding: 20px 20px 5px 20px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   background: rgba(49, 49, 49, 0.596);
@@ -16,15 +23,16 @@
 .div_hot_top {
   display: flex;
   margin-bottom: 0.5rem;
+  width: 80vw;
+  justify-content: flex-start;
 }
 .ul_hot_top {
   display: flex;
-  width: 30rem;
   justify-content: space-between;
   list-style: none;
   padding: 0;
-  margin-left: 4rem;
 }
+
 .ul_hot_top li button {
   background-color: transparent;
   border: none;
@@ -32,7 +40,7 @@
   padding: 7px;
   font-size: 17px;
   border-radius: 10px;
-  width: 100px;
+  width: 150px;
   cursor: pointer;
 }
 .ul_hot_top li button:hover {
@@ -41,7 +49,10 @@
 .ul_hot_top li button:focus {
   background-color: rgba(118, 110, 241, 0.596);
 }
-
+.popular_link {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
 .movie_cards {
   display: flex;
   flex-wrap: wrap;
@@ -50,4 +61,26 @@
   padding-top: 1.5rem;
   background-color: rgb(100, 100, 100);
   border-radius: 5px;
+}
+
+@media only screen and (max-width: 415px) {
+  .ul_hot_top {
+    margin-left: 0;
+  }
+  /*   .ul_hot_top li button {
+    width: 20vw;
+    font-size: 3.6vw;
+  } */
+  .container {
+    padding: 20px 8px 5px 8px;
+  }
+  .div_suggestion span {
+    font-size: 5.2vw;
+  }
+}
+@media only screen and (max-width: 385px) {
+  /*   .ul_hot_top li button {
+    width: 20vw;
+    font-size: 1rem;
+  } */
 }

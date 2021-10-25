@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import styles from "./Movies.module.css";
 import Movie from "../Movie/Movie";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 function Movies(props) {
   useEffect(() => {
@@ -24,14 +25,16 @@ function Movies(props) {
         <div className={styles.div_hot_top}>
           <ul className={styles.ul_hot_top}>
             <li>
-              <button>Hot</button>
+              <NavLink className={styles.popular_link} to="/movies">
+                <button>Popular</button>
+              </NavLink>
             </li>
             <li>
-              <button>Top views</button>
+              <button>Favorites</button>
             </li>
-            <li>
+            {/*      <li>
               <button>Top rating</button>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className={styles.movie_cards}>
