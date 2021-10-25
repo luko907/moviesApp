@@ -29,11 +29,14 @@ function SearchBar(props) {
         }}
       >
         <div className={styles.divContainer}>
-          <Link to="/search">
-            <div className={styles.icon}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </div>
-          </Link>
+          <div className={styles.icon}>
+            <Link className={styles.icon_link} to="/search">
+              <FontAwesomeIcon
+                className={styles.magnify}
+                icon={faMagnifyingGlass}
+              />
+            </Link>
+          </div>
           <input
             type="text"
             className={styles.input_search}

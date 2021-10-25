@@ -1,5 +1,6 @@
 form {
   display: flex;
+  height: 35px;
 }
 
 .divContainer {
@@ -9,7 +10,6 @@ form {
   color: #ffffff;
   border-radius: 20px;
   width: 15rem;
-  padding: 10px 0 10px 0;
 }
 .input_search {
   background: transparent;
@@ -17,13 +17,14 @@ form {
   outline: none;
   color: #ffffff;
   width: 12rem;
+  padding: 15px;
 }
 .input_search:focus {
   outline: none;
 }
 .input_search::placeholder {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 11px;
   text-align: start;
 }
 .input_search:focus::placeholder {
@@ -31,4 +32,32 @@ form {
 }
 .icon {
   align-self: center;
+}
+.icon_link {
+  padding: 14px 9px 14px 20px;
+}
+.magnify {
+  height: 1.2em;
+}
+@media only screen and (max-width: 450px) {
+  .input_search::placeholder {
+    font-size: 2.5vw;
+  }
+  .divContainer {
+    width: 60vw;
+  }
+  form {
+    height: 7vw;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .input_search::placeholder {
+    font-size: 0.7rem;
+  }
+  .divContainer {
+    width: 15rem;
+  }
+  form {
+    height: 2.2rem;
+  }
 }
