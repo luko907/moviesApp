@@ -24,14 +24,14 @@ function Movies(props) {
         <div className={styles.div_hot_top}>
           <ul className={styles.ul_hot_top}>
             <li>
-              <button>Hot</button>
+              <button>Popular</button>
             </li>
             <li>
-              <button>Top views</button>
+              <button>Favorites</button>
             </li>
-            <li>
+            {/*      <li>
               <button>Top rating</button>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className={styles.movie_cards}>
