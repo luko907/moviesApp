@@ -9,7 +9,7 @@ form {
   background: #999999;
   color: #ffffff;
   border-radius: 20px;
-  width: 15rem;
+  width: 17rem;
 }
 .input_search {
   background: transparent;
@@ -34,7 +34,11 @@ form {
   align-self: center;
 }
 .icon_link {
-  padding: 14px 9px 14px 20px;
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  cursor: pointer;
 }
 .magnify {
   height: 1.2em;
