@@ -5,15 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { getActual } from "../../actions";
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 function SearchBar(props) {
   const [movieInfo, setMovieInfo] = useState("");
+  let history = useHistory();
 
   function handleChange(e) {
     setMovieInfo(e.target.value);
   }
   function handleSubmit(e) {
     e.preventDefault();
+    history.push("/movies");
     props.getActual(movieInfo);
     setMovieInfo("");
   }
