@@ -17,7 +17,9 @@ function NavBar(props) {
           <button
             className={styles.link_button}
             onClick={() =>
-              props.mov && props.mov.length < 1 ? props.getMovies() : null
+              (props.mov && props.mov.length < 1) || props.mov === undefined
+                ? props.getMovies()
+                : null
             }
           >
             Movies
