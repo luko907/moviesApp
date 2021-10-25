@@ -44,7 +44,6 @@ function Movies(props) {
 
 const mapStateToProps = (state) => ({
   moviL: state.moviesLoaded,
-  moviD: state.defaulMovies,
 });
 
 export default connect(mapStateToProps, null)(Movies);
