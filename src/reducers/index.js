@@ -1,6 +1,6 @@
 const initialState = {
   moviesLoaded: [],
-  actualMovies: [],
+  /*   actualMovies: [], */
 };
 
 function appReducer(state = initialState, action) {
@@ -22,11 +22,20 @@ function appReducer(state = initialState, action) {
     case "GET_ACTUAL": {
       return {
         ...state,
-        actualMovies: action.payload.Search.filter(
-          (item) => item.Poster !== "N/A"
+        moviesLoaded: action.payload.Search.filter(
+          (v, i, a) =>
+            a.findIndex((t) => t.imdbID === v.imdbID) === i &&
+            v.Poster !== "N/A" &&
+            v.Year > 2015
         ),
       };
     }
+    /*  case "REMOVE_LOADED": {
+      return {
+        ...state,
+        moviesLoaded: [],
+      };
+    } */
     default:
       return state;
   }

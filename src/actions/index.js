@@ -1,3 +1,7 @@
+/* export const removeMoviesLoaded = (payload) => {
+  return { type: "REMOVE_LOADED", payload };
+}; */
+
 export function getActual(title) {
   return function (dispatch) {
     return fetch(
