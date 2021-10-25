@@ -22,13 +22,13 @@ export function getMovies() {
       fetch(
         "https://www.omdbapi.com/?apikey=2b9c4287&s=toy+story&type=movie"
       ).then((value) => value.json()),
-      fetch("http://www.omdbapi.com/?apikey=2b9c4287&s=lego&type=movie").then(
+      fetch("https://www.omdbapi.com/?apikey=2b9c4287&s=lego&type=movie").then(
         (value) => value.json()
       ),
       fetch(
         "https://www.omdbapi.com/?apikey=2b9c4287&s=cry+macho&type=movie"
       ).then((value) => value.json()),
-      fetch("http://www.omdbapi.com/?apikey=2b9c4287&s=cars&type=movie").then(
+      fetch("https://www.omdbapi.com/?apikey=2b9c4287&s=cars&type=movie").then(
         (value) => value.json()
       ),
       fetch(
@@ -37,10 +37,9 @@ export function getMovies() {
       fetch(
         "https://www.omdbapi.com/?apikey=2b9c4287&s=lion+king&type=movie"
       ).then((value) => value.json()),
-      fetch("http://www.omdbapi.com/?apikey=2b9c4287&s=vivo&type=movie").then(
+      fetch("https://www.omdbapi.com/?apikey=2b9c4287&s=vivo&type=movie").then(
         (value) => value.json()
       ),
-
       fetch(
         "https://www.omdbapi.com/?apikey=2b9c4287&s=spirit&type=movie"
       ).then((value) => value.json()),
