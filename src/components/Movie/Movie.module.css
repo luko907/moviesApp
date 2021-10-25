@@ -10,7 +10,8 @@
 }
 .description_container {
   display: flex;
-  margin-left: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1.6rem;
 }
 .movie_img img {
   border-radius: 1rem;
@@ -23,7 +24,6 @@
   width: 12rem;
   justify-content: space-between;
   margin-top: 0.7rem;
-  margin-bottom: 3rem;
 }
 span {
   align-self: flex-end;
@@ -31,4 +31,21 @@ span {
 }
 .year {
   font-size: 12px;
+}
+
+@media only screen and (max-width: 450px) {
+  .movie_img img {
+    border-radius: 1rem;
+    width: 55vw;
+    height: 75vw;
+  }
+  span {
+    font-size: 3vw;
+  }
+  .year {
+    font-size: 2.5vw;
+  }
+  .description {
+    width: 40vw;
+  }
 }

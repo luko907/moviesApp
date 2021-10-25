@@ -17,11 +17,53 @@
   align-items: center;
   font-size: 13px;
 }
+.linkContainer a {
+  padding: 30px;
+}
 .logo {
-  margin-right: 4rem;
+  margin-right: 1rem;
+  padding: 15px;
 }
 .SearchBar {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 765px) {
+  .header {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .header a {
+    font-size: 2.5vw;
+  }
+  .linkContainer a {
+    padding: 3vw;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .linkContainer {
+    flex-direction: column;
+  }
+  .header a {
+    font-size: 3.5vw;
+  }
+  .linkContainer {
+    display: block;
+  }
+  .logo img {
+    width: 50vw;
+    height: auto;
+  }
+  .link_movies {
+    display: none;
+  }
+  .SearchBar {
+    margin-top: 1.5rem;
+  }
+  .header {
+    margin-bottom: 1rem;
+  }
 }

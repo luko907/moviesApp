@@ -1,6 +1,6 @@
 .container {
   border-radius: 15px;
-  padding: 20px 20px 30px 20px;
+  padding: 20px 20px 5px 20px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   background: rgba(49, 49, 49, 0.596);
@@ -50,4 +50,26 @@
   padding-top: 1.5rem;
   background-color: rgb(100, 100, 100);
   border-radius: 5px;
+}
+
+@media only screen and (max-width: 765px) {
+  .ul_hot_top {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .ul_hot_top {
+    margin-left: 0;
+  }
+  .ul_hot_top li button {
+    width: 20vw;
+    font-size: 3.6vw;
+  }
+  .container {
+    padding: 20px 8px 5px 8px;
+  }
+  .div_suggestion span {
+    font-size: 5.2vw;
+  }
 }

@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 2rem 2rem 2rem;
+}
+@media only screen and (max-width: 450px) {
+  .App {
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+}
