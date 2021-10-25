@@ -3,7 +3,6 @@ import NavBar from "./components/NavBar/NavBar.jsx";
 import Movies from "./components/Movies/Movies.jsx";
 import { Switch, Route } from "react-router";
 import { connect } from "react-redux";
-
 import "./App.css";
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/movies" component={Movies} />
-        {/*    <Route path="/movies" component={Movies} /> */}
       </Switch>
     </div>
   );

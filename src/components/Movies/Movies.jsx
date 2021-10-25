@@ -1,7 +1,7 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./Movies.module.css";
 import Movie from "../Movie/Movie";
+import { getMovies } from "../../actions";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
@@ -26,14 +26,11 @@ function Movies(props) {
           <ul className={styles.ul_hot_top}>
             <li>
               <NavLink className={styles.popular_link} to="/movies">
-                <button>Popular</button>
+                <button onClick={() => props.getMovies()}>Popular</button>
               </NavLink>
             </li>
-            <li>
+            {/*    <li>
               <button>Favorites</button>
-            </li>
-            {/*      <li>
-              <button>Top rating</button>
             </li> */}
           </ul>
         </div>
@@ -49,4 +46,10 @@ const mapStateToProps = (state) => ({
   moviL: state.moviesLoaded,
 });
 
-export default connect(mapStateToProps, null)(Movies);
+function mapDispatchToProps(dispatch) {
+  return {
+    getMovies: () => dispatch(getMovies()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Movies);

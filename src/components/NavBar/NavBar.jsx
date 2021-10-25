@@ -3,9 +3,10 @@ import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../../img/logo.svg";
 import SearchBar from "../SearchBar/SearchBar";
-import All from "../SearchBar/All.jsx";
+import { getMovies } from "../../actions";
+import { connect } from "react-redux";
 
-export default function NavBar() {
+function NavBar(props) {
   return (
     <header className={styles.header}>
       <div className={styles.linkContainer}>
@@ -13,13 +14,30 @@ export default function NavBar() {
           <img id="" src={Logo} alt="" />
         </NavLink>
         <NavLink to="/movies" className={styles.link_movies}>
-          Movies
+          <button
+            className={styles.link_button}
+            onClick={() =>
+              props.mov && props.mov.length < 1 ? props.getMovies() : null
+            }
+          >
+            Movies
+          </button>
         </NavLink>
       </div>
       <div className={styles.SearchBar}>
-        <All />
         <SearchBar />
       </div>
     </header>
   );
 }
+const mapStateToProps = (state) => ({
+  mov: state.moviesLoaded,
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getMovies: () => dispatch(getMovies()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
