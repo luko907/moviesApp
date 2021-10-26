@@ -1,0 +1,21 @@
+.movieInfo_fullscreen {
+  display: flex;
+  border: 2px solid white;
+}
+
+.movieInfo_fullscreen img {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  min-width: 1024px;
+  opacity: 0.28;
+}
+
+@media screen and (max-width: 1024px) {
+  .movieInfo_fullscreen img {
+    left: 50%;
+    margin-left: -512px; /* 50% */
+  }
+}
