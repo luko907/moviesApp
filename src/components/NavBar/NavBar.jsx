@@ -16,7 +16,7 @@ function NavBar(props) {
       </div>
       <div className={styles.link_movies_searchbar}>
         <div className={styles.link_movies_div}>
-          <NavLink to="/movies" className={styles.link_movies}>
+          <NavLink to="/" className={styles.link_movies}>
             <button
               className={styles.link_button}
               onClick={() =>
