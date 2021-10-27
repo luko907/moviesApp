@@ -10,7 +10,7 @@ function Movie(props) {
       {props.moviesLoaded.map((item) => (
         <div className={styles.movie} key={item.imdbID}>
           <Link
-            to="/movies/algo"
+            to="/movies/movie"
             style={{
               color: "inherit",
               textDecoration: "inherit",
