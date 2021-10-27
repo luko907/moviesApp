@@ -6,16 +6,15 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .container {
-  border-radius: 15px;
-  padding: 20px 20px 5px 20px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(49, 49, 49, 0.596);
+  background: rgb(6 13 23);
 }
 
 .div_suggestion {
   display: flex;
+  font-family: "Fredoka One", cursive;
   margin-left: 1.1rem;
+  opacity: 0.7;
+  margin-bottom: 0.8rem;
 }
 .div_suggestion span {
   font-size: 25px;
@@ -23,8 +22,9 @@ a {
 .div_hot_top {
   display: flex;
   margin-bottom: 0.5rem;
-  width: 80vw;
+  width: 100%;
   justify-content: flex-start;
+  background-color: rgb(10, 21, 31);
 }
 .ul_hot_top {
   display: flex;
@@ -36,12 +36,13 @@ a {
 .ul_hot_top li button {
   background-color: transparent;
   border: none;
-  color: rgb(255, 255, 255);
+  color: rgb(220 199 199);
   padding: 7px;
   font-size: 17px;
   border-radius: 10px;
   width: 150px;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 .ul_hot_top li button:hover {
   background-color: rgb(231, 26, 26);
@@ -57,10 +58,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid rgba(98, 98, 98, 0.616);
   padding-top: 1.5rem;
-  background-color: rgb(100, 100, 100);
-  border-radius: 5px;
 }
 
 @media only screen and (max-width: 415px) {
