@@ -65,20 +65,10 @@ a {
   .ul_hot_top {
     margin-left: 0;
   }
-  /*   .ul_hot_top li button {
-    width: 20vw;
-    font-size: 3.6vw;
-  } */
   .container {
-    padding: 20px 8px 5px 8px;
+    padding: 20px 0px 5px 20px;
   }
   .div_suggestion span {
     font-size: 5.2vw;
   }
-}
-@media only screen and (max-width: 385px) {
-  /*   .ul_hot_top li button {
-    width: 20vw;
-    font-size: 1rem;
-  } */
 }

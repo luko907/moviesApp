@@ -81,6 +81,7 @@ const namess = [
   "spider man",
   "vivo",
   "spirit",
+  "fast and furious",
 ];
 /* const arr = [];
 namess.forEach((mov, i) =>
