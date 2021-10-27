@@ -4,15 +4,18 @@ import Movie from "../Movie/Movie";
 import { getMovies } from "../../actions";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import background from "../../img/back.png";
 
 function Movies(props) {
   useEffect(() => {
-    document.body.style["-webkit-backdrop-filter"] = "blur(10px)";
-    document.body.style["backdrop-filter"] = "blur(10px)";
+    /*    document.querySelector(".NavBar_header__2ZPPt").style.background =
+      "#3f3f3f"; */
 
+    document.body.style.background = "rgb(6 13 23)";
+    /* document.body.style.background =
+      "url('https://image.tmdb.org/t/p/w500/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg') no-repeat center center /cover fixed";  */
     return () => {
-      document.body.style.removeProperty("backdrop-filter");
-      document.body.style.removeProperty("-webkit-backdrop-filter");
+      document.body.style.background = `url(${background}) no-repeat center center /cover fixed`;
     };
   }, []);
 
@@ -20,7 +23,7 @@ function Movies(props) {
     <React.Fragment>
       <div className={styles.container}>
         <div className={styles.div_suggestion}>
-          <span>Suggestion</span>
+          <span>Sort By</span>
         </div>
         <div className={styles.div_hot_top}>
           <ul className={styles.ul_hot_top}>
