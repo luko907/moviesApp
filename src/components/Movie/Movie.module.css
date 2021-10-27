@@ -1,7 +1,7 @@
 .movie {
   display: flex;
   flex-direction: column;
-  width: 15rem;
+  /*   width: 15rem; */
   margin-right: 2.8rem;
   margin-left: 2.8rem;
   margin-bottom: 2rem;
@@ -19,15 +19,14 @@
 .movie_img {
   display: flex;
   justify-content: center;
-  width: fit-content;
+  width: auto;
 }
 
 .movie_posterimg {
   border-radius: 1rem;
-  width: 270px;
-  height: 400px;
+  width: 306px;
+  height: 455px;
 }
-
 .div_play_icon {
   position: absolute;
   align-self: center;
@@ -55,35 +54,46 @@
   display: flex;
   justify-content: center;
   margin-bottom: 1.6rem;
+  width: 100%;
 }
 
 .description {
   display: flex;
-  width: 15rem;
+  flex-direction: column;
+  width: -webkit-fill-available;
   justify-content: space-between;
   margin-top: 0.7rem;
 }
 span {
-  align-self: flex-end;
-  font-size: 15px;
+  margin-left: 0.2rem;
+  font-size: 20px;
+  margin-bottom: 0.3rem;
 }
 .year {
   font-size: 12px;
+  margin-right: 0.2rem;
+  align-self: flex-start;
 }
 
 @media only screen and (max-width: 450px) {
   .movie_posterimg {
-    border-radius: 1rem;
     width: 55vw;
     height: 75vw;
   }
   span {
-    font-size: 4vw;
+    font-size: 3.5vw;
   }
   .year {
-    font-size: 3vw;
+    font-size: 2.8vw;
   }
-  .description {
+  /*   .description {
     width: 50vw;
+  } */
+}
+@media only screen and (max-width: 420px) {
+  /*   .description {
+    width: 45vw;
   }
+  .description_container {
+  } */
 }
