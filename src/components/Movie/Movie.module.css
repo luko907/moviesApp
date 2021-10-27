@@ -2,6 +2,19 @@
   display: flex;
   flex-direction: column;
   width: 15rem;
+  margin-right: 2.8rem;
+  margin-left: 2.8rem;
+  margin-bottom: 2rem;
+}
+.movie {
+  transition: 0.3s ease;
+}
+
+.movie:hover {
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+  transition: 0.3s ease;
 }
 
 .movie_img {
@@ -15,8 +28,8 @@
 }
 .movie_img img {
   border-radius: 1rem;
-  width: 200px;
-  height: 270px;
+  width: 270px;
+  height: 400px;
 }
 
 .description {
