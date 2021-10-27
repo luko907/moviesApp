@@ -13,21 +13,26 @@ function NavBar(props) {
         <NavLink exact to="/" className={styles.logo}>
           <img id="" src={Logo} alt="" />
         </NavLink>
-        <NavLink to="/movies" className={styles.link_movies}>
-          <button
-            className={styles.link_button}
-            onClick={() =>
-              (props.mov && props.mov.length < 1) || props.mov === undefined
-                ? props.getMovies()
-                : null
-            }
-          >
-            Movies
-          </button>
-        </NavLink>
       </div>
-      <div className={styles.SearchBar}>
-        <SearchBar />
+      <div className={styles.link_movies_searchbar}>
+        <div className={styles.link_movies_div}>
+          <NavLink to="/movies" className={styles.link_movies}>
+            <button
+              className={styles.link_button}
+              onClick={() =>
+                (props.mov && props.mov.length < 1) || props.mov === undefined
+                  ? props.getMovies()
+                  : null
+              }
+            >
+              Movies
+            </button>
+          </NavLink>
+        </div>
+
+        <div className={styles.SearchBar}>
+          <SearchBar />
+        </div>
       </div>
     </header>
   );
