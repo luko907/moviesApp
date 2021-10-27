@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./MovieInfo.module.css";
 import { connect } from "react-redux";
 
