@@ -6,26 +6,28 @@ form {
 .divContainer {
   display: flex;
   justify-content: space-around;
-  background: #999999;
+  background: #9999996e;
   color: #ffffff;
-  border-radius: 20px;
-  width: 17rem;
+  border-radius: 10px;
+  width: 18.7rem;
 }
 .input_search {
   background: transparent;
   border: none;
   outline: none;
   color: #ffffff;
-  width: 12rem;
+  width: 13.9rem;
   padding: 15px;
+  opacity: 0.6;
 }
 .input_search:focus {
   outline: none;
 }
 .input_search::placeholder {
   color: #ffffff;
-  font-size: 11px;
+  font-size: 14px;
   text-align: start;
+  font-style: italic;
 }
 .input_search:focus::placeholder {
   color: transparent;
