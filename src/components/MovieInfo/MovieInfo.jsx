@@ -1,19 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleRoot } from "radium";
 import styles from "./MovieInfo.module.css";
 import { connect } from "react-redux";
 import backgroundd from "../../img/back.png";
+import { useParams } from "react-router-dom";
 
 function MovieInfo(props) {
+  const params = useParams();
+  const [movieDetails, setMovieDetails] = useState([]);
+  /* console.log(params); */
+
   const movieInfofullscreen = {
     display: "flex",
     justifyContent: "center",
-    background:
-      'linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url("https://image.tmdb.org/t/p/w500/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg") no-repeat center center / cover fixed',
+    background: `linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url(${movieDetails.Poster}) no-repeat center center / cover fixed`,
     height: "39vw",
     "@media (max-width: 1200px)": {
-      background:
-        ' url("https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg") no-repeat center center / cover fixed',
+      background: ` url(${movieDetails.Poster}) no-repeat center center / cover fixed`,
     },
     "@media (max-width: 700px)": {
       height: "48vw",
@@ -25,10 +28,15 @@ function MovieInfo(props) {
 
   useEffect(() => {
     document.body.style.background = "#060d17";
+    fetch(`https://www.omdbapi.com/?apikey=2b9c4287&i=${params.id}`)
+      .then((response) => response.json())
+      .then((response) => {
+        setMovieDetails(response);
+      });
     return () => {
       document.body.style.background = `url(${backgroundd}) no-repeat center center /cover fixed`;
     };
-  }, []);
+  }, [params.id]);
   return (
     <React.Fragment>
       <StyleRoot>
