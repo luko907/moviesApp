@@ -21,7 +21,7 @@ a {
 }
 .div_hot_top {
   display: flex;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   justify-content: flex-start;
   background-color: rgb(10, 21, 31);
