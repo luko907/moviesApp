@@ -4,10 +4,9 @@
   font-family: "Zen Kaku Gothic Antique", sans-serif;
   background-color: rgb(21 21 21 / 28%);
   width: 100%;
-  margin-bottom: 5rem;
+  padding: 0.5rem;
 }
 
-/* rgb(129,133,136) */
 .header a {
   text-decoration: none;
   color: rgb(207, 207, 207);

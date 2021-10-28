@@ -40,24 +40,24 @@
   height: 100vh;
 }
 
-@media only screen and (max-width: 1200px) {
+/* @media only screen and (max-width: 1200px) {
   .movieInfo_fullscreen {
     background: url("https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg")
       no-repeat center center / cover fixed;
   }
-}
+} */
 @media only screen and (max-width: 700px) {
-  .movieInfo_fullscreen {
+  /*   .movieInfo_fullscreen {
     height: 48vw;
-  }
+  } */
   .movieInfo_container {
     margin-top: 40%;
   }
 }
 @media only screen and (max-width: 500px) {
-  .movieInfo_fullscreen {
+  /*   .movieInfo_fullscreen {
     height: 78vw;
-  }
+  } */
   .movieInfo_container {
     margin-top: 65%;
   }
