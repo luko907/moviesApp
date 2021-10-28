@@ -8,7 +8,7 @@ https://www.omdbapi.com/
 
 ## Android/iOS
 
-![Screenshot 2021-10-28 090547-phone1](https://user-images.githubusercontent.com/48270029/139260568-a4bdc40e-4f76-4feb-8cce-98ba3e4f678c.png)
+![Screenshot 2021-10-28 090547-phone1](https://user-images.githubusercontent.com/48270029/139264934-b3519a55-d23e-4d2a-b326-5512d6b9149c.png)
 ![Screenshot 2021-10-28 090633-phone2](https://user-images.githubusercontent.com/48270029/139260572-eef0c194-b06e-40f0-9dea-9616e8ed546e.png)
 ![Screenshot 2021-10-28 090753-phone3](https://user-images.githubusercontent.com/48270029/139260578-c8ae8a6d-2605-463d-9091-1cc13ad26642.png)
 ![Screenshot 2021-10-28 090917-phone4](https://user-images.githubusercontent.com/48270029/139260580-4bbd89e1-a2d9-41b6-93c6-ddfe5ed49292.png)
