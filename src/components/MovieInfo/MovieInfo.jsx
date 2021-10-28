@@ -14,12 +14,12 @@ function MovieInfo(props) {
   };
 
   useEffect(() => {
-    document.querySelector(".NavBar_header__2ZPPt").style.marginBottom = "0";
+    /*     document.querySelector(".NavBar_header__2ZPPt").style.marginBottom = "0"; */
     document.body.style.background = "#060d17";
     return () => {
       document.body.style.background = `url(${backgroundd}) no-repeat center center /cover fixed`;
-      document.querySelector(".NavBar_header__2ZPPt").style.marginBottom =
-        "5rem";
+      /*       document.querySelector(".NavBar_header__2ZPPt").style.marginBottom =
+        "5rem"; */
     };
   }, []);
   return (
