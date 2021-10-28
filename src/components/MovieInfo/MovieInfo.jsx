@@ -4,6 +4,15 @@ import { connect } from "react-redux";
 import backgroundd from "../../img/back.png";
 
 function MovieInfo(props) {
+  const movieInfofullscreen = {
+    display: "flex",
+    justifyContent: "center",
+
+    background:
+      'linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url("https://image.tmdb.org/t/p/w500/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg") no-repeat center center / cover fixed',
+    height: "39vw",
+  };
+
   useEffect(() => {
     document.querySelector(".NavBar_header__2ZPPt").style.marginBottom = "0";
     document.body.style.background = "#060d17";
@@ -15,11 +24,7 @@ function MovieInfo(props) {
   }, []);
   return (
     <React.Fragment>
-      <div className={styles.movieInfo_fullscreen}>
-        {/*    <img
-          src="https://image.tmdb.org/t/p/w500/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg"
-          alt=""
-        /> */}
+      <div style={movieInfofullscreen}>
         <div className={styles.movieInfo_container}>
           <div className={styles.movieInfo_img}>
             {/*   <img
