@@ -6,7 +6,13 @@
   width: 85%;
   height: 100vw;
 }
-
+.movieInfo_img_div {
+  margin: 2vw 0 2vw 5vw;
+}
+.movieInfo_img {
+  width: 380px;
+  border-radius: 9px;
+}
 @media only screen and (max-width: 1700px) {
   .movieInfo_container {
     margin-top: 28%;
@@ -15,6 +21,9 @@
 @media only screen and (max-width: 1550px) {
   .movieInfo_container {
     margin-top: 27em;
+  }
+  .movieInfo_img {
+    width: 15vw;
   }
 }
 
@@ -26,5 +35,8 @@
 @media only screen and (max-width: 500px) {
   .movieInfo_container {
     width: 100%;
+  }
+  .movieInfo_img_div {
+    display: none;
   }
 }
