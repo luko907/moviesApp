@@ -17,7 +17,7 @@ export function getMovies() {
 }
 
 export function getActual(title) {
-  const url = `https://www.omdbapi.com/?apikey=2b9c4287&s=${title}&type=movie`;
+  const url = `process.env.REACT_APP_GETACTUAL${title}`;
   return function (dispatch) {
     const fetchData = async () => {
       try {

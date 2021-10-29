@@ -7,6 +7,7 @@ import backgroundd from "../../img/back.png";
 import { useParams } from "react-router-dom";
 
 function MovieInfo(props) {
+  const baseUrl = "https://image.tmdb.org/t/p/w500/";
   const params = useParams();
   const [movieDetails, setMovieDetails] = useState([]);
   /* console.log(params); */
@@ -14,10 +15,14 @@ function MovieInfo(props) {
   const movieInfofullscreen = {
     display: "flex",
     justifyContent: "center",
-    background: `linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url(${movieDetails.Poster}) no-repeat center center / cover fixed`,
+    background: `linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url(${
+      baseUrl + movieDetails.backdrop_path
+    }) no-repeat center center / cover fixed`,
     height: "39vw",
     "@media (max-width: 1200px)": {
-      background: `linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url(${movieDetails.Poster}) no-repeat center center / cover fixed`,
+      background: `linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url(${
+        baseUrl + movieDetails.poster_path
+      }) no-repeat center center / cover fixed`,
     },
     "@media (max-width: 700px)": {
       height: "48vw",
@@ -28,7 +33,7 @@ function MovieInfo(props) {
   };
 
   useEffect(() => {
-    const url = `process.env.REACT_APP_IMBD_MOVIEDETAILS=${params.id}`;
+    const url = `process.env.REACT_APP_API_TMDB_BASE_URL/${params.id}?api_key=process.env.REACT_APP_API_TMDB_API_KEY&language=en-US`;
     document.body.style.background = "#060d17";
     const fetchData = async () => {
       try {
@@ -43,6 +48,23 @@ function MovieInfo(props) {
       document.body.style.background = `url(${backgroundd}) no-repeat center center /cover fixed`;
     };
   }, [params.id]);
+
+  /*   useEffect(() => {
+    const url = `process.env.REACT_APP_IMBD_MOVIEDETAILS=${params.id}`;
+    document.body.style.background = "#060d17";
+    const fetchData = async () => {
+      try {
+        const resp = await axios.get(url);
+        setMovieDetails(resp.data);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchData();
+    return () => {
+      document.body.style.background = `url(${backgroundd}) no-repeat center center /cover fixed`;
+    };
+  }, [params.id]); */
 
   /*   useEffect(() => {
     const url = `process.env.REACT_APP_IMBD_MOVIEDETAILS=${params.id}`;

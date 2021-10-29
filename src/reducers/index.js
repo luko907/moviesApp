@@ -9,7 +9,10 @@ function appReducer(state = initialState, action) {
       return {
         ...state,
         moviesLoaded: action.payload.results.filter(
-          (v, i, a) => a.findIndex((t) => t.id === v.id) === i
+          (v, i, a) =>
+            a.findIndex((t) => t.id === v.id) === i &&
+            v.poster_path !== null &&
+            v.backdrop_path !== null
         ),
       };
     }
@@ -30,10 +33,11 @@ function appReducer(state = initialState, action) {
     case "GET_ACTUAL": {
       return {
         ...state,
-        moviesLoaded: action.payload.Search.filter(
+        moviesLoaded: action.payload.results.filter(
           (v, i, a) =>
-            a.findIndex((t) => t.imdbID === v.imdbID) === i &&
-            v.Poster !== "N/A"
+            a.findIndex((t) => t.id === v.id) === i &&
+            v.poster_path !== null &&
+            v.backdrop_path !== null
         ),
       };
     }
