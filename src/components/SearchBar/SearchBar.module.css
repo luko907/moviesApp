@@ -33,6 +33,7 @@ form {
   color: transparent;
 }
 .icon {
+  display: flex;
   align-self: center;
 }
 .icon_link {
@@ -60,10 +61,21 @@ form {
   .input_search::placeholder {
     font-size: 0.7rem;
   }
+  .icon_link {
+    padding: 15px 5px 15px 5px;
+  }
   .divContainer {
-    width: 15rem;
+    margin-top: 5px;
   }
   form {
     height: 2.2rem;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .divContainer {
+    width: 220px;
+  }
+  .input_search {
+    padding: 15px 5px 15px 5px;
   }
 }
