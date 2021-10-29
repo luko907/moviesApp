@@ -7,6 +7,7 @@ a {
 }
 .container {
   background: rgb(6 13 23);
+  margin-top: 3rem;
 }
 
 .div_suggestion {
@@ -21,7 +22,7 @@ a {
 }
 .div_hot_top {
   display: flex;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   justify-content: flex-start;
   background-color: rgb(10, 21, 31);
@@ -57,7 +58,7 @@ a {
 .movie_cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   padding-top: 1.5rem;
 }
 
@@ -65,20 +66,10 @@ a {
   .ul_hot_top {
     margin-left: 0;
   }
-  /*   .ul_hot_top li button {
-    width: 20vw;
-    font-size: 3.6vw;
-  } */
   .container {
-    padding: 20px 8px 5px 8px;
+    padding: 20px 0px 5px 0;
   }
   .div_suggestion span {
     font-size: 5.2vw;
   }
-}
-@media only screen and (max-width: 385px) {
-  /*   .ul_hot_top li button {
-    width: 20vw;
-    font-size: 1rem;
-  } */
 }

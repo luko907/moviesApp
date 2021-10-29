@@ -1,8 +1,37 @@
-/* export const removeMoviesLoaded = (payload) => {
-  return { type: "REMOVE_LOADED", payload };
-}; */
+import axios from "axios";
+/* dispatch({ type: "GET_MOVIES", payload: value }); */
+
+export function getMovies() {
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=715369ad83702bbb01d37884acb031ed&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
+  return function (dispatch) {
+    const fetchData = async () => {
+      try {
+        const resp = await axios.get(url);
+        dispatch({ type: "GET_MOVIES", payload: resp.data });
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchData();
+  };
+}
 
 export function getActual(title) {
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=715369ad83702bbb01d37884acb031ed&query=${title}`;
+  return function (dispatch) {
+    const fetchData = async () => {
+      try {
+        const resp = await axios.get(url);
+        dispatch({ type: "GET_ACTUAL", payload: resp.data });
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchData();
+  };
+}
+
+/* export function getActual(title) {
   return function (dispatch) {
     return fetch(
       `https://www.omdbapi.com/?apikey=2b9c4287&s=${title}&type=movie`
@@ -15,7 +44,7 @@ export function getActual(title) {
         alert("Please, type again");
       });
   };
-}
+} */
 /* export function getMovies() {
   return function (dispatch) {
     Promise.all([
@@ -53,54 +82,34 @@ export function getActual(title) {
   };
 } */
 
-/* export function getMovies() {
-  const namess = ["nemo", "lego"];
-  const arr = [];
-  namess.forEach((mov, i) =>
-    arr.push(
-      fetch(
-        `https://www.omdbapi.com/?apikey=2b9c4287&s=${namess[i]}&type=movie`
-      ).then((value) => value.json())
+/* const arr = [];
+namess.forEach((mov, i) =>
+arr.push(
+  fetch(
+    `https://www.omdbapi.com/?apikey=2b9c4287&s=${namess[i]}&type=movie`
+    ).then((value) => value.json())
     )
-  );
-  return function (dispatch) {
-    Promise.all(arr)
-      .then((value) => {
-        dispatch({ type: "GET_MOVIES", payload: value });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-} */
-
-const namess = [
+    );
+    export function getMovies() {
+      return function (dispatch) {
+        Promise.all(arr)
+        .then((value) => {
+          dispatch({ type: "GET_MOVIES", payload: value });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      };
+    } */
+/* const namess = [
   "toy story",
   "lego",
   "cry macho",
   "spider man",
   "vivo",
   "spirit",
+  "fast and furious",
 ];
-/* const arr = [];
-namess.forEach((mov, i) =>
-  arr.push(
-    fetch(
-      `https://www.omdbapi.com/?apikey=2b9c4287&s=${namess[i]}&type=movie`
-    ).then((value) => value.json())
-  )
-);
-export function getMovies() {
-  return function (dispatch) {
-    Promise.all(arr)
-      .then((value) => {
-        dispatch({ type: "GET_MOVIES", payload: value });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-} */
 
 const arrMovies = namess.map((mov, i) =>
   fetch(
@@ -118,3 +127,4 @@ export function getMovies() {
       });
   };
 }
+ */

@@ -1,41 +1,121 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { StyleRoot } from "radium";
 import styles from "./MovieInfo.module.css";
 import { connect } from "react-redux";
+import backgroundd from "../../img/back.png";
+import { useParams } from "react-router-dom";
 
 function MovieInfo(props) {
-  /*   useEffect(() => {
-   document.querySelector(".NavBar_header__2ZPPt").style.background =
-      "#3f3f3f"; 
-    document.body.style.width = "auto";
-    document.body.style.background = "black";
-   document.body.style.background =
-      "url('https://image.tmdb.org/t/p/w500/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg') no-repeat center center /cover fixed";  
-    return () => {
-      document.body.style.background = `url(${background}) no-repeat center center fixed`;
+  const baseUrl = "https://image.tmdb.org/t/p/w500/";
+  const params = useParams();
+  const [movieDetails, setMovieDetails] = useState([]);
+  /* console.log(params); */
+
+  const movieInfofullscreen = {
+    display: "flex",
+    justifyContent: "center",
+    background: `linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url(${
+      baseUrl + movieDetails.backdrop_path
+    }) no-repeat center center / cover fixed`,
+    height: "39vw",
+    "@media (max-width: 1200px)": {
+      background: `linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url(${
+        baseUrl + movieDetails.poster_path
+      }) no-repeat center center / cover fixed`,
+    },
+    "@media (max-width: 700px)": {
+      height: "48vw",
+    },
+    "@media (max-width: 500px)": {
+      height: "78vw",
+    },
+  };
+
+  useEffect(() => {
+    const url = `https://api.themoviedb.org/3/movie/${params.id}?api_key=715369ad83702bbb01d37884acb031ed&language=en-US`;
+    document.body.style.background = "#060d17";
+    const fetchData = async () => {
+      try {
+        const resp = await axios.get(url);
+        setMovieDetails(resp.data);
+      } catch (error) {
+        console.log("error", error);
+      }
     };
-  }, []); */
+    fetchData();
+    return () => {
+      document.body.style.background = `url(${backgroundd}) no-repeat center center /cover fixed`;
+    };
+  }, [params.id]);
+
+  /*   useEffect(() => {
+    const url = `https://www.omdbapi.com/?apikey=2b9c4287&i=${params.id}`;
+    document.body.style.background = "#060d17";
+    const fetchData = async () => {
+      try {
+        const resp = await axios.get(url);
+        setMovieDetails(resp.data);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchData();
+    return () => {
+      document.body.style.background = `url(${backgroundd}) no-repeat center center /cover fixed`;
+    };
+  }, [params.id]); */
+
+  /*   useEffect(() => {
+    const url = `https://www.omdbapi.com/?apikey=2b9c4287&i=${params.id}`;
+    document.body.style.background = "#060d17";
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        setMovieDetails(json);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchData();
+    return () => {
+      document.body.style.background = `url(${backgroundd}) no-repeat center center /cover fixed`;
+    };
+  }, [params.id]); */
+
+  /*   useEffect(() => {
+    document.body.style.background = "#060d17";
+    fetch(`https://www.omdbapi.com/?apikey=2b9c4287&i=${params.id}`)
+      .then((response) => response.json())
+      .then((response) => {
+        setMovieDetails(response);
+      });
+    return () => {
+      document.body.style.background = `url(${backgroundd}) no-repeat center center /cover fixed`;
+    };
+  }, [params.id]); */
+
   return (
     <React.Fragment>
-      <div className={styles.movieInfo_fullscreen}>
-        <img
-          src="https://image.tmdb.org/t/p/w500/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg"
-          alt=""
-        />
-        <div className={styles.movieInfo_container}>
-          <div className={styles.movieInfo_img}>
-            {/*   <img
+      <StyleRoot>
+        <div style={movieInfofullscreen}>
+          <div className={styles.movieInfo_container}>
+            <div className={styles.movieInfo_img}>
+              {/*   <img
               src="https://image.tmdb.org/t/p/w500/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg"
               alt=""
             /> */}
-          </div>
-          <div className={styles.description_container}>
-            <div className={styles.description}>
-              <span className={styles.title}>Vaquero loco</span>
-              <span className={styles.year}>2000</span>
+            </div>
+            <div className={styles.description_container}>
+              <div className={styles.description}>
+                <span className={styles.title}></span>
+                <span className={styles.year}></span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </StyleRoot>
     </React.Fragment>
   );
 }
