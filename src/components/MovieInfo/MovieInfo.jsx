@@ -6,11 +6,11 @@ import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 
 function MovieInfo(props) {
-  const baseUrl = "https://image.tmdb.org/t/p/w500/";
+  /*   const baseUrl = "https://image.tmdb.org/t/p/w500/"; */
+  const [movieDetails, setMovieDetails] = useState([]);
   const params = useParams();
   const sample =
     "https://m.media-amazon.com/images/M/MV5BOTg4MGFlZGQtNjgzOS00YzU5LWEzNTEtYzJhMmQyZmI0MzFjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg";
-  const [movieDetails, setMovieDetails] = useState([]);
 
   const movieInfofullscreen = {
     display: "flex",
