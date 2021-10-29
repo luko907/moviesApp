@@ -6,15 +6,6 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 function Movies(props) {
-  /*   useEffect(() => {
-    document.body.style.background = "rgb(6 13 23)";
-    document.body.style.background =
-      "url('https://image.tmdb.org/t/p/w500/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg') no-repeat center center /cover fixed";
-    return () => {
-      document.body.style.background = `url(${background}) no-repeat center center /cover fixed`;
-    };
-  }, []); */
-
   return (
     <React.Fragment>
       {(props.moviL && props.moviL.length < 1) || props.moviL === undefined
