@@ -1,37 +1,3 @@
-/* .movieInfo_fullscreen {
-  display: flex;
-  border: 2px solid white;
-}
-
-.movieInfo_fullscreen img {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  min-width: 1024px;
-}
-
-@media screen and (max-width: 1024px) {
-  .movieInfo_fullscreen img {
-    left: 50%;
-    margin-left: -512px;
-  }
-}
- */
-/* .movieInfo_fullscreen {
-  display: flex;
-  justify-content: center;
-  background: rgb(6, 13, 23);
-  background: linear-gradient(
-      180deg,
-      rgba(6, 13, 23, 0) 61%,
-      rgba(6, 13, 23, 1) 100%
-    ),
-    linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),
-    linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),
-    url(https://image.tmdb.org/t/p/w500/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg)
-      no-repeat center center / cover fixed;
-  height: 39vw;
-} */
 .movieInfo_container {
   background-color: #060d17;
   border-top-left-radius: 25px;
@@ -53,9 +19,6 @@
 }
 
 @media only screen and (max-width: 700px) {
-  /*   .movieInfo_fullscreen {
-    height: 48vw;
-  } */
   .movieInfo_container {
     margin-top: 24em;
   }
