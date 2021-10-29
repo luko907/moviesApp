@@ -1,7 +1,7 @@
 .movie {
   display: flex;
   flex-direction: column;
-  /*   width: 15rem; */
+  width: 19rem;
   margin-right: 2.8rem;
   margin-left: 2.8rem;
   margin-bottom: 2rem;
@@ -86,14 +86,12 @@ span {
   .year {
     font-size: 2.8vw;
   }
-  /*   .description {
-    width: 50vw;
-  } */
-}
-@media only screen and (max-width: 420px) {
-  /*   .description {
-    width: 45vw;
+  .description {
+    width: 53vw;
   }
-  .description_container {
-  } */
+}
+@media only screen and (max-width: 350px) {
+  .description {
+    width: 57vw;
+  }
 }

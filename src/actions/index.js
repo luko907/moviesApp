@@ -1,6 +1,21 @@
 import axios from "axios";
 /* dispatch({ type: "GET_MOVIES", payload: value }); */
 
+export function getMovies() {
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=715369ad83702bbb01d37884acb031ed&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
+  return function (dispatch) {
+    const fetchData = async () => {
+      try {
+        const resp = await axios.get(url);
+        dispatch({ type: "GET_MOVIES", payload: resp.data });
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchData();
+  };
+}
+
 export function getActual(title) {
   const url = `https://www.omdbapi.com/?apikey=2b9c4287&s=${title}&type=movie`;
   return function (dispatch) {
@@ -86,7 +101,7 @@ arr.push(
         });
       };
     } */
-const namess = [
+/* const namess = [
   "toy story",
   "lego",
   "cry macho",
@@ -112,3 +127,4 @@ export function getMovies() {
       });
   };
 }
+ */

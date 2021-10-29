@@ -5,12 +5,13 @@ import playLogo from "../../img/play-icon.svg";
 import { Link } from "react-router-dom";
 
 function Movie(props) {
+  const baseUrl = "https://image.tmdb.org/t/p/w500";
   return (
     <React.Fragment>
       {props.moviesLoaded.map((item) => (
-        <div className={styles.movie} key={item.imdbID}>
+        <div className={styles.movie} key={item.id}>
           <Link
-            to={`/movies/${item.imdbID}`}
+            to={`/movies/${item.id}`}
             style={{
               color: "inherit",
               textDecoration: "inherit",
@@ -19,7 +20,7 @@ function Movie(props) {
             <div className={styles.movie_img}>
               <img
                 className={styles.movie_posterimg}
-                src={item.Poster}
+                src={baseUrl + item.poster_path}
                 alt=""
               />
               <div className={styles.div_play_icon}>
@@ -28,8 +29,10 @@ function Movie(props) {
             </div>
             <div className={styles.description_container}>
               <div className={styles.description}>
-                <span className={styles.title}>{item.Title}</span>
-                <span className={styles.year}>({item.Year})</span>
+                <span className={styles.title}>{item.title}</span>
+                <span className={styles.year}>
+                  {item.release_date.slice(0, -6)}
+                </span>
               </div>
             </div>
           </Link>
