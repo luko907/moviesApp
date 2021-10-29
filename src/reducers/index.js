@@ -8,8 +8,16 @@ function appReducer(state = initialState, action) {
     case "GET_MOVIES": {
       return {
         ...state,
+        moviesLoaded: action.payload.results.filter(
+          (v, i, a) => a.findIndex((t) => t.id === v.id) === i
+        ),
+      };
+    }
+    /*     case "GET_MOVIES": {
+      return {
+        ...state,
         moviesLoaded: action.payload
-          .map((item) => item.Search)
+          .map((item) => item.results)
           .flat(1)
           .filter(
             (v, i, a) =>
@@ -18,7 +26,7 @@ function appReducer(state = initialState, action) {
               v.Year > 2015
           ),
       };
-    }
+    } */
     case "GET_ACTUAL": {
       return {
         ...state,

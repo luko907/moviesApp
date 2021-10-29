@@ -58,7 +58,7 @@ a {
 .movie_cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   padding-top: 1.5rem;
 }
 
