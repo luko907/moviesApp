@@ -16,6 +16,7 @@ function MovieInfo(props) {
     display: "flex",
     justifyContent: "center",
     background: `linear-gradient(180deg, rgba(6,13,23,0) 20%, rgba(6,13,23,1) 24%),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${sample}) no-repeat center center / cover fixed`,
+    minHeight: "100vw",
     "@media (max-width: 1730px)": {
       background: `linear-gradient(180deg, rgba(6,13,23,0) 20%, rgba(6,13,23,1) 32em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${sample}) no-repeat center center / cover fixed`,
     },
