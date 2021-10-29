@@ -8,8 +8,19 @@ function appReducer(state = initialState, action) {
     case "GET_MOVIES": {
       return {
         ...state,
+        moviesLoaded: action.payload.results.filter(
+          (v, i, a) =>
+            a.findIndex((t) => t.id === v.id) === i &&
+            v.poster_path !== null &&
+            v.backdrop_path !== null
+        ),
+      };
+    }
+    /*     case "GET_MOVIES": {
+      return {
+        ...state,
         moviesLoaded: action.payload
-          .map((item) => item.Search)
+          .map((item) => item.results)
           .flat(1)
           .filter(
             (v, i, a) =>
@@ -18,14 +29,15 @@ function appReducer(state = initialState, action) {
               v.Year > 2015
           ),
       };
-    }
+    } */
     case "GET_ACTUAL": {
       return {
         ...state,
-        moviesLoaded: action.payload.Search.filter(
+        moviesLoaded: action.payload.results.filter(
           (v, i, a) =>
-            a.findIndex((t) => t.imdbID === v.imdbID) === i &&
-            v.Poster !== "N/A"
+            a.findIndex((t) => t.id === v.id) === i &&
+            v.poster_path !== null &&
+            v.backdrop_path !== null
         ),
       };
     }

@@ -7,6 +7,7 @@ a {
 }
 .container {
   background: rgb(6 13 23);
+  margin-top: 3rem;
 }
 
 .div_suggestion {
@@ -21,7 +22,7 @@ a {
 }
 .div_hot_top {
   display: flex;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   justify-content: flex-start;
   background-color: rgb(10, 21, 31);
@@ -57,7 +58,7 @@ a {
 .movie_cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   padding-top: 1.5rem;
 }
 
@@ -66,7 +67,7 @@ a {
     margin-left: 0;
   }
   .container {
-    padding: 20px 0px 5px 20px;
+    padding: 20px 0px 5px 0;
   }
   .div_suggestion span {
     font-size: 5.2vw;
