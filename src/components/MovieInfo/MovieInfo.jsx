@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 
 function MovieInfo(props) {
-  /*   const baseUrl = "https://image.tmdb.org/t/p/w500/"; */
+  const baseUrl = "https://image.tmdb.org/t/p/w500";
   const [movieDetails, setMovieDetails] = useState([]);
   const params = useParams();
   const sample =
@@ -40,7 +40,14 @@ function MovieInfo(props) {
         <div style={movieInfofullscreen}>
           <div className={styles.movieInfo_div}> </div>
           <div className={styles.movieInfo_container}>
-            <div className={styles.movieInfo_img}></div>
+            <div className={styles.movieInfo_img_div}>
+              <img
+                src={baseUrl + movieDetails.poster_path}
+                className={styles.movieInfo_img}
+                alt=""
+              />
+            </div>
+
             <div className={styles.description_container}>
               <div className={styles.description}>
                 <span className={styles.title}></span>
