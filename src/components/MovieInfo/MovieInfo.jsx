@@ -9,32 +9,30 @@ import { useParams } from "react-router-dom";
 function MovieInfo(props) {
   const baseUrl = "https://image.tmdb.org/t/p/w500/";
   const params = useParams();
+  const aa =
+    "https://m.media-amazon.com/images/M/MV5BOTg4MGFlZGQtNjgzOS00YzU5LWEzNTEtYzJhMmQyZmI0MzFjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg";
   const [movieDetails, setMovieDetails] = useState([]);
   /* console.log(params); */
 
   const movieInfofullscreen = {
     display: "flex",
     justifyContent: "center",
-    background: `linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url(${
-      baseUrl + movieDetails.backdrop_path
-    }) no-repeat center center / cover fixed`,
-    height: "39vw",
-    "@media (max-width: 1200px)": {
-      background: `linear-gradient(180deg, rgba(6, 13, 23, 0) 61%, rgba(6, 13, 23, 1) 100%), linear-gradient(90deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%),linear-gradient(270deg, rgba(6, 13, 23, 0) 74%, rgba(6, 13, 23, 1) 99%), url(${
-        baseUrl + movieDetails.poster_path
-      }) no-repeat center center / cover fixed`,
+    background: `linear-gradient(180deg, rgba(6,13,23,0) 20%, rgba(6,13,23,1) 24%),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${aa}) no-repeat center center / cover fixed`,
+    /* height: "39vw", */
+    "@media (max-width: 1730px)": {
+      background: `linear-gradient(180deg, rgba(6,13,23,0) 20%, rgba(6,13,23,1) 32em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${aa}) no-repeat center center / cover fixed`,
     },
-    "@media (max-width: 700px)": {
+    /*     "@media (max-width: 700px)": {
       height: "48vw",
     },
     "@media (max-width: 500px)": {
       height: "78vw",
-    },
+    }, */
   };
 
   useEffect(() => {
     const url = `https://api.themoviedb.org/3/movie/${params.id}?api_key=715369ad83702bbb01d37884acb031ed&language=en-US`;
-    document.body.style.background = "#060d17";
+    /*     document.body.style.background = "#060d17"; */
     const fetchData = async () => {
       try {
         const resp = await axios.get(url);
@@ -45,7 +43,7 @@ function MovieInfo(props) {
     };
     fetchData();
     return () => {
-      document.body.style.background = `url(${backgroundd}) no-repeat center center /cover fixed`;
+      /*     document.body.style.background = `url(${backgroundd}) no-repeat center center /cover fixed`; */
     };
   }, [params.id]);
 
@@ -100,6 +98,7 @@ function MovieInfo(props) {
     <React.Fragment>
       <StyleRoot>
         <div style={movieInfofullscreen}>
+          <div className={styles.movieInfo_div}> </div>
           <div className={styles.movieInfo_container}>
             <div className={styles.movieInfo_img}>
               {/*   <img
