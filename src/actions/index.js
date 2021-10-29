@@ -17,7 +17,7 @@ export function getMovies() {
 }
 
 export function getActual(title) {
-  const url = `https://www.omdbapi.com/?apikey=2b9c4287&s=${title}&type=movie`;
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=715369ad83702bbb01d37884acb031ed&query=${title}`;
   return function (dispatch) {
     const fetchData = async () => {
       try {
