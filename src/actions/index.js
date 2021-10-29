@@ -1,8 +1,22 @@
-/* export const removeMoviesLoaded = (payload) => {
-  return { type: "REMOVE_LOADED", payload };
-}; */
+import axios from "axios";
+/* dispatch({ type: "GET_MOVIES", payload: value }); */
 
 export function getActual(title) {
+  const url = `https://www.omdbapi.com/?apikey=2b9c4287&s=${title}&type=movie`;
+  return function (dispatch) {
+    const fetchData = async () => {
+      try {
+        const resp = await axios.get(url);
+        dispatch({ type: "GET_ACTUAL", payload: resp.data });
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchData();
+  };
+}
+
+/* export function getActual(title) {
   return function (dispatch) {
     return fetch(
       `https://www.omdbapi.com/?apikey=2b9c4287&s=${title}&type=movie`
@@ -15,7 +29,7 @@ export function getActual(title) {
         alert("Please, type again");
       });
   };
-}
+} */
 /* export function getMovies() {
   return function (dispatch) {
     Promise.all([
@@ -53,27 +67,25 @@ export function getActual(title) {
   };
 } */
 
-/* export function getMovies() {
-  const namess = ["nemo", "lego"];
-  const arr = [];
-  namess.forEach((mov, i) =>
-    arr.push(
-      fetch(
-        `https://www.omdbapi.com/?apikey=2b9c4287&s=${namess[i]}&type=movie`
-      ).then((value) => value.json())
+/* const arr = [];
+namess.forEach((mov, i) =>
+arr.push(
+  fetch(
+    `https://www.omdbapi.com/?apikey=2b9c4287&s=${namess[i]}&type=movie`
+    ).then((value) => value.json())
     )
-  );
-  return function (dispatch) {
-    Promise.all(arr)
-      .then((value) => {
-        dispatch({ type: "GET_MOVIES", payload: value });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-} */
-
+    );
+    export function getMovies() {
+      return function (dispatch) {
+        Promise.all(arr)
+        .then((value) => {
+          dispatch({ type: "GET_MOVIES", payload: value });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      };
+    } */
 const namess = [
   "toy story",
   "lego",
@@ -83,25 +95,6 @@ const namess = [
   "spirit",
   "fast and furious",
 ];
-/* const arr = [];
-namess.forEach((mov, i) =>
-  arr.push(
-    fetch(
-      `https://www.omdbapi.com/?apikey=2b9c4287&s=${namess[i]}&type=movie`
-    ).then((value) => value.json())
-  )
-);
-export function getMovies() {
-  return function (dispatch) {
-    Promise.all(arr)
-      .then((value) => {
-        dispatch({ type: "GET_MOVIES", payload: value });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-} */
 
 const arrMovies = namess.map((mov, i) =>
   fetch(

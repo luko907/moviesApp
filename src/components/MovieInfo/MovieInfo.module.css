@@ -34,10 +34,10 @@
 } */
 .movieInfo_container {
   background-color: #060d17;
-  border-radius: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   margin-top: 35%;
   width: 85%;
-  height: 100vh;
 }
 
 /* @media only screen and (max-width: 1200px) {
