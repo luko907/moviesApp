@@ -12,7 +12,7 @@ function MovieInfo(props) {
   const [movieDetails, setMovieDetails] = useState([]);
   const [flag, setFlag] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  movieDetails && console.log(movieDetails.id);
+
   const params = useParams();
 
   const baseUrl = "https://image.tmdb.org/t/p/w500";
