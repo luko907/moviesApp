@@ -11,7 +11,7 @@ function Movies(props) {
   useEffect(() => {
     setTimeout(function () {
       setIsLoading(false);
-    }, 300);
+    }, Math.random() * 250);
   }, []);
   <div className="loader"></div>;
   return (
