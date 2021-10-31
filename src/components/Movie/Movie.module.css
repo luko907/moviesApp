@@ -2,7 +2,7 @@
   width: 23rem;
   margin-right: 2.8vw;
   margin-left: 2.8vw;
-  margin-bottom: 2vw;
+  margin-bottom: 3vw;
 }
 .movie {
   transition: 0.3s ease;
@@ -103,7 +103,7 @@ span {
   .movie {
     margin-right: 1vw;
     margin-left: 1vw;
-    margin-bottom: 2vw;
+    margin-bottom: 8vw;
     width: 10rem;
   }
   span {
