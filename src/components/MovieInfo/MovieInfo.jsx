@@ -58,7 +58,7 @@ function MovieInfo(props) {
     movieDetails.length !== 0 && findImg();
     setTimeout(function () {
       setIsLoading(false);
-    }, 1000);
+    }, Math.random() * (600 - 400) + 400);
   }, [
     params.id,
     movieDetails.length,
@@ -68,12 +68,11 @@ function MovieInfo(props) {
 
   return (
     <React.Fragment>
-      {isLoading ? (
+      {flag === null && isLoading ? (
         <div className="loader"></div>
       ) : (
         <StyleRoot>
           <div style={movieInfofullscreen}>
-            <div className={styles.movieInfo_div}> </div>
             <div className={styles.movieInfo_container}>
               <div className={styles.movieInfo_img_div}>
                 <img
