@@ -2,3 +2,29 @@
   display: flex;
   flex-direction: column;
 }
+.loader {
+  position: absolute;
+  top: calc(50% - 4vw);
+  left: calc(50% - 4vw);
+  width: 2.5em;
+  height: 2.5em;
+  border: 0.5em solid rgba(131, 119, 119, 0.2);
+  border-left: 0.5em solid #faf7f7;
+  border-radius: 50%;
+  animation: load8 0.5s infinite linear;
+  transition: opacity 0.3s;
+}
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 400px) {
+  .loader {
+    top: calc(55% - 4vw);
+    left: calc(45% - 4vw);
+  }
+}
