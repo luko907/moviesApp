@@ -82,9 +82,46 @@ function MovieInfo(props) {
                 />
               </div>
               <div className={styles.description_container}>
-                <div className={styles.description}>
-                  <span className={styles.title}></span>
-                  <span className={styles.year}></span>
+                <div className={styles.title}>
+                  <span>Dune</span>
+                </div>
+                <div className={styles.rates_container}>
+                  <span>13</span>
+                  <span>83%</span>
+                  <span>91%</span>
+                  <span>IMDb 8.3</span>
+                </div>
+                <div className={styles.year_time_genre_container}>
+                  <span>2021</span>
+                  <span>2 hr 35 min</span>
+                  <span>Sci-Fi, Action, Adventure, Drama</span>
+                </div>
+
+                <div className={styles.plot}>
+                  <p>
+                    Paul Atreides, a brilliant and gifted young man born into a
+                    great destiny beyond his understanding, must travel to the
+                    most dangerous planet in the universe to ensure the future
+                    of his family and his people. As malevolent forces explode
+                    into conflict over the planet's exclusive supply of the most
+                    precious resource in existence-a commodity capable of
+                    unlocking humanity's greatest potential-only those who can
+                    conquer their fear will survive.
+                  </p>
+                </div>
+                <div className={styles.director_studios_container}>
+                  <div className={styles.director_container}>
+                    <span className={styles.director}>Director</span>
+                    <span className={styles.director_name}>
+                      Denis Villeneuve
+                    </span>
+                  </div>
+                  <div className={styles.studios_container}>
+                    <span className={styles.studios}>Studios</span>
+                    <span className={styles.studios_name}>
+                      Legendary Pictures
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
