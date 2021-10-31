@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { StyleRoot } from "radium";
 import styles from "./MovieInfo.module.css";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import data from "../../data/popular";
+import "../../App.css";
 
 function MovieInfo(props) {
-  const baseUrl = "https://image.tmdb.org/t/p/w500";
   const [movieDetails, setMovieDetails] = useState([]);
-  const params = useParams();
   const [flag, setFlag] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
+  const params = useParams();
+
+  const baseUrl = "https://image.tmdb.org/t/p/w500";
   const movieInfofullscreen = {
     display: "flex",
     justifyContent: "center",
@@ -43,6 +47,7 @@ function MovieInfo(props) {
       for (let i = 0; i < data.length; i++) {
         if (data[i].id === movieDetails.id) {
           setFlag(data[i].backDrop);
+
           break;
         } else {
           setFlag(baseUrl + movieDetails.poster_path);
@@ -51,6 +56,9 @@ function MovieInfo(props) {
     };
     fetchData();
     movieDetails.length !== 0 && findImg();
+    setTimeout(function () {
+      setIsLoading(false);
+    }, 1000);
   }, [
     params.id,
     movieDetails.length,
@@ -60,26 +68,30 @@ function MovieInfo(props) {
 
   return (
     <React.Fragment>
-      <StyleRoot>
-        <div style={movieInfofullscreen}>
-          <div className={styles.movieInfo_div}> </div>
-          <div className={styles.movieInfo_container}>
-            <div className={styles.movieInfo_img_div}>
-              <img
-                src={baseUrl + movieDetails.poster_path}
-                className={styles.movieInfo_img}
-                alt=""
-              />
-            </div>
-            <div className={styles.description_container}>
-              <div className={styles.description}>
-                <span className={styles.title}></span>
-                <span className={styles.year}></span>
+      {isLoading ? (
+        <div className="loader"></div>
+      ) : (
+        <StyleRoot>
+          <div style={movieInfofullscreen}>
+            <div className={styles.movieInfo_div}> </div>
+            <div className={styles.movieInfo_container}>
+              <div className={styles.movieInfo_img_div}>
+                <img
+                  src={baseUrl + movieDetails.poster_path}
+                  className={styles.movieInfo_img}
+                  alt=""
+                />
+              </div>
+              <div className={styles.description_container}>
+                <div className={styles.description}>
+                  <span className={styles.title}></span>
+                  <span className={styles.year}></span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </StyleRoot>
+        </StyleRoot>
+      )}
     </React.Fragment>
   );
 }
