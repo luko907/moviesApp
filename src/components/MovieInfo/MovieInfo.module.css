@@ -18,8 +18,9 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin: 1vw 5vw 1.8vw 3vw;
+  margin: 1vw 5vw 5vw 3vw;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
+  min-height: 63vh;
 }
 .title span,
 .IMDbRate span,
@@ -38,6 +39,9 @@
   width: 22rem;
   font-weight: 700;
 }
+.rates_container span {
+  margin: auto;
+}
 .ageRated,
 .IMDbRate,
 .rating {
@@ -53,7 +57,7 @@
 .IMDbRate a,
 .rating a {
   margin-right: 0;
-  align-self: center;
+  align-self: flex-end;
   margin-right: 0.4rem;
 }
 .IMDbRate img {
@@ -120,6 +124,20 @@
 }
 .director_actors_studios_title span {
   font-weight: 900;
+}
+.studios_name_img_container {
+  display: flex;
+}
+.studios_img {
+  display: flex;
+  justify-content: flex-end;
+}
+.studios_img img {
+  width: 100px;
+  height: auto;
+  margin-right: 0;
+  align-self: center;
+  margin-right: 0.4rem;
 }
 
 @media only screen and (max-width: 1700px) {
