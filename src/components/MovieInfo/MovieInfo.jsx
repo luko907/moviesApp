@@ -16,10 +16,8 @@ function MovieInfo(props) {
   const [flag, setFlag] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
-  console.log(movieDetails.imdb_id);
-  console.log(movieDetails.id + " TMDB id");
-  console.log(info.Ratings);
   const baseUrl = "https://image.tmdb.org/t/p/w500";
+
   const movieInfofullscreen = {
     display: "flex",
     justifyContent: "center",
@@ -75,7 +73,7 @@ function MovieInfo(props) {
 
   return (
     <React.Fragment>
-      {flag === null && isLoading ? (
+      {isLoading && flag === null && info.Runtime === undefined ? (
         <div className="loader"></div>
       ) : (
         <StyleRoot>
@@ -88,14 +86,17 @@ function MovieInfo(props) {
                   alt=""
                 />
               </div>
+
               <div className={styles.description_container}>
                 <div className={styles.title}>
                   <span>{movieDetails.title}</span>
                 </div>
                 <div className={styles.rates_container}>
-                  <div className={styles.ageRated}>
-                    <span>{info.Rated}</span>
-                  </div>
+                  {info.Rated !== "N/A" && (
+                    <div className={styles.ageRated}>
+                      <span>{info.Rated}</span>
+                    </div>
+                  )}
                   {info.Metascore !== "N/A" && (
                     <div className={styles.IMDbRate}>
                       <Link to="#" title="Audience Rating">
@@ -104,30 +105,32 @@ function MovieInfo(props) {
                       <span>{info.Metascore}%</span>
                     </div>
                   )}
-                  <div className={styles.rating}>
-                    <Link to="#" title="IMDb Rating">
-                      <img src={imdb} alt="" />
-                    </Link>
-                    <span>
-                      {info.Ratings &&
-                        info.Ratings.length !== 0 &&
-                        info.Ratings[0].Value.slice(0, -3)}
-                    </span>
-                  </div>
+                  {info.Ratings && info.Ratings.length !== 0 && (
+                    <div className={styles.rating}>
+                      <Link to="#" title="IMDb Rating">
+                        <img src={imdb} alt="" />
+                      </Link>
+                      <span>
+                        {info.Ratings &&
+                          info.Ratings.length !== 0 &&
+                          info.Ratings[0].Value.slice(0, -3)}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div className={styles.year_time_genre_container}>
                   <div className={styles.info_year_info_runtime_container}>
                     <div className={styles.info_year}>
-                      <span>{info.Year}</span>
+                      <span> {info.Year !== "N/A" && info.Year}</span>
                     </div>
                     <div className={styles.info_runtime}>
-                      <span>{info.Runtime}</span>
+                      <span>{info.Runtime !== "N/A" && info.Runtime}</span>
                     </div>
                   </div>
-
                   <div className={styles.movieDetails_genres}>
                     <span>
                       {movieDetails.genres &&
+                        movieDetails.genres.length > 0 &&
                         movieDetails.genres.map((gen) => gen.name).join(", ")}
                     </span>
                   </div>
@@ -138,17 +141,28 @@ function MovieInfo(props) {
                 </div>
                 <div className={styles.director_actors_studios_container}>
                   <div className={styles.director_actors_studios_title}>
-                    <span className={styles.director}>Director</span>
-                    <span className={styles.actors}>Actors</span>
-                    <span className={styles.studios}>Studios</span>
+                    <span className={styles.director}>
+                      {info.Director !== "N/A" && "Director"}
+                    </span>
+                    <span className={styles.actors}>
+                      {info.Actors !== "N/A" && "Actors"}
+                    </span>
+                    <span className={styles.studios}>
+                      {info.Director !== "N/A" && "Studios"}
+                    </span>
                   </div>
                   <div className={styles.director_actors_studios_names}>
                     <span className={styles.director_name}>
-                      {info.Director}
+                      {info.Director !== "N/A" && info.Director}
                     </span>
-                    <span className={styles.actors_names}>{info.Actors}</span>
+
+                    <span className={styles.actors_names}>
+                      {info.Actors !== "N/A" && info.Actors}
+                    </span>
                     <span className={styles.studios_name}>
                       {movieDetails.production_companies &&
+                        movieDetails.production_companies[0].name.length !==
+                          0 &&
                         movieDetails.production_companies[0].name}
                     </span>
                   </div>

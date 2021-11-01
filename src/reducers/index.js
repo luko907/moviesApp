@@ -11,7 +11,10 @@ function appReducer(state = initialState, action) {
           (v, i, a) =>
             a.findIndex((t) => t.id === v.id) === i &&
             v.poster_path !== null &&
-            v.backdrop_path !== null
+            v.backdrop_path !== null &&
+            v.overview !== null &&
+            v.title !== null &&
+            v.imdb_id !== null
         ),
       };
     }
@@ -22,7 +25,10 @@ function appReducer(state = initialState, action) {
           (v, i, a) =>
             a.findIndex((t) => t.id === v.id) === i &&
             v.poster_path !== null &&
-            v.backdrop_path !== null
+            v.backdrop_path !== null &&
+            v.overview !== null &&
+            v.title !== null &&
+            v.imdb_id !== null
         ),
       };
     }
