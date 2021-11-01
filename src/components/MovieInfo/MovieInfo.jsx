@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { StyleRoot } from "radium";
 import styles from "./MovieInfo.module.css";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import data from "../../data/popular";
+import popcorn from "../../img/popcorn.png";
+import imdb from "../../img/imdb.png";
 import "../../App.css";
 
 function MovieInfo(props) {
@@ -13,7 +16,9 @@ function MovieInfo(props) {
   const [flag, setFlag] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
-
+  console.log(movieDetails.imdb_id);
+  console.log(movieDetails.id + " TMDB id");
+  console.log(info.Ratings);
   const baseUrl = "https://image.tmdb.org/t/p/w500";
   const movieInfofullscreen = {
     display: "flex",
@@ -91,35 +96,60 @@ function MovieInfo(props) {
                   <div className={styles.ageRated}>
                     <span>{info.Rated}</span>
                   </div>
-                  <div className={styles.imbDRate}>
-                    <span>IMDb {info.Ratings && info.Ratings[0].Value}</span>
-                  </div>
+                  {info.Metascore !== "N/A" && (
+                    <div className={styles.IMDbRate}>
+                      <Link to="#" title="Audience Rating">
+                        <img src={popcorn} alt="" />
+                      </Link>
+                      <span>{info.Metascore}%</span>
+                    </div>
+                  )}
                   <div className={styles.rating}>
-                    <span>{info.Ratings && info.Ratings[1].Value}</span>
+                    <Link to="#" title="IMDb Rating">
+                      <img src={imdb} alt="" />
+                    </Link>
+                    <span>
+                      {info.Ratings &&
+                        info.Ratings.length !== 0 &&
+                        info.Ratings[0].Value.slice(0, -3)}
+                    </span>
                   </div>
                 </div>
                 <div className={styles.year_time_genre_container}>
-                  <span>{info.Year}</span>
-                  <span>{info.Runtime}</span>
-                  <span>
-                    {movieDetails.genres &&
-                      movieDetails.genres.map((gen) => gen.name).join(" ")}
-                  </span>
+                  <div className={styles.info_year_info_runtime_container}>
+                    <div className={styles.info_year}>
+                      <span>{info.Year}</span>
+                    </div>
+                    <div className={styles.info_runtime}>
+                      <span>{info.Runtime}</span>
+                    </div>
+                  </div>
+
+                  <div className={styles.movieDetails_genres}>
+                    <span>
+                      {movieDetails.genres &&
+                        movieDetails.genres.map((gen) => gen.name).join(", ")}
+                    </span>
+                  </div>
                 </div>
+                <div className={styles.lineSep}></div>
                 <div className={styles.plot}>
                   <p>{movieDetails.overview}</p>
                 </div>
-                <div className={styles.director_studios_container}>
-                  <div className={styles.director_container}>
+                <div className={styles.director_actors_studios_container}>
+                  <div className={styles.director_actors_studios_title}>
                     <span className={styles.director}>Director</span>
-                    <span className={styles.director_name}>
-                      Denis Villeneuve
-                    </span>
-                  </div>
-                  <div className={styles.studios_container}>
+                    <span className={styles.actors}>Actors</span>
                     <span className={styles.studios}>Studios</span>
+                  </div>
+                  <div className={styles.director_actors_studios_names}>
+                    <span className={styles.director_name}>
+                      {info.Director}
+                    </span>
+                    <span className={styles.actors_names}>{info.Actors}</span>
                     <span className={styles.studios_name}>
-                      Legendary Pictures
+                      {movieDetails.production_companies &&
+                        movieDetails.production_companies[0].name}
                     </span>
                   </div>
                 </div>
