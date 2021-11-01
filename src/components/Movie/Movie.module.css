@@ -93,11 +93,6 @@ span {
   span {
     font-size: 2.7vw;
   }
-  /*   .year {
-    font-size: 0.8vw;
-    margin-right: 0.7vw;
-    align-self: flex-start;
-  } */
 }
 @media only screen and (max-width: 450px) {
   .movie {
