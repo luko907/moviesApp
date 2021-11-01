@@ -120,6 +120,7 @@
 
 .director_actors_studios_container {
   display: flex;
+  justify-content: space-between;
 }
 
 .director_actors_studios_container span {
