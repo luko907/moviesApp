@@ -86,38 +86,37 @@ function MovieInfo(props) {
                   alt=""
                 />
               </div>
-
               <div className={styles.description_container}>
                 <div className={styles.title}>
                   <span>{movieDetails.title}</span>
                 </div>
-                <div className={styles.rates_container}>
-                  {info.Rated !== "N/A" && (
+                {info.Rated && (
+                  <div className={styles.rates_container}>
                     <div className={styles.ageRated}>
                       <span>{info.Rated}</span>
                     </div>
-                  )}
-                  {info.Metascore !== "N/A" && (
-                    <div className={styles.IMDbRate}>
-                      <Link to="#" title="Audience Rating">
-                        <img src={popcorn} alt="" />
-                      </Link>
-                      <span>{info.Metascore}%</span>
-                    </div>
-                  )}
-                  {info.Ratings && info.Ratings.length !== 0 && (
-                    <div className={styles.rating}>
-                      <Link to="#" title="IMDb Rating">
-                        <img src={imdb} alt="" />
-                      </Link>
-                      <span>
-                        {info.Ratings &&
-                          info.Ratings.length !== 0 &&
-                          info.Ratings[0].Value.slice(0, -3)}
-                      </span>
-                    </div>
-                  )}
-                </div>
+                    {info.Metascore !== "N/A" && (
+                      <div className={styles.IMDbRate}>
+                        <Link to="#" title="Audience Rating">
+                          <img src={popcorn} alt="" />
+                        </Link>
+                        <span>{info.Metascore}%</span>
+                      </div>
+                    )}
+                    {info.Ratings && info.Ratings.length !== 0 && (
+                      <div className={styles.rating}>
+                        <Link to="#" title="IMDb Rating">
+                          <img src={imdb} alt="" />
+                        </Link>
+                        <span>
+                          {info.Ratings &&
+                            info.Ratings.length !== 0 &&
+                            info.Ratings[0].Value.slice(0, -3)}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )}
                 <div className={styles.year_time_genre_container}>
                   <div className={styles.info_year_info_runtime_container}>
                     <div className={styles.info_year}>
@@ -139,35 +138,53 @@ function MovieInfo(props) {
                 <div className={styles.plot}>
                   <p>{movieDetails.overview}</p>
                 </div>
-                <div className={styles.director_actors_studios_container}>
-                  <div className={styles.director_actors_studios_title}>
-                    <span className={styles.director}>
-                      {info.Director !== "N/A" && "Director"}
-                    </span>
-                    <span className={styles.actors}>
-                      {info.Actors !== "N/A" && "Actors"}
-                    </span>
-                    <span className={styles.studios}>
-                      {info.Director !== "N/A" && "Studios"}
-                    </span>
+                {info.Rated && (
+                  <div className={styles.director_actors_studios_container}>
+                    <div className={styles.director_actors_studios_title}>
+                      <span className={styles.director}>
+                        {info.Director !== "N/A" && "Director"}
+                      </span>
+                      <span className={styles.actors}>
+                        {info.Actors !== "N/A" && "Actors"}
+                      </span>
+                      <span className={styles.studios}>
+                        {info.Director !== "N/A" && "Studios"}
+                      </span>
+                    </div>
+                    <div className={styles.director_actors_studios_names}>
+                      <span className={styles.director_name}>
+                        {info.Director !== "N/A" && info.Director}
+                      </span>
+                      <span className={styles.actors_names}>
+                        {info.Actors !== "N/A" && info.Actors}
+                      </span>
+                      <div className={styles.studios_name_img}>
+                        <span className={styles.studios_name}>
+                          {movieDetails.production_companies.length !== 0 &&
+                            movieDetails.production_companies[0].name.length !==
+                              0 &&
+                            movieDetails.production_companies[0].name}
+                        </span>
+                        {movieDetails.production_companies.length !== 0 &&
+                          movieDetails.production_companies[0].logo_path !==
+                            0 && (
+                            <div className={styles.studios_img}>
+                              <img
+                                src={
+                                  baseUrl +
+                                  movieDetails.production_companies[0].logo_path
+                                }
+                                alt=""
+                              />
+                            </div>
+                          )}
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.director_actors_studios_names}>
-                    <span className={styles.director_name}>
-                      {info.Director !== "N/A" && info.Director}
-                    </span>
-
-                    <span className={styles.actors_names}>
-                      {info.Actors !== "N/A" && info.Actors}
-                    </span>
-                    <span className={styles.studios_name}>
-                      {movieDetails.production_companies &&
-                        movieDetails.production_companies[0].name.length !==
-                          0 &&
-                        movieDetails.production_companies[0].name}
-                    </span>
-                  </div>
-                </div>
+                )}
+                {/* ///SEGUIR ACA */}
               </div>
+              <div></div>
             </div>
           </div>
         </StyleRoot>

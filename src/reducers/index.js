@@ -14,7 +14,7 @@ function appReducer(state = initialState, action) {
             v.backdrop_path !== null &&
             v.overview !== null &&
             v.title !== null &&
-            v.imdb_id !== null
+            v.release_date !== ""
         ),
       };
     }
@@ -28,7 +28,7 @@ function appReducer(state = initialState, action) {
             v.backdrop_path !== null &&
             v.overview !== null &&
             v.title !== null &&
-            v.imdb_id !== null
+            v.release_date !== ""
         ),
       };
     }
