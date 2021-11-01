@@ -28,9 +28,13 @@ function MovieInfo(props) {
       background: `linear-gradient(180deg, rgba(6,13,23,0) 20%, rgba(6,13,23,1) 32em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${flag}) no-repeat center center / cover fixed`,
       minHeight: "84vh",
     },
+    "@media (max-width: 1000px)": {
+      background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${flag}) no-repeat center center / cover fixed`,
+      minHeight: "80vh",
+    },
     "@media (max-width: 550px)": {
       background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${flag}) no-repeat center center / cover fixed`,
-      minHeight: "87vh",
+      /*  minHeight: "87vh", */
     },
   };
   ///////////////////////
@@ -92,9 +96,11 @@ function MovieInfo(props) {
                 </div>
                 {info.Rated && (
                   <div className={styles.rates_container}>
-                    <div className={styles.ageRated}>
-                      <span>{info.Rated}</span>
-                    </div>
+                    {info.Rated !== "N/A" && (
+                      <div className={styles.ageRated}>
+                        <span>{info.Rated}</span>
+                      </div>
+                    )}
                     {info.Metascore !== "N/A" && (
                       <div className={styles.IMDbRate}>
                         <Link to="#" title="Audience Rating">
@@ -158,33 +164,33 @@ function MovieInfo(props) {
                       <span className={styles.actors_names}>
                         {info.Actors !== "N/A" && info.Actors}
                       </span>
-                      <div className={styles.studios_name_img}>
-                        <span className={styles.studios_name}>
-                          {movieDetails.production_companies.length !== 0 &&
-                            movieDetails.production_companies[0].name.length !==
-                              0 &&
-                            movieDetails.production_companies[0].name}
-                        </span>
-                        {movieDetails.production_companies.length !== 0 &&
-                          movieDetails.production_companies[0].logo_path !==
-                            0 && (
-                            <div className={styles.studios_img}>
-                              <img
-                                src={
-                                  baseUrl +
-                                  movieDetails.production_companies[0].logo_path
-                                }
-                                alt=""
-                              />
-                            </div>
-                          )}
+                      <div className={styles.studios_name_img_container}>
+                        <div className={styles.studios_name_span}>
+                          <span className={styles.studios_name}>
+                            {movieDetails.production_companies.length !== 0 &&
+                              movieDetails.production_companies[0].name
+                                .length !== 0 &&
+                              movieDetails.production_companies[0].name}
+                          </span>
+                        </div>
                       </div>
                     </div>
+                    {movieDetails.production_companies.length !== 0 &&
+                      movieDetails.production_companies[0].logo_path !== 0 && (
+                        <div className={styles.studios_img}>
+                          <img
+                            src={
+                              baseUrl +
+                              movieDetails.production_companies[0].logo_path
+                            }
+                            alt=""
+                          />
+                        </div>
+                      )}
                   </div>
                 )}
                 {/* ///SEGUIR ACA */}
               </div>
-              <div></div>
             </div>
           </div>
         </StyleRoot>
