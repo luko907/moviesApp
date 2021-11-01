@@ -102,7 +102,7 @@ function MovieInfo(props) {
                       </div>
                     )}
                     {info.Metascore !== "N/A" && (
-                      <div className={styles.IMDbRate}>
+                      <div className={styles.rating}>
                         <Link to="#" title="Audience Rating">
                           <img src={popcorn} alt="" />
                         </Link>
@@ -110,7 +110,7 @@ function MovieInfo(props) {
                       </div>
                     )}
                     {info.Ratings && info.Ratings.length !== 0 && (
-                      <div className={styles.rating}>
+                      <div className={styles.IMDbRate}>
                         <Link to="#" title="IMDb Rating">
                           <img src={imdb} alt="" />
                         </Link>
