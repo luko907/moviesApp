@@ -1,3 +1,7 @@
+span {
+  margin: auto;
+}
+
 .movieInfo_container {
   display: flex;
   background-color: #060d17;
@@ -16,26 +20,113 @@
 }
 .description_container {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  margin: 3vw 5vw 5vw 3vw;
-  opacity: 0.5;
+  margin: 1vw 5vw 1.8vw 3vw;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 500;
 }
-
+.title span,
+.IMDbRate span,
+.rating span,
+.plot,
+.director_actors_studios_container {
+  opacity: 0.8;
+}
 .title span {
   font-family: "Red Hat Display", sans-serif;
   font-size: 4vw;
 }
-
+.rates_container {
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  font-weight: 700;
+}
 .ageRated,
-.imbDRate,
+.IMDbRate,
 .rating {
+  display: flex;
   border-radius: 3px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   background: rgb(93 93 93 / 50%);
-  width: fit-content;
-  padding: 0.3vw 0.8vw;
+  padding: 0.3vw 1.1vw 0.3vw 1.1vw;
+  text-align: center;
+}
+
+.IMDbRate a,
+.rating a {
+  margin-right: 0;
+  align-self: center;
+  margin-right: 0.4rem;
+}
+.IMDbRate img {
+  width: 15px;
+  height: auto;
+}
+.rating img {
+  width: 35px;
+  height: auto;
+  margin-right: 0;
+  align-self: center;
+  margin-right: 0.4rem;
+}
+
+.year_time_genre_container {
+  display: flex;
+  opacity: 0.9;
+  font-weight: normal;
+}
+
+.year_time_genre_container span {
+  font-size: 22px;
+  margin-left: 0;
+}
+.info_year_info_runtime_container {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5rem;
+  width: 10rem;
+}
+.movieDetails_genres {
+  width: 50%;
+}
+.lineSep {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    hsla(0, 0%, 100%, 0),
+    #333333,
+    hsl(0deg 0% 100% / 0%)
+  );
+}
+.plot p {
+  font-size: 19px;
+}
+
+.director_actors_studios_container {
+  display: flex;
+  height: 6rem;
+}
+
+.director_actors_studios_container span {
+  margin-left: 0;
+}
+.director_actors_studios_title {
+  margin-right: 3.2rem;
+}
+.director_actors_studios_title,
+.director_actors_studios_names {
+  display: flex;
+  flex-direction: column;
+}
+.director_actors_studios_title span,
+.director_actors_studios_names span {
+  font-size: 17px;
+}
+.director_actors_studios_title span {
+  font-weight: 900;
 }
 
 @media only screen and (max-width: 1700px) {
@@ -48,7 +139,7 @@
     margin-top: 27em;
   }
   .movieInfo_img {
-    width: 15vw;
+    width: 25vw;
   }
 }
 
