@@ -33,11 +33,11 @@ function MovieInfo(props) {
       minHeight: "80vh",
     },
     "@media (max-width: 550px)": {
-      background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${info.Poster}) no-repeat center center / cover fixed`,
-      /*  minHeight: "87vh", */
+      background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${
+        info.Poster && info.Poster.replace("_SX300", "")
+      }) no-repeat center center / cover fixed`,
     },
   };
-  ///////////////////////
 
   useEffect(() => {
     const url1 = `process.env.REACT_APP_API_TMDB_BASE_URL/${params.id}?api_key=process.env.REACT_APP_API_TMDB_API_KEY&language=en-US`;
@@ -64,15 +64,31 @@ function MovieInfo(props) {
     };
     fetchData();
     movieDetails.length !== 0 && findImg();
+    const navBarStyles = setInterval(function () {
+      if (window.matchMedia("(max-width: 700px)").matches && info.Title) {
+        document.body.querySelector("header").style.flexDirection = "column";
+      } else if (
+        !window.matchMedia("(max-width: 700px)").matches &&
+        info.Title
+      ) {
+        document.body.querySelector("header").style.flexDirection = "row";
+      }
+    }, 100);
+
     setTimeout(function () {
       setIsLoading(false);
     }, Math.random() * (600 - 400) + 400);
+    return () => {
+      document.body.querySelector("header").style.flexDirection = "column";
+      clearInterval(navBarStyles);
+    };
   }, [
     params.id,
     movieDetails.length,
     movieDetails.id,
     movieDetails.poster_path,
     movieDetails.imdb_id,
+    info.Title,
   ]);
 
   return (
@@ -154,7 +170,10 @@ function MovieInfo(props) {
                         {info.Actors !== "N/A" && "Actors"}
                       </span>
                       <span className={styles.studios}>
-                        {info.Director !== "N/A" && "Studios"}
+                        {movieDetails.production_companies.length !== 0 &&
+                          movieDetails.production_companies[0].name.length !==
+                            0 &&
+                          "Studios"}
                       </span>
                     </div>
                     <div className={styles.director_actors_studios_names}>
