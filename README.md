@@ -1,38 +1,50 @@
 # MoviesApp
+"This product uses the TMDB API but is not endorsed or certified by TMDB."
 
-This a movie app powered by the omdbapi API:
+This a movie app powered by the omdbapi API and  the TMDB API
 
-https://www.omdbapi.com/
+https://www.omdbapi.com/<br />
+https://www.themoviedb.org/documentation/api/
 
 ## Screenshots:
 
 ## Android/iOS
 
-![Screenshot 2021-10-28 090547-phone1](https://user-images.githubusercontent.com/48270029/139264934-b3519a55-d23e-4d2a-b326-5512d6b9149c.png)
-![Screenshot 2021-10-28 090633-phone2](https://user-images.githubusercontent.com/48270029/139260572-eef0c194-b06e-40f0-9dea-9616e8ed546e.png)
-![Screenshot 2021-10-28 090753-phone3](https://user-images.githubusercontent.com/48270029/139260578-c8ae8a6d-2605-463d-9091-1cc13ad26642.png)
-![Screenshot 2021-10-28 090917-phone4](https://user-images.githubusercontent.com/48270029/139260580-4bbd89e1-a2d9-41b6-93c6-ddfe5ed49292.png)
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/48270029/139946822-89e230ce-701f-40eb-8e28-d59a62919839.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/139946825-080628c2-4083-408e-9a8a-dfb98474fba6.png" />
+</div>
 
+<br />
+<br />
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/48270029/139948054-62ff3f91-2ab1-4daf-900f-3937aec93240.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/139946832-e5e3d743-ab2a-48a4-ae50-0b063abc7794.png" />
+</div>
 
 ## Desktop View
-
-![Screenshot 2021-10-28 091035-desktop1](https://user-images.githubusercontent.com/48270029/139260583-9f6ebd59-abb6-4162-b29f-48e6f56103e7.png)
-![Screenshot 2021-10-28 091135-desktop2](https://user-images.githubusercontent.com/48270029/139260594-a8143fce-c30f-4c6d-9361-815543d4690c.png)
-
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/48270029/139948300-1789d36f-25d3-4f5e-b40d-c3b59b20af38.png" />
+  <br />
+  <br />
+  <img src="https://user-images.githubusercontent.com/48270029/139947543-55381647-d935-4fd0-92d7-c5a64429b798.png" />
+</div>
 
 ## Technology stack:
 
 - React/Hooks
 - Redux
 - Router
-- API Fetch
-- Javascript
+- Axios
+- Javascript(Async/Await "Functions")
 - CSS3(CSS Modules)
+- Radium NPM
 - HTML5
 
-## Technology to be added shortly
+## To be added shortly
 
-- Axios
+- Capacity to display movie trailers
 
 ### Project setup:
 
