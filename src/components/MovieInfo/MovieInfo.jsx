@@ -73,7 +73,7 @@ function MovieInfo(props) {
       ) {
         document.body.querySelector("header").style.flexDirection = "row";
       }
-    }, /* Math.random() * (300 - 100) + 100) */ 350);
+    }, /* Math.random() * (300 - 100) + 100) */ 100);
 
     setTimeout(function () {
       setIsLoading(false);
