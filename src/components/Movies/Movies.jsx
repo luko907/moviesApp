@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Movies.module.css";
+
 import Movie from "../Movie/Movie";
 import { getMovies } from "../../actions";
 import { connect } from "react-redux";

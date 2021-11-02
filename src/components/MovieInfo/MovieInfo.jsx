@@ -34,28 +34,11 @@ function MovieInfo(props) {
     },
     "@media (max-width: 550px)": {
       background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${info.Poster}) no-repeat center center / cover fixed`,
-      /*  minHeight: "87vh", */
     },
   };
   ///////////////////////
 
   useEffect(() => {
-    function myFunction(x) {
-      if (x.matches) {
-        document.body.querySelector(
-          ".NavBar_header__2ZPPt"
-        ).style.flexDirection = "column";
-      } else {
-        document.body.querySelector(
-          ".NavBar_header__2ZPPt"
-        ).style.flexDirection = "row";
-      }
-    }
-
-    var x = window.matchMedia("(max-width: 700px)");
-    myFunction(x);
-    x.addListener(myFunction);
-
     const url1 = `process.env.REACT_APP_API_TMDB_BASE_URL/${params.id}?api_key=process.env.REACT_APP_API_TMDB_API_KEY&language=en-US`;
     const url2 = `process.env.REACT_APP_IMBD_MOVIEDETAILS=${movieDetails.imdb_id}`;
     const fetchData = async () => {
@@ -80,12 +63,28 @@ function MovieInfo(props) {
     };
     fetchData();
     movieDetails.length !== 0 && findImg();
+    const navBarStyles = setInterval(function () {
+      if (window.matchMedia("(max-width: 700px)").matches && info.Title) {
+        document.body.querySelector(
+          ".NavBar_header__2ZPPt"
+        ).style.flexDirection = "column";
+      } else if (
+        !window.matchMedia("(max-width: 700px)").matches &&
+        info.Title
+      ) {
+        document.body.querySelector(
+          ".NavBar_header__2ZPPt"
+        ).style.flexDirection = "row";
+      }
+    }, /* Math.random() * (300 - 100) + 100) */ 250);
+
     setTimeout(function () {
       setIsLoading(false);
     }, Math.random() * (600 - 400) + 400);
     return () => {
       document.body.querySelector(".NavBar_header__2ZPPt").style.flexDirection =
         "column";
+      clearInterval(navBarStyles);
     };
   }, [
     params.id,
@@ -93,6 +92,7 @@ function MovieInfo(props) {
     movieDetails.id,
     movieDetails.poster_path,
     movieDetails.imdb_id,
+    info.Title,
   ]);
 
   return (
