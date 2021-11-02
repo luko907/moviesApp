@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 function NavBar(props) {
   return (
-    <header className={styles.header}>
+    <header /*  className={styles.header} */>
       <div className={styles.linkContainer}>
         <NavLink exact to="/" className={styles.logo}>
           <img id="" src={Logo} alt="" />

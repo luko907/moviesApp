@@ -63,27 +63,23 @@ function MovieInfo(props) {
     };
     fetchData();
     movieDetails.length !== 0 && findImg();
+    /*     document.body.querySelector("header").style.flexDirection = "row"; */
     const navBarStyles = setInterval(function () {
       if (window.matchMedia("(max-width: 700px)").matches && info.Title) {
-        document.body.querySelector(
-          ".NavBar_header__2ZPPt"
-        ).style.flexDirection = "column";
+        document.body.querySelector("header").style.flexDirection = "column";
       } else if (
         !window.matchMedia("(max-width: 700px)").matches &&
         info.Title
       ) {
-        document.body.querySelector(
-          ".NavBar_header__2ZPPt"
-        ).style.flexDirection = "row";
+        document.body.querySelector("header").style.flexDirection = "row";
       }
-    }, /* Math.random() * (300 - 100) + 100) */ 250);
+    }, /* Math.random() * (300 - 100) + 100) */ 350);
 
     setTimeout(function () {
       setIsLoading(false);
     }, Math.random() * (600 - 400) + 400);
     return () => {
-      document.body.querySelector(".NavBar_header__2ZPPt").style.flexDirection =
-        "column";
+      document.body.querySelector("header").style.flexDirection = "column";
       clearInterval(navBarStyles);
     };
   }, [
