@@ -47,6 +47,7 @@
 }
 .rates_container span {
   margin: auto;
+  font-size: 1.6rem;
 }
 .ageRated,
 .IMDbRate,

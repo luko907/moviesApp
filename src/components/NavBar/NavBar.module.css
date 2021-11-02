@@ -1,45 +1,34 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
   background-color: rgb(21 21 21 / 28%);
-  width: 100%;
-  padding: 8px 0 8px 0;
 }
-
+.linkContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
 .header a {
+  display: flex;
   text-decoration: none;
+  justify-content: center;
   color: rgb(207, 207, 207);
+  width: 18.7rem;
 }
 .link_movies_searchbar {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 82%;
+  justify-content: center;
 }
 
-.link_button {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  font-size: 19.5px;
-  opacity: 0.8;
-}
 .logo {
   display: flex;
-  margin-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 .SearchBar {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  width: 25rem;
-  margin-bottom: 3.4px;
+  align-items: center;
 }
 
 @media only screen and (max-width: 765px) {
@@ -58,30 +47,5 @@
   }
   .logo {
     margin-left: 0;
-  }
-  .link_movies_div {
-    padding-left: 7vw;
-  }
-}
-@media only screen and (max-width: 450px) {
-  .linkContainer {
-    flex-direction: column;
-    display: contents;
-  }
-  .header a {
-    font-size: 4.5vw;
-  }
-  .SearchBar {
-    margin-top: 0.5rem;
-  }
-  /*   .header {
-    margin-bottom: 1rem;
-  } */
-  .link_movies_searchbar {
-    width: 100%;
-  }
-  .link_movies_div {
-    margin-left: 7%;
-    padding-left: 0;
   }
 }
