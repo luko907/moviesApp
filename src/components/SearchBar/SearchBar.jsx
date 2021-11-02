@@ -39,7 +39,7 @@ function SearchBar(props) {
           <input
             type="text"
             className={styles.input_search}
-            placeholder="Encuentra películas, series y más"
+            placeholder="Search for movies and series . . ."
             value={movieInfo}
             onChange={(e) => {
               handleChange(e);
