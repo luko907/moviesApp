@@ -5,7 +5,7 @@ import playLogo from "../../img/play-icon.svg";
 import { Link } from "react-router-dom";
 
 function Movie(props) {
-  const baseUrl = "https://image.tmdb.org/t/p/w500/";
+  const baseUrl = "https://image.tmdb.org/t/p/w500";
   return (
     <React.Fragment>
       {props.moviesLoaded.map((item) => (
