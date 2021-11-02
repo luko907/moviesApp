@@ -14,7 +14,8 @@ function appReducer(state = initialState, action) {
             v.backdrop_path !== null &&
             v.overview !== null &&
             v.title !== null &&
-            v.release_date !== ""
+            v.release_date !== "" &&
+            v.release_date !== undefined
         ),
       };
     }
@@ -28,7 +29,8 @@ function appReducer(state = initialState, action) {
             v.backdrop_path !== null &&
             v.overview !== null &&
             v.title !== null &&
-            v.release_date !== ""
+            v.release_date !== "" &&
+            v.release_date !== undefined
         ),
       };
     }
