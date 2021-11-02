@@ -37,6 +37,7 @@
 .title span {
   font-family: "Red Hat Display", sans-serif;
   font-size: 4vw;
+  margin-left: 0;
 }
 .rates_container {
   display: flex;

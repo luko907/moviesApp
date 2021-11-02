@@ -9,14 +9,9 @@ header {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  margin-right: 5rem;
 }
-header a {
-  display: flex;
-  text-decoration: none;
-  justify-content: center;
-  color: rgb(207, 207, 207);
-  width: 18.7rem;
-}
+
 .link_movies_searchbar {
   display: flex;
   justify-content: center;
@@ -25,6 +20,9 @@ header a {
 .logo {
   display: flex;
 }
+.logo img {
+  width: 7rem;
+}
 .SearchBar {
   display: flex;
   justify-content: center;
@@ -32,19 +30,17 @@ header a {
 }
 
 @media only screen and (max-width: 765px) {
-  header {
-    flex-direction: column;
-    align-items: center;
+  .logo img {
+    width: 4.5rem;
+  }
+  .linkContainer {
+    margin-right: 0;
   }
   .link_movies_searchbar {
-    width: 100%;
-    justify-content: center;
+    margin-bottom: 0.5rem;
   }
 }
 @media only screen and (max-width: 760px) {
-  header a {
-    font-size: 2.5vw;
-  }
   .logo {
     margin-left: 0;
   }

@@ -36,7 +36,6 @@ function MovieInfo(props) {
       background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${info.Poster}) no-repeat center center / cover fixed`,
     },
   };
-  ///////////////////////
 
   useEffect(() => {
     const url1 = `https://api.themoviedb.org/3/movie/${params.id}?api_key=715369ad83702bbb01d37884acb031ed&language=en-US`;
@@ -63,7 +62,6 @@ function MovieInfo(props) {
     };
     fetchData();
     movieDetails.length !== 0 && findImg();
-    /*     document.body.querySelector("header").style.flexDirection = "row"; */
     const navBarStyles = setInterval(function () {
       if (window.matchMedia("(max-width: 700px)").matches && info.Title) {
         document.body.querySelector("header").style.flexDirection = "column";
@@ -73,7 +71,7 @@ function MovieInfo(props) {
       ) {
         document.body.querySelector("header").style.flexDirection = "row";
       }
-    }, /* Math.random() * (300 - 100) + 100) */ 100);
+    }, 100);
 
     setTimeout(function () {
       setIsLoading(false);
