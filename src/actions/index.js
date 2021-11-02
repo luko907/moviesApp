@@ -21,7 +21,12 @@ export function getActual(title) {
     const fetchData = async () => {
       try {
         const resp = await axios.get(url);
-        dispatch({ type: "GET_ACTUAL", payload: resp.data });
+        resp.data.results && resp.data.results.length < 1
+          ? alert("Please, type again")
+          : dispatch({
+              type: "GET_ACTUAL",
+              payload: resp.data,
+            });
       } catch (error) {
         console.log("error", error);
       }

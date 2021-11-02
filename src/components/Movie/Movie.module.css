@@ -1,7 +1,7 @@
 .movie {
-  width: 23rem;
-  margin-right: 2.8vw;
-  margin-left: 2.8vw;
+  width: 20vw;
+  margin-right: 2vw;
+  margin-left: 2vw;
   margin-bottom: 3vw;
 }
 .movie {
@@ -76,7 +76,7 @@ span {
 }
 @media only screen and (max-width: 1300px) {
   .movie {
-    width: 20vw;
+    width: 18vw;
   }
 }
 @media only screen and (max-width: 1000px) {
