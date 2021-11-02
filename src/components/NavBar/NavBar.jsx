@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import Logo from "../../img/logo.svg";
+import Logo from "../../img/logo-principal-Web.svg";
 import SearchBar from "../SearchBar/SearchBar";
 import { getMovies } from "../../actions";
 import { connect } from "react-redux";
@@ -15,21 +15,6 @@ function NavBar(props) {
         </NavLink>
       </div>
       <div className={styles.link_movies_searchbar}>
-        <div className={styles.link_movies_div}>
-          <NavLink to="/" className={styles.link_movies}>
-            <button
-              className={styles.link_button}
-              onClick={() =>
-                (props.mov && props.mov.length < 1) || props.mov === undefined
-                  ? props.getMovies()
-                  : null
-              }
-            >
-              Movies
-            </button>
-          </NavLink>
-        </div>
-
         <div className={styles.SearchBar}>
           <SearchBar />
         </div>

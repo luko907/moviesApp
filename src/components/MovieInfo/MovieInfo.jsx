@@ -40,6 +40,22 @@ function MovieInfo(props) {
   ///////////////////////
 
   useEffect(() => {
+    function myFunction(x) {
+      if (x.matches) {
+        document.body.querySelector(
+          ".NavBar_header__2ZPPt"
+        ).style.flexDirection = "column";
+      } else {
+        document.body.querySelector(
+          ".NavBar_header__2ZPPt"
+        ).style.flexDirection = "row";
+      }
+    }
+
+    var x = window.matchMedia("(max-width: 700px)");
+    myFunction(x);
+    x.addListener(myFunction);
+
     const url1 = `process.env.REACT_APP_API_TMDB_BASE_URL/${params.id}?api_key=process.env.REACT_APP_API_TMDB_API_KEY&language=en-US`;
     const url2 = `process.env.REACT_APP_IMBD_MOVIEDETAILS=${movieDetails.imdb_id}`;
     const fetchData = async () => {
@@ -67,6 +83,10 @@ function MovieInfo(props) {
     setTimeout(function () {
       setIsLoading(false);
     }, Math.random() * (600 - 400) + 400);
+    return () => {
+      document.body.querySelector(".NavBar_header__2ZPPt").style.flexDirection =
+        "column";
+    };
   }, [
     params.id,
     movieDetails.length,
@@ -154,7 +174,10 @@ function MovieInfo(props) {
                         {info.Actors !== "N/A" && "Actors"}
                       </span>
                       <span className={styles.studios}>
-                        {info.Director !== "N/A" && "Studios"}
+                        {movieDetails.production_companies.length !== 0 &&
+                          movieDetails.production_companies[0].name.length !==
+                            0 &&
+                          "Studios"}
                       </span>
                     </div>
                     <div className={styles.director_actors_studios_names}>
