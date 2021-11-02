@@ -8,13 +8,14 @@ header {
 .linkContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
-  margin-right: 5rem;
+  margin: 0.9rem 5rem 1rem 0;
+  width: 96%;
 }
 
 .link_movies_searchbar {
   display: flex;
   justify-content: center;
+  width: 96%;
 }
 
 .logo {
@@ -26,7 +27,8 @@ header {
 .SearchBar {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: self-end;
+  margin-bottom: 1rem;
 }
 
 @media only screen and (max-width: 765px) {
