@@ -7,7 +7,6 @@ a {
 }
 .container {
   background: rgb(6 13 23);
-  margin-top: 3rem;
 }
 
 .div_suggestion {
@@ -16,6 +15,7 @@ a {
   margin-left: 1.1rem;
   opacity: 0.7;
   margin-bottom: 0.8rem;
+  margin-top: 0.8rem;
 }
 .div_suggestion span {
   font-size: 25px;
@@ -65,9 +65,6 @@ a {
 @media only screen and (max-width: 415px) {
   .ul_hot_top {
     margin-left: 0;
-  }
-  .container {
-    padding: 20px 0px 5px 0;
   }
   .div_suggestion span {
     font-size: 5.2vw;

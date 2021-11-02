@@ -3,7 +3,7 @@ header {
   flex-direction: column;
   justify-content: center;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  background-color: rgb(21 21 21 / 28%);
+  background-color: rgb(0 0 0 / 76%);
 }
 .linkContainer {
   display: flex;
@@ -45,5 +45,13 @@ header {
 @media only screen and (max-width: 760px) {
   .logo {
     margin-left: 0;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .linkContainer {
+    width: 100%;
+  }
+  .link_movies_searchbar {
+    width: 100%;
   }
 }
