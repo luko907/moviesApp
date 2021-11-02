@@ -5,7 +5,7 @@ import playLogo from "../../img/play-icon.svg";
 import { Link } from "react-router-dom";
 
 function Movie(props) {
-  const baseUrl = "https://image.tmdb.org/t/p/w500/";
+  const baseUrl = "https://image.tmdb.org/t/p/w500";
   return (
     <React.Fragment>
       {props.moviesLoaded.map((item) => (
@@ -33,7 +33,9 @@ function Movie(props) {
               <div className={styles.description}>
                 <span className={styles.title}>{item.title}</span>
                 <span className={styles.year}>
-                  {item.release_date.slice(0, -6)}
+                  {item.release_date.length > 4
+                    ? item.release_date.slice(0, -6)
+                    : item.release_date}
                 </span>
               </div>
             </div>

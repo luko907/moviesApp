@@ -37,6 +37,7 @@
 .title span {
   font-family: "Red Hat Display", sans-serif;
   font-size: 4vw;
+  margin-left: 0;
 }
 .rates_container {
   display: flex;
@@ -47,6 +48,7 @@
 }
 .rates_container span {
   margin: auto;
+  font-size: 1.6rem;
 }
 .ageRated,
 .IMDbRate,
