@@ -11,16 +11,16 @@ https://www.themoviedb.org/documentation/api/
 ## Android/iOS
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/48270029/139946822-89e230ce-701f-40eb-8e28-d59a62919839.png" />
-  <img src="https://user-images.githubusercontent.com/48270029/139946825-080628c2-4083-408e-9a8a-dfb98474fba6.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/140329935-6433117d-13bb-4a39-88e6-dbc44687e314.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/140329948-2d498532-dd4e-45c2-95be-6e2ba9bbf212.png" />
 </div>
 
 <br />
 <br />
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/48270029/139948054-62ff3f91-2ab1-4daf-900f-3937aec93240.png" />
-  <img src="https://user-images.githubusercontent.com/48270029/139946832-e5e3d743-ab2a-48a4-ae50-0b063abc7794.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/140329951-0c3dc74c-2262-4f28-a83a-4cf6beaa6869.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/140329953-8541cceb-6a1f-472f-822d-178e7c3b3d35.png" />
 </div>
 
 ## Desktop View
