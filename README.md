@@ -10,6 +10,7 @@ https://www.themoviedb.org/documentation/api/
 
 ## Android/iOS
 
+<a href="https://movies-app-lk.netlify.app"> 💻Website!<a/>
 <div align="center">
   <img src="https://user-images.githubusercontent.com/48270029/140329935-6433117d-13bb-4a39-88e6-dbc44687e314.png" />
   <img src="https://user-images.githubusercontent.com/48270029/140329948-2d498532-dd4e-45c2-95be-6e2ba9bbf212.png" />
@@ -31,7 +32,7 @@ https://www.themoviedb.org/documentation/api/
   <img src="https://user-images.githubusercontent.com/48270029/139947543-55381647-d935-4fd0-92d7-c5a64429b798.png" />
 </div>
 
-## Technology stack:
+### Built with:
 
 - React/Hooks
 - Redux
@@ -42,7 +43,7 @@ https://www.themoviedb.org/documentation/api/
 - Radium NPM
 - HTML5
 
-## To be added shortly
+### To be added shortly:
 
 - Capacity to display movie trailers
 
