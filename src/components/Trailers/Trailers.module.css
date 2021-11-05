@@ -1,0 +1,36 @@
+.video_responsive_container {
+  display: flex;
+}
+.video_responsive {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.video_responsive iframe {
+  display: flex;
+  border-radius: 15px;
+  width: 22vw;
+  height: 12.5vw;
+}
+
+@media only screen and (max-width: 1550px) {
+  .video_responsive {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video_responsive iframe {
+    width: 100%;
+    height: 26vw;
+    margin-bottom: 3vw;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .video_responsive iframe {
+    width: 100%;
+    height: 35vw;
+    margin-bottom: 5vw;
+  }
+}
