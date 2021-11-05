@@ -13,7 +13,15 @@
   width: 22vw;
   height: 12.5vw;
 }
-
+.trailer_span_div {
+  margin-bottom: 1.5vw;
+}
+.trailer_span_div span {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 2vw;
+  margin-left: 0;
+}
 @media only screen and (max-width: 1550px) {
   .video_responsive {
     flex-direction: column;
@@ -25,12 +33,33 @@
     height: 26vw;
     margin-bottom: 3vw;
   }
+  .trailer_span_div span {
+    font-size: 1.8rem;
+  }
 }
 
+@media only screen and (max-width: 1000px) {
+  .trailer_span_div span {
+    font-size: 3vw;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .trailer_span_div span {
+    font-size: 3.5vw;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .trailer_span_div span {
+    align-self: center;
+  }
+}
 @media only screen and (max-width: 420px) {
   .video_responsive iframe {
     width: 100%;
     height: 35vw;
     margin-bottom: 5vw;
+  }
+  .trailer_span_div span {
+    font-size: 4.2vw;
   }
 }
