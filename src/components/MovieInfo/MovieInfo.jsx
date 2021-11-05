@@ -207,7 +207,6 @@ function MovieInfo(props) {
                 <div className={styles.trailer_main}>
                   <Trailer id={params.id}></Trailer>
                 </div>
-                {/* ///SEGUIR ACA */}
               </div>
             </div>
           </div>

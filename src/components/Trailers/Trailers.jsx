@@ -11,7 +11,9 @@ export default function Trailer(props) {
       try {
         const resp = await axios.get(url);
         setMovieTrailer(
-          resp.data.results.filter((item) => item.type === "Trailer").slice(1)
+          resp.data.results
+            .filter((item) => item.type === "Trailer")
+            .slice(0, 2)
         );
       } catch (error) {
         console.log("error", error);
@@ -21,7 +23,7 @@ export default function Trailer(props) {
   }, [props.id]);
   return (
     <React.Fragment>
-      {movieTrailer && (
+      {movieTrailer.length !== 0 && (
         <div>
           <div className={styles.trailer_span_div}>
             <span>Trailers</span>
