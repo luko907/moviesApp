@@ -45,7 +45,7 @@ https://www.themoviedb.org/documentation/api/
 
 ### To be added shortly:
 
-- Capacity to display movie trailers
+- Capacity to search by genre/year released
 
 ### Project setup:
 
