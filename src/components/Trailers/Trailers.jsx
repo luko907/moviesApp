@@ -18,25 +18,31 @@ export default function Trailer(props) {
       }
     };
     fetchData();
-  }, []);
-
+  }, [props.id]);
   return (
     <React.Fragment>
-      <div className={styles.video_responsive_container}>
-        <div className={styles.video_responsive}>
-          {movieTrailer &&
-            movieTrailer.map((x) => (
-              <iframe
-                src={`https://www.youtube.com/embed/${x.key}`}
-                frameBorder="0"
-                key={x.key}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Embedded youtube"
-              />
-            ))}
+      {movieTrailer && (
+        <div>
+          <div className={styles.trailer_span_div}>
+            <span>Trailers</span>
+          </div>
+          <div className={styles.video_responsive_container}>
+            <div className={styles.video_responsive}>
+              {movieTrailer &&
+                movieTrailer.map((x) => (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${x.key}`}
+                    frameBorder="0"
+                    key={x.key}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="Embedded youtube"
+                  />
+                ))}
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </React.Fragment>
   );
 }
