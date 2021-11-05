@@ -109,9 +109,6 @@ span {
   }
 }
 @media only screen and (max-width: 425px) {
-  .movie {
-    pointer-events: none;
-  }
   .div_play_icon:hover {
     filter: alpha(opacity=0);
     opacity: 0;

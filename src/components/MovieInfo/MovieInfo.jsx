@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { StyleRoot } from "radium";
+import Trailer from "../Trailers/Trailers";
 import styles from "./MovieInfo.module.css";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -67,12 +68,7 @@ function MovieInfo(props) {
     const navBarStyles = setInterval(function () {
       if (window.matchMedia("(max-width: 700px)").matches && info.Title) {
         document.body.querySelector("header").style.flexDirection = "column";
-      } else if (
-        !window.matchMedia("(max-width: 700px)").matches &&
-        info.Title
-      ) {
-        document.body.querySelector("header").style.flexDirection = "row";
-      }
+      } else if (!window.matchMedia("(max-width: 700px)").matches && info.Title) document.body.querySelector("header").style.flexDirection = "row";
     }, 100);
 
     setTimeout(function () {
@@ -99,116 +95,121 @@ function MovieInfo(props) {
         <StyleRoot>
           <div style={movieInfofullscreen}>
             <div className={styles.movieInfo_container}>
-              <div className={styles.movieInfo_img_div}>
-                <img
-                  src={baseUrl + movieDetails.poster_path}
-                  className={styles.movieInfo_img}
-                  alt=""
-                />
-              </div>
-              <div className={styles.description_container}>
-                <div className={styles.title}>
-                  <span>{movieDetails.title}</span>
+              <div style={{ display: "flex" }}>
+                <div className={styles.movieInfo_img_div}>
+                  <img
+                    src={baseUrl + movieDetails.poster_path}
+                    className={styles.movieInfo_img}
+                    alt=""
+                  />
                 </div>
-                {info.Rated && (
-                  <div className={styles.rates_container}>
-                    {info.Rated !== "N/A" && (
-                      <div className={styles.ageRated}>
-                        <span>{info.Rated}</span>
-                      </div>
-                    )}
-                    {info.Metascore !== "N/A" && (
-                      <div className={styles.rating}>
-                        <Link to="#" title="Audience Rating">
-                          <img src={popcorn} alt="" />
-                        </Link>
-                        <span>{info.Metascore}%</span>
-                      </div>
-                    )}
-                    {info.Ratings && info.Ratings.length !== 0 && (
-                      <div className={styles.IMDbRate}>
-                        <Link to="#" title="IMDb Rating">
-                          <img src={imdb} alt="" />
-                        </Link>
-                        <span>
-                          {info.Ratings &&
-                            info.Ratings.length !== 0 &&
-                            info.Ratings[0].Value.slice(0, -3)}
-                        </span>
-                      </div>
-                    )}
+                <div className={styles.description_container}>
+                  <div className={styles.title}>
+                    <span>{movieDetails.title}</span>
                   </div>
-                )}
-                <div className={styles.year_time_genre_container}>
-                  <div className={styles.info_year_info_runtime_container}>
-                    <div className={styles.info_year}>
-                      <span> {info.Year !== "N/A" && info.Year}</span>
-                    </div>
-                    <div className={styles.info_runtime}>
-                      <span>{info.Runtime !== "N/A" && info.Runtime}</span>
-                    </div>
-                  </div>
-                  <div className={styles.movieDetails_genres}>
-                    <span>
-                      {movieDetails.genres &&
-                        movieDetails.genres.length > 0 &&
-                        movieDetails.genres.map((gen) => gen.name).join(", ")}
-                    </span>
-                  </div>
-                </div>
-                <div className={styles.lineSep}></div>
-                <div className={styles.plot}>
-                  <p>{movieDetails.overview}</p>
-                </div>
-                {info.Rated && (
-                  <div className={styles.director_actors_studios_container}>
-                    <div className={styles.director_actors_studios_title}>
-                      <span className={styles.director}>
-                        {info.Director !== "N/A" && "Director"}
-                      </span>
-                      <span className={styles.actors}>
-                        {info.Actors !== "N/A" && "Actors"}
-                      </span>
-                      <span className={styles.studios}>
-                        {movieDetails.production_companies.length !== 0 &&
-                          movieDetails.production_companies[0].name.length !==
-                            0 &&
-                          "Studios"}
-                      </span>
-                    </div>
-                    <div className={styles.director_actors_studios_names}>
-                      <span className={styles.director_name}>
-                        {info.Director !== "N/A" && info.Director}
-                      </span>
-                      <span className={styles.actors_names}>
-                        {info.Actors !== "N/A" && info.Actors}
-                      </span>
-                      <div className={styles.studios_name_img_container}>
-                        <div className={styles.studios_name_span}>
-                          <span className={styles.studios_name}>
-                            {movieDetails.production_companies.length !== 0 &&
-                              movieDetails.production_companies[0].name
-                                .length !== 0 &&
-                              movieDetails.production_companies[0].name}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    {movieDetails.production_companies.length !== 0 &&
-                      movieDetails.production_companies[0].logo_path !== 0 && (
-                        <div className={styles.studios_img}>
-                          <img
-                            src={
-                              baseUrl +
-                              movieDetails.production_companies[0].logo_path
-                            }
-                            alt=""
-                          />
+                  {info.Rated && (
+                    <div className={styles.rates_container}>
+                      {info.Rated !== "N/A" && (
+                        <div className={styles.ageRated}>
+                          <span>{info.Rated}</span>
                         </div>
                       )}
+                      {info.Metascore !== "N/A" && (
+                        <div className={styles.rating}>
+                          <Link to="#" title="Audience Rating">
+                            <img src={popcorn} alt="" />
+                          </Link>
+                          <span>{info.Metascore}%</span>
+                        </div>
+                      )}
+                      {info.Ratings && info.Ratings.length !== 0 && (
+                        <div className={styles.IMDbRate}>
+                          <Link to="#" title="IMDb Rating">
+                            <img src={imdb} alt="" />
+                          </Link>
+                          <span>
+                            {info.Ratings &&
+                              info.Ratings.length !== 0 &&
+                              info.Ratings[0].Value.slice(0, -3)}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  <div className={styles.year_time_genre_container}>
+                    <div className={styles.info_year_info_runtime_container}>
+                      <div className={styles.info_year}>
+                        <span> {info.Year !== "N/A" && info.Year}</span>
+                      </div>
+                      <div className={styles.info_runtime}>
+                        <span>{info.Runtime !== "N/A" && info.Runtime}</span>
+                      </div>
+                    </div>
+                    <div className={styles.movieDetails_genres}>
+                      <span>
+                        {movieDetails.genres &&
+                          movieDetails.genres.length > 0 &&
+                          movieDetails.genres.map((gen) => gen.name).join(", ")}
+                      </span>
+                    </div>
                   </div>
-                )}
-                {/* ///SEGUIR ACA */}
+                  <div className={styles.lineSep}></div>
+                  <div className={styles.plot}>
+                    <p>{movieDetails.overview}</p>
+                  </div>
+                  {info.Rated && (
+                    <div className={styles.director_actors_studios_container}>
+                      <div className={styles.director_actors_studios_title}>
+                        <span className={styles.director}>
+                          {info.Director !== "N/A" && "Director"}
+                        </span>
+                        <span className={styles.actors}>
+                          {info.Actors !== "N/A" && "Actors"}
+                        </span>
+                        <span className={styles.studios}>
+                          {movieDetails.production_companies.length !== 0 &&
+                            movieDetails.production_companies[0].name.length !==
+                              0 &&
+                            "Studios"}
+                        </span>
+                      </div>
+                      <div className={styles.director_actors_studios_names}>
+                        <span className={styles.director_name}>
+                          {info.Director !== "N/A" && info.Director}
+                        </span>
+                        <span className={styles.actors_names}>
+                          {info.Actors !== "N/A" && info.Actors}
+                        </span>
+                        <div className={styles.studios_name_img_container}>
+                          <div className={styles.studios_name_span}>
+                            <span className={styles.studios_name}>
+                              {movieDetails.production_companies.length !== 0 &&
+                                movieDetails.production_companies[0].name
+                                  .length !== 0 &&
+                                movieDetails.production_companies[0].name}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      {movieDetails.production_companies.length !== 0 &&
+                        movieDetails.production_companies[0].logo_path !==
+                          0 && (
+                          <div className={styles.studios_img}>
+                            <img
+                              src={
+                                baseUrl +
+                                movieDetails.production_companies[0].logo_path
+                              }
+                              alt=""
+                            />
+                          </div>
+                        )}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className={styles.trailer_main}>
+                <Trailer id={params.id}></Trailer>
               </div>
             </div>
           </div>
