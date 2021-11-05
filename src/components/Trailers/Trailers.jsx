@@ -29,10 +29,11 @@ export default function Trailer(props) {
             <span>Trailers</span>
           </div>
           <div className={styles.video_responsive_container}>
-            <div className={styles.video_responsive}>
+            <div className={movieTrailer.length > 1 && styles.video_responsive}>
               {movieTrailer &&
                 movieTrailer.map((x) => (
                   <iframe
+                    className={movieTrailer.length <= 1 && styles.iframeAlt}
                     src={`https://www.youtube.com/embed/${x.key}`}
                     frameBorder="0"
                     key={x.key}
