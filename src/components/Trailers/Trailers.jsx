@@ -26,7 +26,7 @@ export default function Trailer(props) {
       {movieTrailer.length !== 0 && (
         <div>
           <div className={styles.trailer_span_div}>
-            <span>Trailers</span>
+            <span>Trailer{movieTrailer.length > 1 ? "s" : null}</span>
           </div>
           <div className={styles.video_responsive_container}>
             <div className={movieTrailer.length > 1 && styles.video_responsive}>

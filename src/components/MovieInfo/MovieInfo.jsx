@@ -35,7 +35,7 @@ function MovieInfo(props) {
     },
     "@media (max-width: 550px)": {
       background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${
-        info.Poster /*  && info.Poster.replace("_SX300", "") */
+        info.Poster && info.Poster.replace("_SX300", "")
       }) no-repeat center center / cover fixed`,
     },
   };
