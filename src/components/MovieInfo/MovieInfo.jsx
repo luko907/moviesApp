@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { StyleRoot } from "radium";
+import Trailer from "../Trailers/Trailers";
 import styles from "./MovieInfo.module.css";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -208,6 +209,10 @@ function MovieInfo(props) {
                       )}
                   </div>
                 )}
+                <div className={styles.trailer_main}>
+                  <span>Trailers</span>
+                  <Trailer></Trailer>
+                </div>
                 {/* ///SEGUIR ACA */}
               </div>
             </div>

@@ -123,6 +123,7 @@
 .director_actors_studios_container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1.5vw;
 }
 
 .director_actors_studios_container span {
@@ -166,6 +167,16 @@
   margin-right: 0.4rem;
 }
 
+.trailer_main {
+  display: flex;
+  flex-direction: column;
+}
+.trailer_main span {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 1.5vw;
+}
+
 @media only screen and (max-width: 1700px) {
   .movieInfo_container {
     margin-top: 28%;
@@ -184,6 +195,10 @@
   }
   .title span {
     font-size: 4vw;
+  }
+  .trailer_main span {
+    margin-top: 2vw;
+    font-size: 1.8rem;
   }
   .rates_container span {
     font-size: 1.7vw;
@@ -236,7 +251,9 @@
     justify-content: unset;
     margin: 1vw 0 0 3vw;
   }
-
+  .trailer_main span {
+    font-size: 3vw;
+  }
   .rates_container {
     width: 90%;
   }
@@ -270,7 +287,9 @@
   .rates_container span {
     font-size: 2.5vw;
   }
-
+  .trailer_main span {
+    font-size: 3.5vw;
+  }
   .year_time_genre_container {
     flex-direction: column;
   }
@@ -297,6 +316,10 @@
     width: 85%;
     min-height: 55vh;
   }
+  .trailer_main span {
+    align-self: center;
+    margin-bottom: 4vw;
+  }
   .rating img {
     width: 3vw;
     height: auto;
@@ -318,6 +341,9 @@
   .IMDbRate img {
     width: 6.6vw;
     height: auto;
+  }
+  .trailer_main span {
+    font-size: 4.2vw;
   }
   .year_time_genre_container span {
     font-size: 3.5vw;
