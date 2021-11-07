@@ -6,7 +6,7 @@ export default function Trailer(props) {
   const [movieTrailer, setMovieTrailer] = useState([]);
 
   useEffect(() => {
-    const url = `process.env.REACT_APP_API_TMDB_BASE_URL/${props.id}process.env.REACT_APP_VIDEOCF=process.env.REACT_APP_API_TMDB_API_KEY&language=en-US`;
+    const url = `${process.env.REACT_APP_API_TMDB_BASE_URL}${props.id}${process.env.REACT_APP_VIDEOCF}=${process.env.REACT_APP_API_TMDB_API_KEY}&language=en-US`;
     const fetchData = async () => {
       try {
         const resp = await axios.get(url);

@@ -41,8 +41,8 @@ function MovieInfo(props) {
   };
 
   useEffect(() => {
-    const url1 = `process.env.REACT_APP_API_TMDB_BASE_URL/${params.id}?api_key=process.env.REACT_APP_API_TMDB_API_KEY&language=en-US`;
-    const url2 = `process.env.REACT_APP_IMBD_MOVIEDETAILS=${movieDetails.imdb_id}`;
+    const url1 = `${process.env.REACT_APP_API_TMDB_BASE_URL}${params.id}?api_key=${process.env.REACT_APP_API_TMDB_API_KEY}&language=en-US`;
+    const url2 = `${process.env.REACT_APP_IMBD_MOVIEDETAILS}=${movieDetails.imdb_id}`;
     const fetchData = async () => {
       try {
         const resp1 = await axios.get(url1);

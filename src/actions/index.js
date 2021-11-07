@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function getMovies() {
-  const url = `process.env.REACT_APP_GETPOPULAR`;
+  const url = process.env.REACT_APP_GETPOPULAR;
   return function (dispatch) {
     const fetchData = async () => {
       try {
@@ -16,7 +16,7 @@ export function getMovies() {
 }
 
 export function getActual(title) {
-  const url = `process.env.REACT_APP_GETACTUAL${title}`;
+  const url = `${process.env.REACT_APP_GETACTUAL}${title}`;
   return function (dispatch) {
     const fetchData = async () => {
       try {
