@@ -1,8 +1,3 @@
-.similiar_img {
-  width: 270px;
-  border-radius: 9px;
-  margin-bottom: 2rem;
-}
 .right {
   right: calc(0% + 0px);
   position: absolute;
@@ -65,6 +60,125 @@
 .similar_span_div span {
   font-weight: 700;
   font-size: 30px;
-  margin-bottom: 2vw;
   margin-left: 0;
+}
+
+.movie {
+  padding-top: 4rem;
+  margin-bottom: 5rem;
+  width: 13vw;
+  transition: 0.3s ease;
+}
+
+.movie:hover {
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+  transition: 0.3s ease;
+}
+
+.movie_img {
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.movie_posterimg {
+  border-radius: 1rem;
+  width: -webkit-fill-available;
+}
+
+.div_play_icon {
+  position: absolute;
+  align-self: center;
+  opacity: 0;
+}
+
+.div_play_icon:hover {
+  opacity: 1;
+}
+
+.play_icon {
+  width: 70px;
+  height: auto;
+}
+
+.link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.movie_posterimg:hover + .div_play_icon {
+  opacity: 0.7;
+}
+
+.description_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.6vw;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+  margin-top: 0.7rem;
+}
+span {
+  margin-left: 0.2rem;
+  font-size: 20px;
+  margin-bottom: 0.3rem;
+}
+.year {
+  font-size: 12px;
+  margin-right: 0.2rem;
+  align-self: flex-start;
+}
+@media only screen and (max-width: 1300px) {
+  .movie {
+    width: 18vw;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  span {
+    margin-left: 1vw;
+    font-size: 2vw;
+    margin-bottom: 1vw;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .movie {
+    width: 25vw;
+  }
+  span {
+    font-size: 2.7vw;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .movie {
+    margin-right: 1vw;
+    margin-left: 1vw;
+    margin-bottom: 8vw;
+    width: 10rem;
+  }
+  span {
+    font-size: 3.5vw;
+  }
+  .year {
+    font-size: 2.8vw;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .div_play_icon:hover {
+    opacity: 0;
+  }
+  .movie_posterimg:hover + .div_play_icon {
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .movie {
+    width: 9rem;
+  }
 }

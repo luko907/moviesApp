@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./Carousel.module.css";
-/* import { Link } from "react-router-dom"; */
+import { Link } from "react-router-dom";
+import playLogo from "../../img/play-icon.svg";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -98,12 +99,29 @@ function CarouselSimilar(props) {
       >
         {similar &&
           similar.map((item, i) => (
-            <div key={i}>
-              <img
-                className={styles.similiar_img}
-                src={baseUrl + item.poster_path}
-                alt=""
-              />
+            <div className={styles.movie} key={item.id}>
+              <Link className={styles.link} to={`/movies/${item.id}`}>
+                <div className={styles.movie_img}>
+                  <img
+                    className={styles.movie_posterimg}
+                    src={baseUrl + item.poster_path}
+                    alt=""
+                  />
+                  <div className={styles.div_play_icon}>
+                    <img className={styles.play_icon} src={playLogo} alt="" />
+                  </div>
+                </div>
+                <div className={styles.description_container}>
+                  <div className={styles.description}>
+                    <span className={styles.title}>{item.title}</span>
+                    <span className={styles.year}>
+                      {item.release_date.length > 4
+                        ? item.release_date.slice(0, -6)
+                        : item.release_date}
+                    </span>
+                  </div>
+                </div>
+              </Link>
             </div>
           ))}
       </Carousel>
