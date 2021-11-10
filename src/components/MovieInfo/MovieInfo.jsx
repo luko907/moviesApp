@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { StyleRoot } from "radium";
 import Trailer from "../Trailers/Trailers";
 import styles from "./MovieInfo.module.css";
 import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
 import data from "../../data/popular";
 import popcorn from "../../img/popcorn.png";
 import imdb from "../../img/imdb.png";
 import "../../App.css";
-import Carousel from "../Carousel/Carousel";
+import CarouselSimilar from "../Carousel/CarouselSimilar";
+import CarouselRec from "../Carousel/CarouselRecomend";
 
 function MovieInfo(props) {
   const [movieDetails, setMovieDetails] = useState([]);
@@ -211,7 +211,24 @@ function MovieInfo(props) {
               <div className={styles.trailer_main}>
                 <Trailer id={params.id}></Trailer>
               </div>
-              <Carousel />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginBottom: "4rem",
+                }}
+              >
+                <CarouselSimilar />
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginBottom: "4rem",
+                }}
+              >
+                <CarouselRec />
+              </div>
             </div>
           </div>
         </StyleRoot>
