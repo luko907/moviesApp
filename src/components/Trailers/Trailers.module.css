@@ -1,7 +1,7 @@
 .video_responsive_container {
   display: flex;
   justify-content: center;
-  margin-bottom: 1vw;
+  margin-bottom: 4rem;
 }
 .video_responsive {
   display: flex;

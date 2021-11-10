@@ -34,9 +34,6 @@ function MovieInfo(props) {
       background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${flag}) no-repeat center center / cover fixed`,
       minHeight: "80vh",
     },
-    /*     "@media (max-width: 550px)": {
-      background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${flag}) no-repeat center center / cover fixed`,
-    }, */
   };
 
   useEffect(() => {
@@ -218,7 +215,7 @@ function MovieInfo(props) {
                   marginBottom: "4rem",
                 }}
               >
-                <CarouselSimilar />
+                <CarouselSimilar id={params.id} />
               </div>
               <div
                 style={{
