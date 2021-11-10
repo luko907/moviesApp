@@ -72,7 +72,7 @@ function MovieInfo(props) {
 
     setTimeout(function () {
       setIsLoading(false);
-    }, Math.random() * (600 - 400) + 400);
+    }, Math.random() * (1000 - 400) + 400);
     return () => {
       document.body.querySelector("header").style.flexDirection = "column";
       clearInterval(navBarStyles);
