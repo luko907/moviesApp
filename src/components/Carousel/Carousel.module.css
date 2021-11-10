@@ -54,7 +54,6 @@
 }
 .similar_span_div {
   display: flex;
-  margin-bottom: 2rem;
 }
 
 .similar_span_div span {
@@ -64,8 +63,8 @@
 }
 
 .movie {
-  padding-top: 4rem;
-  margin-bottom: 5rem;
+  padding-top: 4vw;
+  margin-bottom: 5vw;
   width: 13vw;
   transition: 0.3s ease;
 }
@@ -136,19 +135,19 @@ span {
 }
 @media only screen and (max-width: 1300px) {
   .movie {
-    width: 18vw;
+    width: 15vw;
   }
 }
 @media only screen and (max-width: 1000px) {
   span {
     margin-left: 1vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin-bottom: 1vw;
   }
 }
 @media only screen and (max-width: 700px) {
   .movie {
-    width: 25vw;
+    width: 18vw;
   }
   span {
     font-size: 2.7vw;
@@ -159,7 +158,7 @@ span {
     margin-right: 1vw;
     margin-left: 1vw;
     margin-bottom: 8vw;
-    width: 10rem;
+    width: 19vw;
   }
   span {
     font-size: 3.5vw;
@@ -179,6 +178,15 @@ span {
 
 @media only screen and (max-width: 380px) {
   .movie {
-    width: 9rem;
+    width: 5.2rem;
+  }
+  .similar_span_div span {
+    font-size: 4.2vw;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .movie {
+    width: 3.3rem;
   }
 }
