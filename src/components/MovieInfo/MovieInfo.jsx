@@ -10,6 +10,7 @@ import data from "../../data/popular";
 import popcorn from "../../img/popcorn.png";
 import imdb from "../../img/imdb.png";
 import "../../App.css";
+import Carousel from "../Carousel/Carousel";
 
 function MovieInfo(props) {
   const [movieDetails, setMovieDetails] = useState([]);
@@ -211,6 +212,7 @@ function MovieInfo(props) {
               <div className={styles.trailer_main}>
                 <Trailer id={params.id}></Trailer>
               </div>
+              <Carousel />
             </div>
           </div>
         </StyleRoot>
