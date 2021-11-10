@@ -1,0 +1,70 @@
+.similiar_img {
+  width: 270px;
+  border-radius: 9px;
+  margin-bottom: 2rem;
+}
+.right {
+  right: calc(0% + 0px);
+  position: absolute;
+  outline: 0;
+  transition: all 0.5s;
+  border-radius: 35px;
+  z-index: 1000;
+  border: 0;
+  background: rgba(8, 128, 184, 0.76);
+  min-width: 65px;
+  min-height: 65px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.right::before {
+  font-size: 22px;
+  color: #fff;
+  display: block;
+  font-family: revicons;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  content: "\e825";
+}
+.right:hover,
+.left:hover {
+  background: rgb(0, 0, 0);
+}
+.left {
+  left: calc(0% + 0px);
+  position: absolute;
+  outline: 0;
+  transition: all 0.5s;
+  border-radius: 35px;
+  z-index: 1000;
+  border: 0;
+  background: rgba(8, 128, 184, 0.76);
+  min-width: 65px;
+  min-height: 65px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.left::before {
+  font-size: 22px;
+  color: #fff;
+  display: block;
+  font-family: revicons;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  content: "\e824";
+}
+.similar_span_div {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.similar_span_div span {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 2vw;
+  margin-left: 0;
+}
