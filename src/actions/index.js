@@ -1,5 +1,4 @@
 import axios from "axios";
-
 export function getMovies() {
   const url = process.env.REACT_APP_GETPOPULAR;
   return function (dispatch) {

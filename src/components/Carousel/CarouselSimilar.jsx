@@ -6,13 +6,14 @@ import styles from "./Carousel.module.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-function CarouselRec(props) {
+function CarouselSimilar(props) {
   const [similar, setSimilar] = useState([]);
   const baseUrl = "https://image.tmdb.org/t/p/w500";
 
   const CustomRightArrow = ({ onClick, ...rest }) => {
     const {
-      onMove,
+      // eslint-disable-next-line
+      onMove, // eslint-disable-next-line
       carouselState: { currentSlide, deviceType },
     } = rest;
     // onMove means if dragging or swiping in progress.
@@ -20,7 +21,8 @@ function CarouselRec(props) {
   };
   const CustomLeftArrow = ({ onClick, ...rest }) => {
     const {
-      onMove,
+      // eslint-disable-next-line
+      onMove, // eslint-disable-next-line
       carouselState: { currentSlide, deviceType },
     } = rest;
     // onMove means if dragging or swiping in progress.
@@ -110,4 +112,4 @@ function CarouselRec(props) {
   );
 }
 
-export default CarouselRec;
+export default CarouselSimilar;
