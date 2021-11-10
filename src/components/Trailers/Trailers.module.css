@@ -1,11 +1,11 @@
 .video_responsive_container {
   display: flex;
   justify-content: center;
-  margin-bottom: 1vw;
+  margin-bottom: 4vw;
 }
 .video_responsive {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
 }
 .iframeAlt {

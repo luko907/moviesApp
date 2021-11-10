@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { StyleRoot } from "radium";
 import Trailer from "../Trailers/Trailers";
 import styles from "./MovieInfo.module.css";
 import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
 import data from "../../data/popular";
 import popcorn from "../../img/popcorn.png";
 import imdb from "../../img/imdb.png";
 import "../../App.css";
+import CarouselSimilar from "../Carousel/CarouselSimilar";
+import CarouselRec from "../Carousel/CarouselRecomend";
 
 function MovieInfo(props) {
   const [movieDetails, setMovieDetails] = useState([]);
@@ -33,9 +34,6 @@ function MovieInfo(props) {
       background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${flag}) no-repeat center center / cover fixed`,
       minHeight: "80vh",
     },
-    /*     "@media (max-width: 550px)": {
-      background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${flag}) no-repeat center center / cover fixed`,
-    }, */
   };
 
   useEffect(() => {
@@ -209,6 +207,24 @@ function MovieInfo(props) {
               </div>
               <div className={styles.trailer_main}>
                 <Trailer id={params.id}></Trailer>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginBottom: "4rem",
+                }}
+              >
+                <CarouselSimilar id={params.id} />
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginBottom: "4rem",
+                }}
+              >
+                <CarouselRec id={params.id} />
               </div>
             </div>
           </div>
