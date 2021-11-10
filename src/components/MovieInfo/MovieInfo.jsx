@@ -33,11 +33,9 @@ function MovieInfo(props) {
       background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${flag}) no-repeat center center / cover fixed`,
       minHeight: "80vh",
     },
-    "@media (max-width: 550px)": {
-      background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${
-        info.Poster && info.Poster.replace("_SX300", "")
-      }) no-repeat center center / cover fixed`,
-    },
+    /*     "@media (max-width: 550px)": {
+      background: `linear-gradient(180deg, rgba(6,13,23,0) 30%, rgba(6,13,23,1) 20em),linear-gradient(90deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),linear-gradient(270deg, rgba(6,13,23,0) 93%, rgba(6,13,23,0.6320903361344538) 98%),url(${flag}) no-repeat center center / cover fixed`,
+    }, */
   };
 
   useEffect(() => {
@@ -54,12 +52,13 @@ function MovieInfo(props) {
       }
     };
     const findImg = () => {
+      const poster = info.Poster && info.Poster.replace("_SX300", "");
       for (let i = 0; i < data.length; i++) {
         if (data[i].id === movieDetails.id) {
           setFlag(data[i].backDrop);
           break;
         } else {
-          setFlag(baseUrl + movieDetails.poster_path);
+          setFlag(poster);
         }
       }
     };
@@ -82,7 +81,7 @@ function MovieInfo(props) {
     params.id,
     movieDetails.length,
     movieDetails.id,
-    movieDetails.poster_path,
+    info.Poster,
     movieDetails.imdb_id,
     info.Title,
   ]);
