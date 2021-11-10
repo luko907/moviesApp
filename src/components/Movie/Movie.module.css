@@ -58,7 +58,6 @@
   display: flex;
   flex-direction: column;
   width: -webkit-fill-available;
-  justify-content: space-between;
   margin-top: 0.7rem;
 }
 span {
@@ -107,11 +106,9 @@ span {
 }
 @media only screen and (max-width: 425px) {
   .div_play_icon:hover {
-    filter: alpha(opacity=0);
     opacity: 0;
   }
   .movie_posterimg:hover + .div_play_icon {
-    filter: alpha(opacity=0);
     opacity: 0;
   }
 }
