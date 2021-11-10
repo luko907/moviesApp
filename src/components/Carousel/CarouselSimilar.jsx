@@ -73,11 +73,11 @@ function CarouselSimilar(props) {
     };
 
     fetchData();
-  }, []);
+  }, [props.id]);
   return (
     <div>
       <div className={styles.similar_span_div}>
-        <span>Similar Movies</span>
+        <span>Similar</span>
       </div>
       <Carousel
         renderButtonGroupOutside={true}

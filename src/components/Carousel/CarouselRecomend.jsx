@@ -53,8 +53,8 @@ function CarouselRec(props) {
   };
 
   useEffect(() => {
-    const url =
-      "process.env.REACT_APP_API_TMDB_BASE_URL/580489/similar?api_key=process.env.REACT_APP_API_TMDB_API_KEY&language=en-US&page=1";
+    const url = `${process.env.REACT_APP_API_TMDB_BASE_URL}${props.id}/recommendations?api_key=${process.env.REACT_APP_API_TMDB_API_KEY}&language=en-US&page=2`;
+
     const fetchData = async () => {
       try {
         const resp = await axios.get(url);
@@ -75,7 +75,7 @@ function CarouselRec(props) {
     };
 
     fetchData();
-  }, []);
+  }, [props.id]);
   return (
     <div>
       <div className={styles.similar_span_div}>

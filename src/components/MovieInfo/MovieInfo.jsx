@@ -224,7 +224,7 @@ function MovieInfo(props) {
                   marginBottom: "4rem",
                 }}
               >
-                <CarouselRec />
+                <CarouselRec id={params.id} />
               </div>
             </div>
           </div>
