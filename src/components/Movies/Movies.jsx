@@ -26,8 +26,8 @@ function Movies(props) {
           <div className={styles.div_suggestion}>
             <span>Sort By</span>
           </div>
-          <div className={styles.div_hot_top}>
-            <ul className={styles.ul_hot_top}>
+          <div className={styles.div_top}>
+            <ul className={styles.ul_top}>
               <li>
                 <NavLink className={styles.popular_link} to="/">
                   <button onClick={() => props.getMovies()}>Popular</button>
