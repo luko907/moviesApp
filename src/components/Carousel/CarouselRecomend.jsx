@@ -12,7 +12,8 @@ function CarouselRec(props) {
 
   const CustomRightArrow = ({ onClick, ...rest }) => {
     const {
-      onMove,
+      // eslint-disable-next-line
+      onMove, // eslint-disable-next-line
       carouselState: { currentSlide, deviceType },
     } = rest;
     // onMove means if dragging or swiping in progress.
@@ -20,7 +21,8 @@ function CarouselRec(props) {
   };
   const CustomLeftArrow = ({ onClick, ...rest }) => {
     const {
-      onMove,
+      // eslint-disable-next-line
+      onMove, // eslint-disable-next-line
       carouselState: { currentSlide, deviceType },
     } = rest;
     // onMove means if dragging or swiping in progress.
