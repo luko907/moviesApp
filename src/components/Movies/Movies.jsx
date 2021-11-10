@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import styles from "./Movies.module.css";
-import Movie from "../Movie/Movie";
 import { getMovies } from "../../actions";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import styles from "./Movies.module.css";
 import "../../App.css";
+import Movie from "../Movie/Movie";
 
 function Movies(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +13,7 @@ function Movies(props) {
       setIsLoading(false);
     }, Math.random() * 250);
   }, []);
-  <div className="loader"></div>;
+
   return (
     <React.Fragment>
       {(props.moviL && props.moviL.length < 1) || props.moviL === undefined
@@ -26,8 +26,8 @@ function Movies(props) {
           <div className={styles.div_suggestion}>
             <span>Sort By</span>
           </div>
-          <div className={styles.div_hot_top}>
-            <ul className={styles.ul_hot_top}>
+          <div className={styles.div_top}>
+            <ul className={styles.ul_top}>
               <li>
                 <NavLink className={styles.popular_link} to="/">
                   <button onClick={() => props.getMovies()}>Popular</button>
