@@ -9,7 +9,6 @@ import "react-multi-carousel/lib/styles.css";
 function CarouselSimilar(props) {
   const [similar, setSimilar] = useState([]);
   const baseUrl = "https://image.tmdb.org/t/p/w500";
-
   const CustomRightArrow = ({ onClick, ...rest }) => {
     const {
       // eslint-disable-next-line
@@ -53,7 +52,7 @@ function CarouselSimilar(props) {
   };
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_API_TMDB_BASE_URL}580489/similar?api_key=${process.env.REACT_APP_API_TMDB_API_KEY}&language=en-US&page=1`;
+    const url = `${process.env.REACT_APP_API_TMDB_BASE_URL}${props.id}/similar?api_key=${process.env.REACT_APP_API_TMDB_API_KEY}&language=en-US&page=1`;
     const fetchData = async () => {
       try {
         const resp = await axios.get(url);
@@ -98,8 +97,8 @@ function CarouselSimilar(props) {
         itemClass="carousel-item-padding-40-px"
       >
         {similar &&
-          similar.map((item) => (
-            <div>
+          similar.map((item, i) => (
+            <div key={i}>
               <img
                 className={styles.similiar_img}
                 src={baseUrl + item.poster_path}

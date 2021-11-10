@@ -99,8 +99,8 @@ function CarouselRec(props) {
         itemClass="carousel-item-padding-40-px"
       >
         {similar &&
-          similar.map((item) => (
-            <div>
+          similar.map((item, i) => (
+            <div key={i}>
               <img
                 className={styles.similiar_img}
                 src={baseUrl + item.poster_path}
