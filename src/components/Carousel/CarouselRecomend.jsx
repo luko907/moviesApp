@@ -79,15 +79,15 @@ function CarouselRec(props) {
   }, [props.id]);
   return (
     <div>
-      <div className={styles.similar_span_div}>
+      <div className={styles.recomended_span_div}>
         <span>Recommended</span>
       </div>
       <Carousel
         renderButtonGroupOutside={true}
         centerMode={true}
         responsive={responsive}
-        swipeable={false}
-        draggable={false}
+        swipeable={true}
+        draggable={true}
         showDots={true}
         infinite={true}
         keyBoardControl={true}

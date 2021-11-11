@@ -54,12 +54,11 @@
 }
 .similar_span_div {
   display: flex;
+  justify-content: center;
 }
-
-.similar_span_div span {
-  font-weight: 700;
-  font-size: 30px;
-  margin-left: 0;
+.recomended_span_div {
+  display: flex;
+  justify-content: center;
 }
 
 .movie {
@@ -133,24 +132,54 @@ span {
   margin-right: 0.2rem;
   align-self: flex-start;
 }
+.similar_span_div span,
+.recomended_span_div span {
+  font-weight: 700;
+  font-size: 30px;
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 1550px) {
+  .similar_span_div span,
+  .recomended_span_div span {
+    font-size: 1.8rem;
+  }
+}
 @media only screen and (max-width: 1300px) {
   .movie {
     width: 15vw;
   }
 }
 @media only screen and (max-width: 1000px) {
+  .movie {
+    width: 18.5vw;
+  }
   span {
     margin-left: 1vw;
     font-size: 1.5vw;
     margin-bottom: 1vw;
+  }
+  .similar_span_div span,
+  .recomended_span_div span {
+    font-size: 3vw;
+  }
+  .movie_posterimg {
+    border-radius: 0.4rem;
   }
 }
 @media only screen and (max-width: 700px) {
   .movie {
     width: 18vw;
   }
+  .movie_posterimg {
+    border-radius: 0;
+  }
   span {
     font-size: 2.7vw;
+  }
+  .similar_span_div span,
+  .recomended_span_div span {
+    font-size: 3.5vw;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -166,6 +195,10 @@ span {
   .year {
     font-size: 2.8vw;
   }
+  .similar_span_div span,
+  .recomended_span_div span {
+    font-size: 4.2vw;
+  }
 }
 @media only screen and (max-width: 425px) {
   .div_play_icon:hover {
@@ -178,15 +211,12 @@ span {
 
 @media only screen and (max-width: 380px) {
   .movie {
-    width: 5.2rem;
-  }
-  .similar_span_div span {
-    font-size: 4.2vw;
+    width: 5.3rem;
   }
 }
 
 @media only screen and (max-width: 320px) {
   .movie {
-    width: 3.3rem;
+    width: 4rem;
   }
 }
