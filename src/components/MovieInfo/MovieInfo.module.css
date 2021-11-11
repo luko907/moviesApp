@@ -195,10 +195,6 @@
   .title span {
     font-size: 4vw;
   }
-  /*   .trailer_main span {
-    margin-top: 2vw;
-    font-size: 1.8rem;
-  } */
   .rates_container span {
     font-size: 1.7vw;
   }
@@ -347,3 +343,4 @@
     font-size: 2.5vw;
   }
 }
+
