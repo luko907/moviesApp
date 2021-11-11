@@ -94,7 +94,7 @@ function CarouselRec(props) {
         customRightArrow={<CustomRightArrow />}
         customLeftArrow={<CustomLeftArrow />}
         customTransition="all 1000ms"
-        transitionDuration={500}
+        transitionDuration={50}
         containerClass="carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile"]}
         itemClass="carousel-item-padding-40-px"
