@@ -85,7 +85,7 @@ function CarouselSimilar(props) {
         centerMode={true}
         responsive={responsive}
         swipeable={false}
-        draggable={false}
+        draggable={true}
         showDots={true}
         infinite={true}
         keyBoardControl={true}
