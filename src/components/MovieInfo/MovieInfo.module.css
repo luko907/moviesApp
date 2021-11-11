@@ -286,9 +286,7 @@
   .rates_container span {
     font-size: 2.5vw;
   }
-  /*   .trailer_main span {
-    font-size: 3.5vw;
-  } */
+
   .year_time_genre_container {
     flex-direction: column;
   }
@@ -312,24 +310,6 @@
 }
 @media only screen and (max-width: 560px) {
   .movieInfo_container {
-    width: 85%;
-    min-height: 55vh;
-  }
-  /*   .trailer_main span {
-    align-self: center;
-    margin-bottom: 4vw;
-  } */
-  .rating img {
-    width: 3vw;
-    height: auto;
-  }
-  .IMDbRate img {
-    width: 6vw;
-    height: auto;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .movieInfo_container {
     width: 100%;
     min-height: 55vh;
   }
@@ -341,9 +321,6 @@
     width: 6.6vw;
     height: auto;
   }
-  /*   .trailer_main span {
-    font-size: 4.2vw;
-  } */
   .year_time_genre_container span {
     font-size: 3.5vw;
   }
