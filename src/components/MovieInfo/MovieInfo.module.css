@@ -312,24 +312,6 @@
 }
 @media only screen and (max-width: 560px) {
   .movieInfo_container {
-    width: 85%;
-    min-height: 55vh;
-  }
-  /*   .trailer_main span {
-    align-self: center;
-    margin-bottom: 4vw;
-  } */
-  .rating img {
-    width: 3vw;
-    height: auto;
-  }
-  .IMDbRate img {
-    width: 6vw;
-    height: auto;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .movieInfo_container {
     width: 100%;
     min-height: 55vh;
   }
@@ -370,3 +352,43 @@
     font-size: 2.5vw;
   }
 }
+/* @media only screen and (max-width: 400px) {
+  .movieInfo_container {
+    width: 100%;
+    min-height: 55vh;
+  }
+  .rating img {
+    width: 3.6vw;
+    height: auto;
+  }
+  .IMDbRate img {
+    width: 6.6vw;
+    height: auto;
+  }
+  .year_time_genre_container span {
+    font-size: 3.5vw;
+  }
+  .year_time_genre_container {
+    flex-direction: column;
+  }
+  .info_year_info_runtime_container {
+    width: 50%;
+    justify-content: space-between;
+  }
+  .rates_container span {
+    font-size: 3.5vw;
+  }
+  .plot p {
+    font-size: 3.8vw;
+  }
+  .title span {
+    font-size: 6vw;
+  }
+  .director_actors_studios_title span {
+    font-size: 3vw;
+  }
+  .director_actors_studios_names span {
+    font-size: 2.5vw;
+  }
+}
+ */
