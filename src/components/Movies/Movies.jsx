@@ -6,11 +6,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import styles from "./Movies.module.css";
 import "../../App.css";
+
 import Movie from "../Movie/Movie";
+import Dropdown from "../DropDown/DropDown";
+import DropdownYear from "../DropDown/DropDownYear";
 
 function Movies(props) {
   const [isLoading, setIsLoading] = useState(true);
-  const [selected, setSelected] = useState("Genres");
   useEffect(() => {
     setTimeout(function () {
       setIsLoading(false);
@@ -18,12 +20,7 @@ function Movies(props) {
   }, []);
   function popularHandler() {
     props.getMovies();
-    setSelected("Genres");
   }
-  const handleChange = (event) => {
-    setSelected(event.target.value);
-    props.getMovies();
-  };
   return (
     <React.Fragment>
       {(props.moviL && props.moviL.length < 1) || props.moviL === undefined
@@ -45,16 +42,10 @@ function Movies(props) {
                 </NavLink>
               </li>
               <li>
-                <NavLink className={styles.popular_link} to="/">
-                  <select value={selected} onChange={handleChange}>
-                    <option value="Genres" disabled>
-                      Genres
-                    </option>
-                    <option value="Action">Action</option>
-                    <option value="Horror">Horror</option>
-                    <option value="Comedy">Comedy</option>
-                  </select>
-                </NavLink>
+                <Dropdown />
+              </li>
+              <li>
+                <DropdownYear />
               </li>
             </ul>
           </div>
