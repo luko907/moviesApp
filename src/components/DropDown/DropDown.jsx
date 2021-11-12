@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import "./Dropdown.css";
+import "./DropDown.css";
 
 export default function Dropdown() {
-  const [isOpen, setIsOpen] = useState(false);
   const [haveText, setHaveText] = useState("");
   const [genres, setGenres] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [clickedOutside, setClickedOutside] = useState(false);
+  const myRef = useRef();
+
   useEffect(() => {
     const url = `process.env.REACT_APP_GETGENRELIST`;
     const fetchData = async () => {
@@ -17,10 +20,21 @@ export default function Dropdown() {
       }
     };
     fetchData();
-    return () => {};
-  }, []);
+    document.addEventListener("mousedown", handleClickOutside);
 
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      setClickedOutside(false);
+      setIsOpen(false);
+    };
+  }, [clickedOutside]);
+  const handleClickOutside = (e) => {
+    if (!myRef.current.contains(e.target)) {
+      setClickedOutside(true);
+    }
+  };
   const handleClick = () => {
+    setClickedOutside(false);
     setIsOpen(!isOpen);
   };
 
@@ -44,7 +58,8 @@ export default function Dropdown() {
 
   return (
     <div
-      className={isOpen ? "dropdown active" : "dropdown"}
+      ref={myRef}
+      className={!clickedOutside && isOpen ? "dropdown active" : "dropdown"}
       onClick={handleClick}
     >
       <div className="dropdown__text">{!haveText ? "Genres" : haveText}</div>
