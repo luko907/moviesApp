@@ -36,7 +36,7 @@ export function getActual(title) {
 
 export function getGenre(id) {
   const response = [];
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= Math.floor(Math.random() * (40 - 20)) + 20; i++) {
     response.push(
       fetch(
         `process.env.REACT_APP_GETGENRE${id}&include_video=false&page=${i}&with_watch_monetization_types=flatrate`
