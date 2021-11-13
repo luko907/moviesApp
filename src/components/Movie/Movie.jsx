@@ -8,38 +8,66 @@ function Movie(props) {
   const baseUrl = "https://image.tmdb.org/t/p/w500";
   return (
     <React.Fragment>
-      {props.moviesLoaded.map((item) => (
-        <div className={styles.movie} key={item.id}>
-          <Link className={styles.link} to={`/movies/${item.id}`}>
-            <div className={styles.movie_img}>
-              <img
-                className={styles.movie_posterimg}
-                src={baseUrl + item.poster_path}
-                alt=""
-              />
-              <div className={styles.div_play_icon}>
-                <img className={styles.play_icon} src={playLogo} alt="" />
-              </div>
+      {props.moviesActual.length
+        ? props.moviesActual.map((item) => (
+            <div className={styles.movie} key={item.id}>
+              <Link className={styles.link} to={`/movies/${item.id}`}>
+                <div className={styles.movie_img}>
+                  <img
+                    className={styles.movie_posterimg}
+                    src={baseUrl + item.poster_path}
+                    alt=""
+                  />
+                  <div className={styles.div_play_icon}>
+                    <img className={styles.play_icon} src={playLogo} alt="" />
+                  </div>
+                </div>
+                <div className={styles.description_container}>
+                  <div className={styles.description}>
+                    <span className={styles.title}>{item.title}</span>
+                    <span className={styles.year}>
+                      {item.release_date.length > 4
+                        ? item.release_date.slice(0, -6)
+                        : item.release_date}
+                    </span>
+                  </div>
+                </div>
+              </Link>
             </div>
-            <div className={styles.description_container}>
-              <div className={styles.description}>
-                <span className={styles.title}>{item.title}</span>
-                <span className={styles.year}>
-                  {item.release_date.length > 4
-                    ? item.release_date.slice(0, -6)
-                    : item.release_date}
-                </span>
-              </div>
+          ))
+        : props.moviesLoaded.map((item) => (
+            <div className={styles.movie} key={item.id}>
+              <Link className={styles.link} to={`/movies/${item.id}`}>
+                <div className={styles.movie_img}>
+                  <img
+                    className={styles.movie_posterimg}
+                    src={baseUrl + item.poster_path}
+                    alt=""
+                  />
+                  <div className={styles.div_play_icon}>
+                    <img className={styles.play_icon} src={playLogo} alt="" />
+                  </div>
+                </div>
+                <div className={styles.description_container}>
+                  <div className={styles.description}>
+                    <span className={styles.title}>{item.title}</span>
+                    <span className={styles.year}>
+                      {item.release_date.length > 4
+                        ? item.release_date.slice(0, -6)
+                        : item.release_date}
+                    </span>
+                  </div>
+                </div>
+              </Link>
             </div>
-          </Link>
-        </div>
-      ))}
+          ))}
     </React.Fragment>
   );
 }
 
 const mapStateToProps = (state) => ({
   moviesLoaded: state.moviesLoaded,
+  moviesActual: state.moviesActual,
 });
 
 export default connect(mapStateToProps, null)(Movie);

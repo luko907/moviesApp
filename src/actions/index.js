@@ -33,3 +33,29 @@ export function getActual(title) {
     fetchData();
   };
 }
+
+export function getGenre(id) {
+  const response = [];
+  for (let i = 1; i <= 100; i++) {
+    response.push(
+      fetch(
+        `process.env.REACT_APP_GETGENRE${id}&include_video=false&page=${i}&with_watch_monetization_types=flatrate`
+      ).then((value) => value.json())
+    );
+  }
+  return function (dispatch) {
+    Promise.all(response)
+      .then((value) => {
+        dispatch({ type: "GET_GENRE", payload: value });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+}
+
+export function getReset() {
+  return function (dispatch) {
+    dispatch({ type: "RESET" });
+  };
+}

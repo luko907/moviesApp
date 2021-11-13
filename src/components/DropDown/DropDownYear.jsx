@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./DropDown.css";
+import "./DropDownYear.css";
+import Slider from "./ReactSlider.jsx";
 
 export default function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,14 +25,24 @@ export default function Dropdown() {
     setClickedOutside(false);
     setIsOpen(!isOpen);
   };
+  const itemList = () => {
+    return (
+      <div className="dropdownYear__items">
+        <Slider />
+      </div>
+    );
+  };
 
   return (
     <div
       ref={myRef}
-      className={!clickedOutside && isOpen ? "dropdown active" : "dropdown"}
+      className={
+        !clickedOutside && isOpen ? "dropdownYear active" : "dropdownYear"
+      }
       onClick={handleClick}
     >
-      <div className="dropdown__text">Release date</div>
+      <div className="dropdownYear__text">Release date</div>
+      {itemList()}
     </div>
   );
 }

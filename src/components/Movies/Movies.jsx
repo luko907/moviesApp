@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getMovies } from "../../actions";
+import { getMovies, getReset } from "../../actions";
 import { connect } from "react-redux";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,13 +19,12 @@ function Movies(props) {
     }, Math.random() * 250);
   }, []);
   function popularHandler() {
+    props.getReset();
     props.getMovies();
   }
   return (
     <React.Fragment>
-      {(props.moviL && props.moviL.length < 1) || props.moviL === undefined
-        ? props.getMovies()
-        : null}
+      {props.moviL && props.moviL.length < 1 ? props.getMovies() : null}
       {isLoading ? (
         <div className="loader"></div>
       ) : (
@@ -49,6 +48,10 @@ function Movies(props) {
               </li>
             </ul>
           </div>
+          <div className={styles.moviesCount_div}>
+            <span>{props.moviL.length} titles</span>
+          </div>
+
           <div className={styles.movie_cards}>
             <Movie />
           </div>
@@ -65,6 +68,7 @@ const mapStateToProps = (state) => ({
 function mapDispatchToProps(dispatch) {
   return {
     getMovies: () => dispatch(getMovies()),
+    getReset: () => dispatch(getReset()),
   };
 }
 

@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { connect } from "react-redux";
 import "./DropDown.css";
+import { getGenre, getReset } from "../../actions/index";
 
-export default function Dropdown() {
+function Dropdown(props) {
   const [haveText, setHaveText] = useState("");
+  const [idGenre, setIdGenre] = useState(null);
   const [genres, setGenres] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [clickedOutside, setClickedOutside] = useState(false);
+  const [clickedOutside, setClickedOutside] = useState(true);
   const myRef = useRef();
 
   useEffect(() => {
@@ -14,7 +17,7 @@ export default function Dropdown() {
     const fetchData = async () => {
       try {
         const resp = await axios.get(url);
-        setGenres(resp.data.genres.map((item) => item.name));
+        setGenres(resp.data.genres);
       } catch (error) {
         console.log("error", error);
       }
@@ -22,12 +25,11 @@ export default function Dropdown() {
     fetchData();
     document.addEventListener("mousedown", handleClickOutside);
 
+    props.getGenre(idGenre);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      setClickedOutside(false);
-      setIsOpen(false);
     };
-  }, [clickedOutside]);
+  }, [clickedOutside, props, idGenre]);
   const handleClickOutside = (e) => {
     if (!myRef.current.contains(e.target)) {
       setClickedOutside(true);
@@ -39,17 +41,20 @@ export default function Dropdown() {
   };
 
   const handleText = (ev) => {
+    setIdGenre(ev.currentTarget.id);
     setHaveText(ev.currentTarget.textContent);
+    props.getReset();
   };
 
   const itemList = (props) => {
     const list = props.map((item) => (
       <div
         onClick={handleText}
+        id={item.id}
         className="dropdown__item"
-        key={item.toString()}
+        key={item.id}
       >
-        {item}
+        {item.name}
       </div>
     ));
 
@@ -67,55 +72,12 @@ export default function Dropdown() {
     </div>
   );
 }
-/* export default class Dropdown extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      isOpen: false,
-      haveText: "",
-    };
-  }
-
-  render() {
-    const { isOpen, haveText } = this.state;
-
-    return (
-      <div
-        className={isOpen ? "dropdown active" : "dropdown"}
-        onClick={this.handleClick}
-      >
-        <div className="dropdown__text">
-          {!haveText ? "Select Race" : haveText}
-        </div>
-        {this.itemList(race)}
-      </div>
-    );
-  }
-
-  handleClick = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
+function mapDispatchToProps(dispatch) {
+  return {
+    getGenre: (id) => dispatch(getGenre(id)),
+    getReset: () => dispatch(getReset()),
   };
+}
 
-  handleText = (ev) => {
-    this.setState({
-      haveText: ev.currentTarget.textContent,
-    });
-  };
-
-  itemList = (props) => {
-    const list = props.map((item) => (
-      <div
-        onClick={this.handleText}
-        className="dropdown__item"
-        key={item.toString()}
-      >
-        {item}
-      </div>
-    ));
-
-    return <div className="dropdown__items"> {list} </div>;
-  };
-} */
+export default connect(null, mapDispatchToProps)(Dropdown);
