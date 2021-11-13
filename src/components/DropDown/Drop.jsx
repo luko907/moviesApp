@@ -23,6 +23,8 @@ function Drop(props) {
       }
     };
     fetchData();
+    console.log(haveText);
+    console.log(idGenre);
     document.addEventListener("mousedown", handleClickOutside);
 
     props.getGenre(idGenre);
