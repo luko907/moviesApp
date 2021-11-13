@@ -36,7 +36,7 @@ export function getActual(title) {
 
 export function getGenre(id) {
   const response = [];
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= Math.floor(Math.random() * (40 - 20)) + 20; i++) {
     response.push(
       fetch(
         `https://api.themoviedb.org/3/discover/movie?api_key=715369ad83702bbb01d37884acb031ed&language=en-US&sort_by=popularity.desc&include_adult=false&with_genres=${id}&include_video=false&page=${i}&with_watch_monetization_types=flatrate`
