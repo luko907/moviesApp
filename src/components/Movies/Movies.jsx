@@ -48,9 +48,13 @@ function Movies(props) {
             </ul>
           </div>
           <div className={styles.moviesCount_div}>
-            <span>{props.moviL.length} titles</span>
+            <span>
+              {props.moviActual.length > 0
+                ? props.moviActual.length
+                : props.moviL.length}{" "}
+              titles
+            </span>
           </div>
-
           <div className={styles.movie_cards}>
             <Movie />
           </div>
@@ -62,6 +66,7 @@ function Movies(props) {
 
 const mapStateToProps = (state) => ({
   moviL: state.moviesLoaded,
+  moviActual: state.moviesActual,
 });
 
 function mapDispatchToProps(dispatch) {
