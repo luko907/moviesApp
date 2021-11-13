@@ -6,10 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import styles from "./Movies.module.css";
 import "../../App.css";
-
 import Movie from "../Movie/Movie";
-import Dropdown from "../DropDown/DropDown";
-import DropdownYear from "../DropDown/DropDownYear";
+import Drop from "../DropDown/Drop.jsx";
+import Dropyear from "../DropDown/Dropyear.jsx";
 
 function Movies(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,10 +40,10 @@ function Movies(props) {
                 </NavLink>
               </li>
               <li>
-                <Dropdown />
+                <Drop />
               </li>
               <li>
-                <DropdownYear />
+                <Dropyear />
               </li>
             </ul>
           </div>

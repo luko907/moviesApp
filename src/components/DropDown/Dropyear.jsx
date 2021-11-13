@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./DropDownYear.css";
+import "./Dropyear.css";
 import Slider from "./ReactSlider.jsx";
 
-export default function Dropdown() {
+export default function Dropyear() {
   const [isOpen, setIsOpen] = useState(false);
   const [clickedOutside, setClickedOutside] = useState(false);
   const myRef = useRef();
