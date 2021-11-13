@@ -3,7 +3,9 @@ import "./ReactSlider.css";
 export default function Slider(props) {
   const [value, setValue] = useState(1950);
   const [final, setFinal] = useState(null);
-  useEffect(() => {});
+  useEffect(() => {
+    console.log(final);
+  });
 
   return (
     <div className="slider-parent">

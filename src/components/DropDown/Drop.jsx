@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import "./DropDown.css";
+import "./Drop.css";
 import { getGenre, getReset } from "../../actions/index";
 
-function Dropdown(props) {
+function Drop(props) {
   const [haveText, setHaveText] = useState("");
   const [idGenre, setIdGenre] = useState(null);
   const [genres, setGenres] = useState([]);
@@ -80,4 +80,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null, mapDispatchToProps)(Dropdown);
+export default connect(null, mapDispatchToProps)(Drop);
