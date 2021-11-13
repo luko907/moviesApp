@@ -33,3 +33,29 @@ export function getActual(title) {
     fetchData();
   };
 }
+
+export function getGenre(id) {
+  const response = [];
+  for (let i = 1; i <= 100; i++) {
+    response.push(
+      fetch(
+        `https://api.themoviedb.org/3/discover/movie?api_key=715369ad83702bbb01d37884acb031ed&language=en-US&sort_by=popularity.desc&include_adult=false&with_genres=${id}&include_video=false&page=${i}&with_watch_monetization_types=flatrate`
+      ).then((value) => value.json())
+    );
+  }
+  return function (dispatch) {
+    Promise.all(response)
+      .then((value) => {
+        dispatch({ type: "GET_GENRE", payload: value });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+}
+
+export function getReset() {
+  return function (dispatch) {
+    dispatch({ type: "RESET" });
+  };
+}

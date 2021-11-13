@@ -15,9 +15,8 @@ function SearchBar(props) {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    props.getActual(movieInfo);
-    setMovieInfo("");
     history.push("/");
+    props.getActual(movieInfo);
   }
 
   return (
