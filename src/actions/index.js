@@ -39,7 +39,7 @@ export function getGenre(id) {
   for (let i = 1; i <= 40; i++) {
     response.push(
       fetch(
-        `https://api.themoviedb.org/3/discover/movie?api_key=715369ad83702bbb01d37884acb031ed&language=en-US&sort_by=popularity.desc&include_adult=false&with_genres=${id}&include_video=false&page=${i}&with_watch_monetization_types=flatrate`
+        `${process.env.REACT_APP_GETGENRE}${id}&include_video=false&page=${i}&with_watch_monetization_types=flatrate`
       ).then((value) => value.json())
     );
   }

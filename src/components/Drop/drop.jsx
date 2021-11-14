@@ -13,7 +13,7 @@ function Drop(props) {
   const myRef = useRef();
 
   useEffect(() => {
-    const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=715369ad83702bbb01d37884acb031ed&language=en-US`;
+    const url = process.env.REACT_APP_GETGENRELIST;
     const fetchData = async () => {
       try {
         const resp = await axios.get(url);
