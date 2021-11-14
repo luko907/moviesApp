@@ -71,6 +71,7 @@ function MovieInfo(props) {
     setTimeout(function () {
       setIsLoading(false);
     }, Math.random() * (1000 - 400) + 400);
+
     return () => {
       document.body.querySelector("header").style.flexDirection = "column";
       clearInterval(navBarStyles);
@@ -83,7 +84,6 @@ function MovieInfo(props) {
     movieDetails.imdb_id,
     info.Title,
   ]);
-
   return (
     <React.Fragment>
       {isLoading && flag === null && info.Runtime === undefined ? (

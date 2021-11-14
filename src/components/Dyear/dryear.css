@@ -1,0 +1,77 @@
+.dropdownYear {
+  border-radius: 2px;
+  top: 50px;
+  margin: 0 auto;
+  width: 170px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.dropdownYear__text {
+  font-size: 16px;
+  color: white;
+  padding: 14px 17px;
+  cursor: pointer;
+  text-align: center;
+  height: auto;
+}
+
+.dropdownYear__text:hover {
+  color: white;
+  background-color: rgb(231, 26, 26);
+  border-radius: 15px;
+}
+
+.dropdownYear__text:after {
+  content: "";
+  transition: all 0.3s;
+  border: solid #ccc;
+  border-width: 0 1px 1px 0;
+  float: right;
+  margin-top: 8px;
+  margin-right: 6px;
+  padding: 5px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.dropdownYear.active .dropdownYear__text:after {
+  margin-top: 1px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.dropdownYear__items {
+  visibility: hidden;
+  opacity: 1;
+  transition: max-height 0.6s ease;
+  width: 180px;
+  height: 0;
+  border-radius: 8px;
+}
+
+.dropdownYear.active .dropdownYear__items {
+  display: flex;
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  transition: max-height 0.7s, opacity 3s, visibility 4s ease;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: auto;
+}
+
+.dropdownYear__item {
+  cursor: pointer;
+  padding: 10px 18px;
+}
+
+.dropdownYear__item:hover {
+  border-radius: 8px;
+  color: white;
+  background: #3a4143;
+}

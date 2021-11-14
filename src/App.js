@@ -22,6 +22,7 @@ function App() {
 
 const mapStateToProps = (state) => ({
   moviesL: state.moviesLoaded,
+  moviesActual: state.moviesActual,
 });
 
 export default connect(mapStateToProps, null)(App);

@@ -1,39 +1,59 @@
 import React, { useState, useEffect } from "react";
-import { getMovies } from "../../actions";
+import { getMovies, getReset } from "../../actions";
 import { connect } from "react-redux";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import styles from "./Movies.module.css";
 import "../../App.css";
 import Movie from "../Movie/Movie";
+import Drop from "../Drop/drop";
+/* import DropYear from "../Dyear/dryear"; */
 
 function Movies(props) {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    if (props.moviL.length < 1) {
+      props.getMovies();
+    }
     setTimeout(function () {
       setIsLoading(false);
-    }, Math.random() * 250);
-  }, []);
-
+    }, Math.random() * 240);
+  }, [props]);
+  function popularHandler() {
+    props.getReset();
+    props.getMovies();
+  }
   return (
     <React.Fragment>
-      {(props.moviL && props.moviL.length < 1) || props.moviL === undefined
-        ? props.getMovies()
-        : null}
       {isLoading ? (
         <div className="loader"></div>
       ) : (
         <div className={styles.container}>
           <div className={styles.div_suggestion}>
-            <span>Sort By</span>
+            <FontAwesomeIcon className={styles.filter} icon={faFilter} />
+            <span>Filters</span>
           </div>
           <div className={styles.div_top}>
             <ul className={styles.ul_top}>
               <li>
                 <NavLink className={styles.popular_link} to="/">
-                  <button onClick={() => props.getMovies()}>Popular</button>
+                  <button onClick={() => popularHandler()}>Popular</button>
                 </NavLink>
               </li>
+              <li>
+                <Drop />
+              </li>
+              <li>{/*                <DropYear /> */}</li>
             </ul>
+          </div>
+          <div className={styles.moviesCount_div}>
+            <span>
+              {props.moviActual.length > 0
+                ? props.moviActual.length
+                : props.moviL.length}{" "}
+              titles
+            </span>
           </div>
           <div className={styles.movie_cards}>
             <Movie />
@@ -46,11 +66,13 @@ function Movies(props) {
 
 const mapStateToProps = (state) => ({
   moviL: state.moviesLoaded,
+  moviActual: state.moviesActual,
 });
 
 function mapDispatchToProps(dispatch) {
   return {
     getMovies: () => dispatch(getMovies()),
+    getReset: () => dispatch(getReset()),
   };
 }
 

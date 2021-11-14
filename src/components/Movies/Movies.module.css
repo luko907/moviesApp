@@ -5,6 +5,21 @@ select,
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 7px;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  margin-right: 2rem;
+  margin-top: 6px;
+  padding: 1rem;
+  padding-right: 2rem;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -20,20 +35,21 @@ a {
   margin-top: 0.8rem;
 }
 .div_suggestion span {
+  margin: 0;
   font-size: 25px;
 }
 .div_top {
   display: flex;
-  margin-bottom: 1.5rem;
   width: 100%;
   justify-content: flex-start;
   background-color: rgb(10, 21, 31);
 }
 .ul_top {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .ul_top li button {
@@ -41,14 +57,41 @@ a {
   border: none;
   color: rgb(220 199 199);
   padding: 7px;
-  font-size: 17px;
+  font-size: 20px;
   border-radius: 10px;
   width: 150px;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
 }
-.ul_top li button:hover {
+
+.ul_top li label {
+  background-color: transparent;
+  border: none;
+  color: rgb(220 199 199);
+  padding: 7px;
+  font-size: 22px;
+  border-radius: 10px;
+  width: 150px;
+  font-family: "Poppins", sans-serif;
+}
+.ul_top li select {
+  background-color: transparent;
+  border: none;
+  color: rgb(220 199 199);
+  padding: 7px;
+  font-size: 17px;
+  border-radius: 10px;
+  width: 120px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+.ul_top li button:hover,
+.ul_top li select:hover {
   background-color: rgb(231, 26, 26);
+}
+.ul_top li select:focus {
+  background-color: rgb(10, 21, 31);
 }
 .ul_top li button:focus {
   background-color: rgba(118, 110, 241, 0.596);
@@ -62,6 +105,38 @@ a {
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding-top: 1.5rem;
+}
+.filter {
+  align-self: center;
+  font-size: 24px;
+  margin-right: 14px;
+}
+.moviesCount_div {
+  display: flex;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.7;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.moviesCount_div span {
+  font-size: 20px;
+}
+@media only screen and (max-width: 1100px) {
+  .moviesCount_div span {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .popular_link {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 @media only screen and (max-width: 415px) {
