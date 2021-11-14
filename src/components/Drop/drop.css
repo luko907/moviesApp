@@ -76,3 +76,18 @@
   color: white;
   background: #3a4143;
 }
+
+@media only screen and (max-width: 1100px) {
+  .dropdown__items {
+    background-color: rgba(34, 43, 51, 0.924);
+  }
+}
+@media only screen and (max-width: 500px) {
+  .dropdown.active .dropdown__items {
+    flex-direction: column;
+    margin-left: 11vw;
+  }
+  .dropdown__item {
+    padding: 15px 23px;
+  }
+}

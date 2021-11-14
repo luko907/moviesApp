@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import "./Drop.css";
+import "./drop.css";
 import { getGenre, getReset } from "../../actions/index";
 
 function Drop(props) {

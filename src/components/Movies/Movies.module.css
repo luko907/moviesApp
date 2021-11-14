@@ -46,9 +46,10 @@ select {
 }
 .ul_top {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .ul_top li button {
@@ -126,6 +127,18 @@ select {
 .moviesCount_div span {
   font-size: 20px;
 }
+@media only screen and (max-width: 1100px) {
+  .moviesCount_div span {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .popular_link {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 @media only screen and (max-width: 415px) {
   .ul_top {
     margin-left: 0;

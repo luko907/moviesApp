@@ -7,8 +7,8 @@ import { NavLink } from "react-router-dom";
 import styles from "./Movies.module.css";
 import "../../App.css";
 import Movie from "../Movie/Movie";
-import Drop from "../Dropdown/Drop.jsx";
-import Dropyear from "../Dropdown/Dropyear.jsx";
+import Drop from "../Drop/drop";
+import DropYear from "../Dyear/dryear";
 
 function Movies(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ function Movies(props) {
     }
     setTimeout(function () {
       setIsLoading(false);
-    }, Math.random() * 250);
+    }, Math.random() * 240);
   }, [props]);
   function popularHandler() {
     props.getReset();
@@ -45,7 +45,7 @@ function Movies(props) {
                 <Drop />
               </li>
               <li>
-                <Dropyear />
+                <DropYear />
               </li>
             </ul>
           </div>

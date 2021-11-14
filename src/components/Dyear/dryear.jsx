@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./Dropyear.css";
+import "./dryear.css";
 import Slider from "./ReactSlider.jsx";
 
-export default function Dropyear() {
+export default function Dryear() {
   const [isOpen, setIsOpen] = useState(false);
   const [clickedOutside, setClickedOutside] = useState(false);
   const myRef = useRef();
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       setClickedOutside(false);
