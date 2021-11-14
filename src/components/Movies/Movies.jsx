@@ -13,17 +13,19 @@ import Dropyear from "../Dropdown/Dropyear.jsx";
 function Movies(props) {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    if (props.moviL.length < 1) {
+      props.getMovies();
+    }
     setTimeout(function () {
       setIsLoading(false);
     }, Math.random() * 250);
-  }, []);
+  }, [props]);
   function popularHandler() {
     props.getReset();
     props.getMovies();
   }
   return (
     <React.Fragment>
-      {props.moviL.length < 1 ? props.getMovies() : null}
       {isLoading ? (
         <div className="loader"></div>
       ) : (
