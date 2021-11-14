@@ -8,7 +8,7 @@ import styles from "./Movies.module.css";
 import "../../App.css";
 import Movie from "../Movie/Movie";
 import Drop from "../Drop/drop";
-import DropYear from "../Dyear/dryear";
+/* import DropYear from "../Dyear/dryear"; */
 
 function Movies(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -44,9 +44,7 @@ function Movies(props) {
               <li>
                 <Drop />
               </li>
-              <li>
-                <DropYear />
-              </li>
+              <li>{/*                <DropYear /> */}</li>
             </ul>
           </div>
           <div className={styles.moviesCount_div}>
