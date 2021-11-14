@@ -7,8 +7,8 @@ import { NavLink } from "react-router-dom";
 import styles from "./Movies.module.css";
 import "../../App.css";
 import Movie from "../Movie/Movie";
-import Drop from "../DropDown/Drop.jsx";
-import Dropyear from "../DropDown/Dropyear.jsx";
+import Drop from "../Dropdown/Drop.jsx";
+import Dropyear from "../Dropdown/Dropyear.jsx";
 
 function Movies(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +23,7 @@ function Movies(props) {
   }
   return (
     <React.Fragment>
-      {props.moviL && props.moviL.length < 1 ? props.getMovies() : null}
+      {props.moviL.length < 1 ? props.getMovies() : null}
       {isLoading ? (
         <div className="loader"></div>
       ) : (
