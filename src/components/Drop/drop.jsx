@@ -13,7 +13,7 @@ function Drop(props) {
   const myRef = useRef();
 
   useEffect(() => {
-    const url = `process.env.REACT_APP_GETGENRELIST`;
+    const url = process.env.REACT_APP_GETGENRELIST;
     const fetchData = async () => {
       try {
         const resp = await axios.get(url);
