@@ -59,15 +59,3 @@ export function getReset() {
     dispatch({ type: "RESET" });
   };
 }
-
-export function getMoviedetails(value) {
-  return function (dispatch) {
-    dispatch({ type: "RESET", payload: value });
-  };
-}
-
-export function getInfo(value) {
-  return function (dispatch) {
-    dispatch({ type: "RESET", payload: value });
-  };
-}
