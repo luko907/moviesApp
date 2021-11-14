@@ -55,19 +55,7 @@ function appReducer(state = initialState, action) {
           ),
       };
     }
-    case "GET_MOVIESDETAIL": {
-      console.log(action.payload);
-      return {
-        ...state,
-        movieDetails: action.payload,
-      };
-    }
-    case "GET_INFO": {
-      return {
-        ...state,
-        info: action.payload,
-      };
-    }
+
     case "RESET": {
       return {
         ...state,
