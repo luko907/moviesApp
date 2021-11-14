@@ -1,6 +1,8 @@
 const initialState = {
   moviesLoaded: [],
   moviesActual: [],
+  movieDetails: [],
+  info: [],
 };
 
 function appReducer(state = initialState, action) {
@@ -51,6 +53,19 @@ function appReducer(state = initialState, action) {
               v.release_date !== "" &&
               v.release_date !== undefined
           ),
+      };
+    }
+    case "GET_MOVIESDETAIL": {
+      console.log(action.payload);
+      return {
+        ...state,
+        movieDetails: action.payload,
+      };
+    }
+    case "GET_INFO": {
+      return {
+        ...state,
+        info: action.payload,
       };
     }
     case "RESET": {

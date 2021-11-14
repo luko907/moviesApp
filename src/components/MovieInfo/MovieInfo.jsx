@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import { getMoviedetails, getInfo } from "../../actions/index.js";
 import { StyleRoot } from "radium";
 import Trailer from "../Trailers/Trailers";
 import styles from "./MovieInfo.module.css";
@@ -71,6 +72,7 @@ function MovieInfo(props) {
     setTimeout(function () {
       setIsLoading(false);
     }, Math.random() * (1000 - 400) + 400);
+
     return () => {
       document.body.querySelector("header").style.flexDirection = "column";
       clearInterval(navBarStyles);
@@ -82,8 +84,10 @@ function MovieInfo(props) {
     info.Poster,
     movieDetails.imdb_id,
     info.Title,
+    props,
+    info,
+    movieDetails,
   ]);
-
   return (
     <React.Fragment>
       {isLoading && flag === null && info.Runtime === undefined ? (
@@ -236,6 +240,13 @@ function MovieInfo(props) {
 
 const mapStateToProps = (state) => ({
   moviesLoaded: state.moviesLoaded,
+  moviesDet: state.movieDetails,
+  infoe: state.info,
 });
-
-export default connect(mapStateToProps, null)(MovieInfo);
+function mapDispatchToProps(dispatch) {
+  return {
+    getMoviedetails: (value) => dispatch(getMoviedetails(value)),
+    getInfo: (value) => dispatch(getInfo(value)),
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(MovieInfo);
