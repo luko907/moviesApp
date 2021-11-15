@@ -59,3 +59,9 @@ export function getReset() {
     dispatch({ type: "RESET" });
   };
 }
+
+export function yearFilter(year) {
+  return function (dispatch) {
+    dispatch({ type: "YEAR_FILTER", payload: year });
+  };
+}

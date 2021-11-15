@@ -113,6 +113,7 @@ select {
 }
 .moviesCount_div {
   display: flex;
+  width: 130px;
   margin-left: 2rem;
   margin-top: 1rem;
   margin-bottom: 2rem;

@@ -6,7 +6,6 @@ import { getGenre, getReset } from "../../actions/index";
 
 function Drop(props) {
   const [haveText, setHaveText] = useState("");
-  const [idGenre, setIdGenre] = useState(null);
   const [genres, setGenres] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [clickedOutside, setClickedOutside] = useState(true);
@@ -25,12 +24,10 @@ function Drop(props) {
     fetchData();
 
     document.addEventListener("mousedown", handleClickOutside);
-
-    props.getGenre(idGenre);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [clickedOutside, props, idGenre]);
+  }, [clickedOutside, isOpen]);
   const handleClickOutside = (e) => {
     if (!myRef.current.contains(e.target)) {
       setClickedOutside(true);
@@ -40,9 +37,8 @@ function Drop(props) {
     setClickedOutside(false);
     setIsOpen(!isOpen);
   };
-
   const handleText = (ev) => {
-    setIdGenre(ev.currentTarget.id);
+    props.getGenre(ev.currentTarget.id);
     setHaveText(ev.currentTarget.textContent);
     props.getReset();
   };
@@ -59,7 +55,7 @@ function Drop(props) {
       </div>
     ));
 
-    return <div className="dropdown__items"> {list} </div>;
+    return <div className="dropdown__items">{list}</div>;
   };
 
   return (
