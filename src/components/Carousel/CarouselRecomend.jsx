@@ -66,8 +66,8 @@ function CarouselRec(props) {
             v.backdrop_path !== null &&
             v.overview !== null &&
             v.title !== null &&
-            v.release_date !== "" &&
-            v.release_date !== undefined
+            v.release_date !== null &&
+            v.vote_count > 20
         );
         setSimilar(final);
       } catch (error) {

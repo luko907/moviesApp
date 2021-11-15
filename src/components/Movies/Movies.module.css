@@ -96,7 +96,7 @@ select {
 .ul_top li button:focus {
   background-color: rgba(118, 110, 241, 0.596);
 }
-.popular_link {
+.topRating_link_link {
   margin-right: 1rem;
   margin-left: 1rem;
 }
@@ -134,7 +134,7 @@ select {
   }
 }
 @media only screen and (max-width: 620px) {
-  .popular_link {
+  .topRating_link {
     margin-left: 0;
     margin-right: 0;
   }

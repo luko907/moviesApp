@@ -20,12 +20,22 @@ export function getActual(title) {
     const fetchData = async () => {
       try {
         const resp = await axios.get(url);
-        resp.data.results && resp.data.results.length < 1
-          ? alert("Please, type again")
-          : dispatch({
+        const respFinal = resp.data.results.filter(
+          (v, i, a) =>
+            a.findIndex((t) => t.id === v.id) === i &&
+            v.poster_path !== null &&
+            v.backdrop_path !== null &&
+            v.overview !== null &&
+            v.title !== null &&
+            v.release_date !== null &&
+            v.vote_count > 20
+        );
+        respFinal && respFinal.length > 0
+          ? dispatch({
               type: "GET_ACTUAL",
-              payload: resp.data,
-            });
+              payload: respFinal,
+            })
+          : alert("Please, type another title");
       } catch (error) {
         console.log("error", error);
       }

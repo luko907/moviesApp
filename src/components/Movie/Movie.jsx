@@ -26,7 +26,7 @@ function Movie(props) {
                   <div className={styles.description}>
                     <span className={styles.title}>{item.title}</span>
                     <span className={styles.year}>
-                      {item.release_date.length > 4
+                      {item.release_date && item.release_date.length > 4
                         ? item.release_date.slice(0, -6)
                         : item.release_date}
                     </span>
