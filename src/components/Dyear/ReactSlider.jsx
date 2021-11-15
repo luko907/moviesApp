@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import "./ReactSlider.css";
-export default function Slider(props) {
+import { yearFilter } from "../../actions";
+function Slider(props) {
   const [value, setValue] = useState(1950);
   const [final, setFinal] = useState(null);
   useEffect(() => {
-    console.log(final);
+    /* console.log(final); */
   });
 
   return (
@@ -23,3 +25,11 @@ export default function Slider(props) {
     </div>
   );
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    yearFilter: () => dispatch(yearFilter()),
+  };
+}
+
+export default connect(null, mapDispatchToProps)(Slider);
