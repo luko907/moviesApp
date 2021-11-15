@@ -20,7 +20,7 @@ function Movies(props) {
       setIsLoading(false);
     }, Math.random() * 240);
   }, [props]);
-  function popularHandler() {
+  function topRatingHandler() {
     props.getReset();
     props.getMovies();
   }
@@ -37,8 +37,8 @@ function Movies(props) {
           <div className={styles.div_top}>
             <ul className={styles.ul_top}>
               <li>
-                <NavLink className={styles.popular_link} to="/">
-                  <button onClick={() => popularHandler()}>Popular</button>
+                <NavLink className={styles.topRating_link} to="/">
+                  <button onClick={() => topRatingHandler()}>Top Rating</button>
                 </NavLink>
               </li>
               <li>

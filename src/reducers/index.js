@@ -23,16 +23,7 @@ function appReducer(state = initialState, action) {
     case "GET_ACTUAL": {
       return {
         ...state,
-        moviesActual: action.payload.results.filter(
-          (v, i, a) =>
-            a.findIndex((t) => t.id === v.id) === i &&
-            v.poster_path !== null &&
-            v.backdrop_path !== null &&
-            v.overview !== null &&
-            v.title !== null &&
-            v.release_date !== "" &&
-            v.release_date !== undefined
-        ),
+        moviesActual: action.payload,
       };
     }
     case "GET_GENRE": {
@@ -48,8 +39,8 @@ function appReducer(state = initialState, action) {
               v.backdrop_path !== null &&
               v.overview !== null &&
               v.title !== null &&
-              v.release_date !== "" &&
-              v.release_date !== undefined
+              v.release_date !== null &&
+              v.vote_count > 20
           )
           .sort((a, b) => 0.5 - Math.random()),
       };
@@ -57,16 +48,7 @@ function appReducer(state = initialState, action) {
     case "YEAR_FILTER": {
       return {
         ...state,
-        moviesLoaded: action.payload.results.filter(
-          (v, i, a) =>
-            a.findIndex((t) => t.id === v.id) === i &&
-            v.poster_path !== null &&
-            v.backdrop_path !== null &&
-            v.overview !== null &&
-            v.title !== null &&
-            v.release_date !== "" &&
-            v.release_date !== undefined
-        ),
+        moviesLoaded: action.payload,
       };
     }
     case "RESET": {
