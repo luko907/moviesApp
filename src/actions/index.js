@@ -69,9 +69,20 @@ export function getReset() {
     dispatch({ type: "RESET" });
   };
 }
-
-export function yearFilter(year) {
+/////REVISAR!!!!!!!!!
+export function yearFilter(obj) {
   return function (dispatch) {
-    dispatch({ type: "YEAR_FILTER", payload: year });
+    const fetchData = async () => {
+      try {
+        const final = await obj.filter((v) => v.release_date > 1998);
+        dispatch({
+          type: "YEAR_FILTER",
+          payload: final,
+        });
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchData();
   };
 }

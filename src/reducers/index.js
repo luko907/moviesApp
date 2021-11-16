@@ -45,12 +45,14 @@ function appReducer(state = initialState, action) {
           .sort((a, b) => 0.5 - Math.random()),
       };
     }
-    case "YEAR_FILTER": {
+    /* case "YEAR_FILTER": {
       return {
         ...state,
-        moviesLoaded: action.payload,
+        moviesLoaded: state.moviesLoaded.filter(
+          (v) => v.release_date === action.payload.min
+        ),
       };
-    }
+    } */
     case "RESET": {
       return {
         ...state,

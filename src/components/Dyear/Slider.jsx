@@ -9,6 +9,11 @@ class Slider extends React.Component {
       value: range,
     });
   };
+  onChangeComplete = (range) => {
+    this.props.onChangeComplete({
+      value: range,
+    });
+  };
   render() {
     const { min, max, step, value } = this.props.data;
     return (
@@ -19,6 +24,7 @@ class Slider extends React.Component {
           step={step}
           onChange={this.onChange}
           value={value}
+          onChangeComplete={this.onChangeComplete}
         />
       </div>
     );

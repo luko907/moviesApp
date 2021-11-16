@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
+import { yearFilter } from "../../actions";
+import { connect } from "react-redux";
 import "./dryear.css";
 import Slider from "./Slider";
 
-export default function Dryear() {
+function Dryear(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [clickedOutside, setClickedOutside] = useState(false);
   const [data, setDat] = useState({
@@ -12,10 +14,9 @@ export default function Dryear() {
     value: { min: 2000, max: 2021 },
   });
   const myRef = useRef();
-  console.log(data.value.min);
-  console.log(data.value.max);
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       setClickedOutside(false);
@@ -34,6 +35,13 @@ export default function Dryear() {
       value: data.value,
     }));
   };
+  const onChangeComplete = (data) => {
+    props.yearFilter({
+      arr: props.moviesLoaded,
+      min: data.value,
+      max: data.value.max,
+    });
+  };
   const handleClick = () => {
     setClickedOutside(false);
     setIsOpen(!isOpen);
@@ -41,7 +49,11 @@ export default function Dryear() {
   const itemList = () => {
     return (
       <div className="dropdownYear__items">
-        <Slider data={data} onChange={onChange} />
+        <Slider
+          data={data}
+          onChange={onChange}
+          onChangeComplete={onChangeComplete}
+        />
       </div>
     );
   };
@@ -59,3 +71,14 @@ export default function Dryear() {
     </div>
   );
 }
+const mapStateToProps = (state) => ({
+  moviesLoaded: state.moviesLoaded,
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    yearFilter: (values) => dispatch(yearFilter(values)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dryear);
