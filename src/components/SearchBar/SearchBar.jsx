@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { getActual } from "../../actions";
+import { getActual, getReset } from "../../actions";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
@@ -14,6 +14,7 @@ function SearchBar(props) {
     setMovieInfo(e.target.value);
   }
   function handleSubmit(e) {
+    props.getReset();
     e.preventDefault();
     history.push("/");
     props.getActual(movieInfo);
@@ -54,6 +55,7 @@ function SearchBar(props) {
 function mapDispatchToProps(dispatch) {
   return {
     getActual: (title) => dispatch(getActual(title)),
+    getReset: () => dispatch(getReset()),
   };
 }
 

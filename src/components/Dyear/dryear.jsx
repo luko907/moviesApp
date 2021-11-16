@@ -1,14 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
+import { yearFilter } from "../../actions";
+import { connect } from "react-redux";
 import "./dryear.css";
-import Slider from "./ReactSlider.jsx";
+import Slider from "./Slider";
 
-export default function Dryear() {
+function Dryear(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [clickedOutside, setClickedOutside] = useState(false);
+  const [data, setDat] = useState({
+    min: 1950,
+    max: 2021,
+    flag: null,
+    step: 1,
+    value: { min: 2000, max: 2021 },
+  });
   const myRef = useRef();
-
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       setClickedOutside(false);
@@ -20,6 +29,20 @@ export default function Dryear() {
       setClickedOutside(true);
     }
   };
+
+  const onChange = (data) => {
+    setDat((prevState) => ({
+      ...prevState,
+      value: data.value,
+    }));
+  };
+  const onChangeComplete = (data) => {
+    props.yearFilter({
+      arr: props.moviesActual.length ? props.moviesActual : props.moviesLoaded,
+      min: data.value.min,
+      max: data.value.max,
+    });
+  };
   const handleClick = () => {
     setClickedOutside(false);
     setIsOpen(!isOpen);
@@ -27,7 +50,11 @@ export default function Dryear() {
   const itemList = () => {
     return (
       <div className="dropdownYear__items">
-        <Slider />
+        <Slider
+          data={data}
+          onChange={onChange}
+          onChangeComplete={onChangeComplete}
+        />
       </div>
     );
   };
@@ -38,10 +65,23 @@ export default function Dryear() {
       className={
         !clickedOutside && isOpen ? "dropdownYear active" : "dropdownYear"
       }
-      onClick={handleClick}
     >
-      <div className="dropdownYear__text">Release date</div>
+      <div className="dropdownYear__text" onClick={handleClick}>
+        Release date
+      </div>
       {itemList()}
     </div>
   );
 }
+const mapStateToProps = (state) => ({
+  moviesLoaded: state.moviesLoaded,
+  moviesActual: state.moviesActual,
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    yearFilter: (values) => dispatch(yearFilter(values)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dryear);

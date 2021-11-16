@@ -1,0 +1,44 @@
+.slider {
+  margin-top: 2rem;
+  width: 160px;
+}
+
+.input-range__slider {
+  background: #0e0d0d;
+  margin-bottom: 10px;
+  border: white light;
+}
+
+.input-range__track {
+  background: rgb(251, 251, 251);
+  padding: 1px;
+}
+
+.input-range__track--active {
+  background: #45465ca6;
+  padding: 1px;
+}
+
+.input-range__label--value .input-range__label-container {
+  color: white;
+  font-size: 1rem;
+  padding: 2px 5px;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+  top: -8px;
+  opacity: 0.7;
+}
+
+.input-range__label--min .input-range__label-container {
+  font-size: 0.75rem;
+  color: #888;
+  left: -40px;
+  top: -18px;
+}
+
+.input-range__label--max .input-range__label-container {
+  font-size: 0.75rem;
+  color: #888;
+  left: 38px;
+  top: -18px;
+}

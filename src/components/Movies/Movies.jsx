@@ -51,7 +51,10 @@ function Movies(props) {
           </div>
           <div className={styles.moviesCount_div}>
             <span>
-              {props.moviActual.length > 0
+              {props.moviesYearFilter.length > 0
+                ? props.moviesYearFilter.length +
+                  (props.moviesYearFilter.length > 1 ? " titles" : " title")
+                : props.moviActual.length > 0
                 ? props.moviActual.length +
                   (props.moviActual.length > 1 ? " titles" : " title")
                 : props.moviL.length + " titles"}
@@ -69,6 +72,7 @@ function Movies(props) {
 const mapStateToProps = (state) => ({
   moviL: state.moviesLoaded,
   moviActual: state.moviesActual,
+  moviesYearFilter: state.moviesYearFilter,
 });
 
 function mapDispatchToProps(dispatch) {
