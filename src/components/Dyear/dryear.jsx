@@ -1,12 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./dryear.css";
-import Slider from "./ReactSlider.jsx";
+import Slider from "./Slider";
 
 export default function Dryear() {
   const [isOpen, setIsOpen] = useState(false);
   const [clickedOutside, setClickedOutside] = useState(false);
+  const [data, setDat] = useState({
+    min: 1950,
+    max: 2021,
+    step: 1,
+    value: { min: 2000, max: 2021 },
+  });
   const myRef = useRef();
-
+  console.log(data.value.min);
+  console.log(data.value.max);
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -20,6 +27,13 @@ export default function Dryear() {
       setClickedOutside(true);
     }
   };
+
+  const onChange = (data) => {
+    setDat((prevState) => ({
+      ...prevState,
+      value: data.value,
+    }));
+  };
   const handleClick = () => {
     setClickedOutside(false);
     setIsOpen(!isOpen);
@@ -27,7 +41,7 @@ export default function Dryear() {
   const itemList = () => {
     return (
       <div className="dropdownYear__items">
-        <Slider />
+        <Slider data={data} onChange={onChange} />
       </div>
     );
   };

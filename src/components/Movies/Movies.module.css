@@ -64,7 +64,7 @@ select {
   font-family: "Poppins", sans-serif;
 }
 
-.ul_top li label {
+/* .ul_top li label {
   background-color: transparent;
   border: none;
   color: rgb(220 199 199);
@@ -73,7 +73,7 @@ select {
   border-radius: 10px;
   width: 150px;
   font-family: "Poppins", sans-serif;
-}
+} */
 .ul_top li select {
   background-color: transparent;
   border: none;
