@@ -28,7 +28,7 @@ export function getActual(title) {
             v.overview !== null &&
             v.title !== null &&
             v.release_date !== null &&
-            v.vote_count > 20
+            v.vote_count > 50
         );
         respFinal && respFinal.length > 0
           ? dispatch({
@@ -74,7 +74,15 @@ export function yearFilter(obj) {
   return function (dispatch) {
     const fetchData = async () => {
       try {
-        const final = await obj.filter((v) => v.release_date > 1998);
+        const final = await obj.arr
+          .filter(
+            (v) =>
+              v.release_date.slice(0, 4) >= obj.min.toString() &&
+              v.release_date.slice(0, 4) <= obj.max.toString()
+          )
+          .sort(function (a, b) {
+            return b.release_date.slice(0, 4) - a.release_date.slice(0, 4);
+          });
         dispatch({
           type: "YEAR_FILTER",
           payload: final,

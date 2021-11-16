@@ -10,6 +10,7 @@ function Dryear(props) {
   const [data, setDat] = useState({
     min: 1950,
     max: 2021,
+    flag: null,
     step: 1,
     value: { min: 2000, max: 2021 },
   });
@@ -37,8 +38,8 @@ function Dryear(props) {
   };
   const onChangeComplete = (data) => {
     props.yearFilter({
-      arr: props.moviesLoaded,
-      min: data.value,
+      arr: props.moviesActual.length ? props.moviesActual : props.moviesLoaded,
+      min: data.value.min,
       max: data.value.max,
     });
   };
@@ -64,15 +65,17 @@ function Dryear(props) {
       className={
         !clickedOutside && isOpen ? "dropdownYear active" : "dropdownYear"
       }
-      onClick={handleClick}
     >
-      <div className="dropdownYear__text">Release date</div>
+      <div className="dropdownYear__text" onClick={handleClick}>
+        Release date
+      </div>
       {itemList()}
     </div>
   );
 }
 const mapStateToProps = (state) => ({
   moviesLoaded: state.moviesLoaded,
+  moviesActual: state.moviesActual,
 });
 
 function mapDispatchToProps(dispatch) {

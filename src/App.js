@@ -23,6 +23,7 @@ function App() {
 const mapStateToProps = (state) => ({
   moviesL: state.moviesLoaded,
   moviesActual: state.moviesActual,
+  moviesYearFilter: state.moviesYearFilter,
 });
 
 export default connect(mapStateToProps, null)(App);

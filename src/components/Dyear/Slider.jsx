@@ -15,7 +15,7 @@ class Slider extends React.Component {
     });
   };
   render() {
-    const { min, max, step, value } = this.props.data;
+    const { min, max, step, value /* , flag */ } = this.props.data;
     return (
       <div className="slider">
         <InputRange
@@ -25,6 +25,7 @@ class Slider extends React.Component {
           onChange={this.onChange}
           value={value}
           onChangeComplete={this.onChangeComplete}
+          /* flag={flag} */
         />
       </div>
     );

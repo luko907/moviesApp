@@ -43,6 +43,7 @@ function MovieInfo(props) {
       try {
         const resp1 = await axios.get(url1);
         const resp2 = await axios.get(url2);
+        console.log(resp1.data);
         setMovieDetails(resp1.data);
         setInfo(resp2.data);
       } catch (error) {

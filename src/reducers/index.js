@@ -1,6 +1,7 @@
 const initialState = {
   moviesLoaded: [],
   moviesActual: [],
+  moviesYearFilter: [],
 };
 
 function appReducer(state = initialState, action) {
@@ -15,8 +16,7 @@ function appReducer(state = initialState, action) {
             v.backdrop_path !== null &&
             v.overview !== null &&
             v.title !== null &&
-            v.release_date !== "" &&
-            v.release_date !== undefined
+            v.release_date !== null
         ),
       };
     }
@@ -40,23 +40,22 @@ function appReducer(state = initialState, action) {
               v.overview !== null &&
               v.title !== null &&
               v.release_date !== null &&
-              v.vote_count > 20
+              v.vote_count > 50
           )
           .sort((a, b) => 0.5 - Math.random()),
       };
     }
-    /* case "YEAR_FILTER": {
+    case "YEAR_FILTER": {
       return {
         ...state,
-        moviesLoaded: state.moviesLoaded.filter(
-          (v) => v.release_date === action.payload.min
-        ),
+        moviesYearFilter: action.payload,
       };
-    } */
+    }
     case "RESET": {
       return {
         ...state,
         moviesActual: [],
+        moviesYearFilter: [],
       };
     }
     default:
