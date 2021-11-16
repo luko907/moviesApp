@@ -52,9 +52,9 @@ function Movies(props) {
           <div className={styles.moviesCount_div}>
             <span>
               {props.moviActual.length > 0
-                ? props.moviActual.length
-                : props.moviL.length}{" "}
-              titles
+                ? props.moviActual.length +
+                  (props.moviActual.length > 1 ? " titles" : " title")
+                : props.moviL.length + " titles"}
             </span>
           </div>
           <div className={styles.movie_cards}>
