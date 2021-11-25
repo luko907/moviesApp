@@ -12,24 +12,24 @@ https://www.themoviedb.org/documentation/api/
 
 <a href="https://movies-app-lk.netlify.app"> 💻Website!<a/>
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/48270029/140329935-6433117d-13bb-4a39-88e6-dbc44687e314.png" />
-  <img src="https://user-images.githubusercontent.com/48270029/140329948-2d498532-dd4e-45c2-95be-6e2ba9bbf212.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/143493278-5ac5097d-3fc1-4e68-9f38-406a18f6d995.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/143493282-1d5c2301-bab2-473a-a740-a7fcff8e5672.png" />
 </div>
 
 <br />
 <br />
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/48270029/140329951-0c3dc74c-2262-4f28-a83a-4cf6beaa6869.png" />
-  <img src="https://user-images.githubusercontent.com/48270029/140329953-8541cceb-6a1f-472f-822d-178e7c3b3d35.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/143493283-0847f550-cc6c-41d2-a592-f15b6ebeea54.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/143493288-2667a4fe-db02-4e16-a2d3-7f642f79eee0.png" />
 </div>
 
 ## Desktop View
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/48270029/139948300-1789d36f-25d3-4f5e-b40d-c3b59b20af38.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/143493291-3eae3412-ac83-4de1-a55e-434bda8b59dc.png" />
   <br />
   <br />
-  <img src="https://user-images.githubusercontent.com/48270029/139947543-55381647-d935-4fd0-92d7-c5a64429b798.png" />
+  <img src="https://user-images.githubusercontent.com/48270029/143493295-9fb416eb-61a0-4a1e-8ce5-50e70ba1e7c8.png" />
 </div>
 
 ### Built with:
@@ -42,10 +42,6 @@ https://www.themoviedb.org/documentation/api/
 - CSS3(CSS Modules)
 - Radium NPM
 - HTML5
-
-### To be added shortly:
-
-- Capacity to search by genre/year released
 
 ### Project setup:
 
