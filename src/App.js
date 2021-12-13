@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./components/NavBar/NavBar.jsx";
-import Movies from "./components/Movies/Movies.jsx";
+import Home from "./components/Home/Home.jsx";
 import MovieInfo from "./components/MovieInfo/MovieInfo.jsx";
 import { Switch, Route } from "react-router";
 import { connect } from "react-redux";
@@ -13,7 +13,7 @@ function App() {
       <ScrollToTop />
       <NavBar />
       <Switch>
-        <Route exact path="/" component={Movies} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/movies/:id" component={MovieInfo} />
       </Switch>
     </div>

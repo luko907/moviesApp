@@ -69,7 +69,7 @@ export function getReset() {
     dispatch({ type: "RESET" });
   };
 }
-/////REVISAR!!!!!!!!!
+
 export function yearFilter(obj) {
   return function (dispatch) {
     const fetchData = async () => {

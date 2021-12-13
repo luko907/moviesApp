@@ -20,8 +20,6 @@ function Dryear(props) {
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      setClickedOutside(false);
-      setIsOpen(false);
     };
   }, [clickedOutside]);
   const handleClickOutside = (e) => {
